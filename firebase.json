@@ -1,0 +1,37 @@
+{
+  "hosting": {
+    "predeploy": ["node scripts/build-config.js"],
+    "public": ".",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**",
+      "graphify-out/**",
+      "scripts/**",
+      "package.json",
+      "package-lock.json",
+      "SETUP_EMAILJS.md",
+      "email-template.html"
+    ],
+    "headers": [
+      {
+        "source": "**/*.@(js|css)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=604800"
+          }
+        ]
+      },
+      {
+        "source": "**/*.@(png|jpg|jpeg|gif|svg|webp)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=2592000"
+          }
+        ]
+      }
+    ]
+  }
+}

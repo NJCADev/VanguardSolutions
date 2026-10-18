@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="refresh" content="0; url=home/home.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Vanguard Solutions | Desarrollo de Software y Servicios TI en Costa Rica</title>
+<meta name="description" content="Expertos en soluciones tecnológicas de vanguardia, desarrollo web, aplicaciones móviles y consultoría informática en Cartago."></head>
+<body>
+  <script src="config.js"></script>
+  <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = window.VS_CONFIG.firebase;
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+</body>
+</html>

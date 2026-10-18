@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta data-i18n-attr="content:contact.002" name="description" content="Contáctanos — Vanguard Solutions. Escríbenos por WhatsApp, correo o completa el formulario. Estamos en Cartago, Costa Rica." />
+  <meta name="robots" content="index, follow" />
+  <title data-i18n="contact.001">Contacto – Vanguard Solutions</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="../components/global.css" />
+  <link rel="stylesheet" href="../components/header.css" />
+  <link rel="stylesheet" href="../components/footer.css" />
+  <link rel="stylesheet" href="contact.css" />
+</head>
+<body>
+  <!-- SCROLL PROGRESS -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- PAGE LOADER -->
+  <div id="page-loader" aria-hidden="true">
+    <div class="loader-ring"></div>
+  </div>
+
+  <!-- HEADER PLACEHOLDER -->
+  <div id="header-placeholder"></div>
+
+  <main class="main-content" id="main-content">
+
+    <!-- ══════════════════════════════════════════════════════
+         HERO
+    ══════════════════════════════════════════════════════ -->
+    <section data-i18n-attr="aria-label:contact.003" class="page-hero contact-hero" aria-label="Encabezado de contacto">
+      <div class="contact-hero-orb contact-hero-orb--l" aria-hidden="true"></div>
+      <div class="contact-hero-orb contact-hero-orb--r" aria-hidden="true"></div>
+      <div class="contact-hero-grid"                    aria-hidden="true"></div>
+      <div class="page-hero-content">
+        <span class="neon-badge mb-sm">
+          <i class="fa-solid fa-satellite-dish" aria-hidden="true"></i>&nbsp; <span data-i18n="contact.004">Conectemos</span>
+        </span>
+        <h1 data-i18n-html="contact.005">Hablemos del <span class="accent">Futuro</span></h1>
+        <p data-i18n="contact.006">Cuéntanos tu idea, proyecto o necesidad. Respondemos en menos de 24 horas con una propuesta personalizada y sin compromiso.</p>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         CONTACT GRID
+    ══════════════════════════════════════════════════════ -->
+    <section class="contact-section section" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="contact-grid">
+
+          <!-- LEFT: Info + WhatsApp + Details -->
+          <aside data-i18n-attr="aria-label:contact.007" class="contact-info reveal reveal-left" aria-label="Información de contacto">
+
+            <!-- WhatsApp CTA -->
+            <div data-i18n-attr="aria-label:home.066" class="whatsapp-cta glass-card" aria-label="Contactar por WhatsApp">
+              <div class="wacta-icon" aria-hidden="true">
+                <i class="fa-brands fa-whatsapp"></i>
+              </div>
+              <div class="wacta-content">
+                <h3 data-i18n="contact.008">Escríbenos por WhatsApp</h3>
+                <p data-i18n="contact.009">La forma más rápida de conectar con nuestro equipo. Respuesta inmediata en horario laboral.</p>
+                <button data-i18n-attr="aria-label:contact.010"
+                  id="wa-btn"
+                  type="button"
+                  class="btn btn-green wacta-btn"
+                  aria-label="Abrir chat en WhatsApp"
+                >
+                  <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                  <span data-i18n="contact.011">Chatear Ahora — +506 7135-8066</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Contact Details -->
+            <div data-i18n-attr="aria-label:contact.012" class="contact-details glass-card" aria-label="Detalles de contacto">
+              <h3 data-i18n="contact.013" class="contact-details-title">Información de Contacto</h3>
+
+              <ul class="contact-detail-list">
+                <li class="contact-detail-item">
+                  <div class="cdi-icon-wrap" aria-hidden="true">
+                    <i class="fa-solid fa-phone"></i>
+                  </div>
+                  <div class="cdi-content">
+                    <span data-i18n="contact.014" class="cdi-label">Teléfono</span>
+                    <span class="cdi-value">+506 7135-8066</span>
+                  </div>
+                </li>
+
+                <li class="contact-detail-item">
+                  <div class="cdi-icon-wrap cdi-icon-wrap--purple" aria-hidden="true">
+                    <i class="fa-solid fa-envelope"></i>
+                  </div>
+                  <div class="cdi-content">
+                    <span data-i18n="contact.015" class="cdi-label">Correo Electrónico</span>
+                    <span data-i18n="contact.016" class="cdi-value">vanguardsolutionscr@gmail.com</span>
+                  </div>
+                </li>
+
+                <li class="contact-detail-item">
+                  <div class="cdi-icon-wrap cdi-icon-wrap--green" aria-hidden="true">
+                    <i class="fa-solid fa-location-dot"></i>
+                  </div>
+                  <div class="cdi-content">
+                    <span data-i18n="contact.017" class="cdi-label">Ubicación</span>
+                    <span data-i18n="contact.018" class="cdi-value">Cartago, Costa Rica</span>
+                  </div>
+                </li>
+
+                <li class="contact-detail-item">
+                  <div class="cdi-icon-wrap" aria-hidden="true">
+                    <i class="fa-solid fa-clock"></i>
+                  </div>
+                  <div class="cdi-content">
+                    <span data-i18n="contact.019" class="cdi-label">Horario de Atención</span>
+                    <span data-i18n="contact.020" class="cdi-value">Lunes a Viernes de 8 am a 6 pm</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Social links -->
+            <div data-i18n-attr="aria-label:contact.021" class="contact-social glass-card" aria-label="Redes sociales">
+              <h4 data-i18n="contact.022" class="contact-social-title">Síguenos</h4>
+              <div class="contact-social-links">
+                <a data-i18n-attr="aria-label:contact.023" href="#" class="csocial-btn" aria-label="LinkedIn">
+                  <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                  <span data-i18n="contact.023">LinkedIn</span>
+                </a>
+                <a data-i18n-attr="aria-label:contact.024" href="#" class="csocial-btn csocial-btn--purple" aria-label="Twitter / X">
+                  <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+                  <span data-i18n="contact.024">Twitter / X</span>
+                </a>
+                <a data-i18n-attr="aria-label:contact.025" href="#" class="csocial-btn csocial-btn--green" aria-label="Instagram">
+                  <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                  <span data-i18n="contact.025">Instagram</span>
+                </a>
+              </div>
+            </div>
+
+          </aside>
+
+          <!-- RIGHT: Form -->
+          <div class="contact-form-wrap reveal reveal-right">
+            <div data-i18n-attr="aria-label:contact.026" class="contact-form-card glass-card" aria-label="Formulario de contacto">
+              <div class="cfc-header">
+                <h2 data-i18n-html="contact.027" id="contact-heading">Envíanos un <span class="accent">Mensaje</span></h2>
+                <p data-i18n="contact.028">Completa el formulario y un especialista se pondrá en contacto contigo a la brevedad.</p>
+              </div>
+
+              <form data-i18n-attr="aria-label:contact.026" class="contact-form" id="contact-form" novalidate aria-label="Formulario de contacto">
+
+                <div class="form-row">
+                  <div class="form-group" id="fg-name">
+                    <label for="cf-name" class="form-label">
+                      <i class="fa-solid fa-user" aria-hidden="true"></i>
+                      <span data-i18n="contact.029">Nombre Completo</span> <span class="required" aria-hidden="true">*</span>
+                    </label>
+                    <input data-i18n-attr="placeholder:contact.030"
+                      type="text"
+                      id="cf-name"
+                      name="name"
+                      class="form-input"
+                      placeholder="Juan Pérez"
+                      autocomplete="name"
+                      required
+                      aria-required="true"
+                      aria-describedby="err-name"
+                    />
+                    <span class="form-error" id="err-name" role="alert" aria-live="polite"></span>
+                  </div>
+
+                  <div class="form-group" id="fg-company">
+                    <label data-i18n-html="contact.031" for="cf-company" class="form-label">
+                      <i class="fa-solid fa-building" aria-hidden="true"></i>
+                      Empresa <span class="form-optional">(Opcional)</span>
+                    </label>
+                    <input data-i18n-attr="placeholder:contact.032"
+                      type="text"
+                      id="cf-company"
+                      name="company"
+                      class="form-input"
+                      placeholder="Mi Empresa S.A."
+                      autocomplete="organization"
+                    />
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group" id="fg-email">
+                    <label for="cf-email" class="form-label">
+                      <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                      <span data-i18n="contact.015">Correo Electrónico</span> <span class="required" aria-hidden="true">*</span>
+                    </label>
+                    <input data-i18n-attr="placeholder:contact.033"
+                      type="email"
+                      id="cf-email"
+                      name="email"
+                      class="form-input"
+                      placeholder="correo@empresa.com"
+                      autocomplete="email"
+                      required
+                      aria-required="true"
+                      aria-describedby="err-email"
+                    />
+                    <span class="form-error" id="err-email" role="alert" aria-live="polite"></span>
+                  </div>
+
+                  <div class="form-group" id="fg-phone">
+                    <label data-i18n-html="contact.034" for="cf-phone" class="form-label">
+                      <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                      Teléfono <span class="form-optional">(Opcional)</span>
+                    </label>
+                    <input
+                      type="tel"
+                      id="cf-phone"
+                      name="phone"
+                      class="form-input"
+                      placeholder="+506 7135-8066"
+                      autocomplete="tel"
+                    />
+                  </div>
+                </div>
+
+                <div class="form-group" id="fg-service">
+                  <label for="cf-service" class="form-label">
+                    <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
+                    <span data-i18n="contact.035">Servicio de Interés</span> <span class="required" aria-hidden="true">*</span>
+                  </label>
+                  <div class="form-select-wrap">
+                    <select
+                      id="cf-service"
+                      name="service"
+                      class="form-input form-select"
+                      required
+                      aria-required="true"
+                      aria-describedby="err-service"
+                    >
+                      <option data-i18n="contact.036" value="" disabled selected>Selecciona un servicio…</option>
+                      <option data-i18n="services.008" value="apps">Desarrollo de Apps Móviles</option>
+                      <option data-i18n="services.018" value="web">Diseño y Desarrollo Web</option>
+                      <option data-i18n="services.029" value="hosting">Hosting de Alta Disponibilidad</option>
+                      <option data-i18n="home.023" value="domains">Gestión de Dominios</option>
+                      <option data-i18n="services.048" value="support">Soporte Técnico Especializado</option>
+                      <option data-i18n="contact.037" value="other">Otro / Consulta General</option>
+                    </select>
+                    <i class="fa-solid fa-chevron-down form-select-arrow" aria-hidden="true"></i>
+                  </div>
+                  <span class="form-error" id="err-service" role="alert" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group" id="fg-message">
+                  <label for="cf-message" class="form-label">
+                    <i class="fa-solid fa-comment-dots" aria-hidden="true"></i>
+                    <span data-i18n="contact.038">Mensaje</span> <span class="required" aria-hidden="true">*</span>
+                  </label>
+                  <textarea data-i18n-attr="placeholder:contact.039"
+                    id="cf-message"
+                    name="message"
+                    class="form-input form-textarea"
+                    rows="5"
+                    placeholder="Cuéntanos sobre tu proyecto, necesidades y cualquier detalle relevante…"
+                    required
+                    aria-required="true"
+                    aria-describedby="err-message"
+                    maxlength="1000"
+                  ></textarea>
+                  <div class="form-char-count">
+                    <span class="form-error" id="err-message" role="alert" aria-live="polite"></span>
+                    <span class="char-counter" id="char-counter" aria-live="polite">0 / 1000</span>
+                  </div>
+                </div>
+
+                <!-- Honeypot (anti-spam) -->
+                <div class="form-honeypot" aria-hidden="true">
+                  <input type="text" name="_trap" tabindex="-1" autocomplete="off" />
+                </div>
+
+                <!-- Error de envío -->
+                <div class="form-send-error" id="form-send-error" role="alert" aria-live="assertive" hidden></div>
+
+                <button type="submit" class="btn btn-primary form-submit" id="form-submit">
+                  <span class="submit-text">
+                    <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+                    <span data-i18n="contact.040">Enviar Mensaje</span>
+                  </span>
+                  <span class="submit-loading" aria-hidden="true">
+                    <i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>
+                    <span data-i18n="contact.041">Enviando…</span>
+                  </span>
+                </button>
+              </form>
+
+              <!-- SUCCESS STATE -->
+              <div class="form-success" id="form-success" aria-live="polite" aria-hidden="true">
+                <div class="fs-icon" aria-hidden="true">
+                  <i class="fa-solid fa-circle-check"></i>
+                </div>
+                <h3 data-i18n="contact.042">¡Mensaje Enviado!</h3>
+                <p data-i18n="contact.043">Gracias por contactarnos. Un especialista de Vanguard Solutions se pondrá en contacto contigo en menos de 24 horas hábiles.</p>
+                <button class="btn btn-outline mt-md" id="form-reset-btn">
+                  <i class="fa-solid fa-rotate-left" aria-hidden="true"></i>
+                  <span data-i18n="contact.044">Enviar Otro Mensaje</span>
+                </button>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         MAP SECTION
+    ══════════════════════════════════════════════════════ -->
+    <section class="map-section section" aria-labelledby="map-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="neon-badge mb-sm">
+            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>&nbsp; <span data-i18n="contact.017">Ubicación</span>
+          </span><br>
+          <h2 data-i18n-html="contact.045" id="map-heading">Nos Encontramos en <span class="accent">Cartago</span></h2>
+          <div class="section-divider"></div>
+          <p data-i18n="contact.046">Cartago, Costa Rica — accesibles para visitas presenciales y con soporte remoto para todo el país.</p>
+        </div>
+
+        <div data-i18n-attr="aria-label:contact.047" class="map-wrapper reveal" aria-label="Mapa de ubicación en Cartago, Costa Rica">
+          <div class="map-frame-border" aria-hidden="true"></div>
+          <iframe data-i18n-attr="title:contact.048;aria-label:contact.049"
+            title="Ubicación de Vanguard Solutions en Cartago, Costa Rica"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.847!2d-83.91176!3d9.877207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOcKwNTInMzguMiJOIDgzwrA1NCc0Mi4zIlc!5e0!3m2!1ses-419!2scr!4v1710000000000"            class="map-iframe"
+            width="100%"
+            height="420"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            aria-label="Google Maps mostrando Cartago, Costa Rica"
+          ></iframe>
+          <div class="map-overlay-badge" aria-hidden="true">
+            <i class="fa-solid fa-location-dot"></i>
+            <span data-i18n="contact.018">Cartago, Costa Rica</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         FAQ SECTION
+    ══════════════════════════════════════════════════════ -->
+    <section class="faq-section section" aria-labelledby="faq-heading">
+      <div class="faq-bg" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-header">
+          <span data-i18n="contact.050" class="neon-badge mb-sm">Preguntas Frecuentes</span><br>
+          <h2 data-i18n-html="contact.051" id="faq-heading">Respuestas <span class="accent">Rápidas</span></h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="faq-grid" role="list">
+
+          <div class="faq-item glass-card reveal" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-1">
+              <span data-i18n="contact.052">¿Cuánto tiempo tarda un proyecto web?</span>
+              <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer" id="faq-1" hidden>
+              <p data-i18n="contact.053">Depende del alcance. Un sitio corporativo toma entre 3 y 6 semanas. Una plataforma e‑commerce o app móvil compleja puede llevar entre 2 y 4 meses. En la consulta inicial establecemos un cronograma claro y realista.</p>
+            </div>
+          </div>
+
+          <div class="faq-item glass-card reveal" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-2">
+              <span data-i18n="contact.054">¿Trabajan con clientes fuera de Cartago?</span>
+              <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer" id="faq-2" hidden>
+              <p data-i18n="contact.055">Sí. Trabajamos de forma remota con empresas en todo Costa Rica y otros países de Latinoamérica. Las reuniones se realizan por Zoom o Google Meet, y la gestión del proyecto es 100% en línea con herramientas colaborativas.</p>
+            </div>
+          </div>
+
+          <div class="faq-item glass-card reveal" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-3">
+              <span data-i18n="contact.056">¿Ofrecen mantenimiento post-entrega?</span>
+              <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer" id="faq-3" hidden>
+              <p data-i18n="contact.057">Sí. Ofrecemos planes de mantenimiento mensual que incluyen actualizaciones de seguridad, backups, monitoreo de uptime y hasta X horas de ajustes según el plan contratado. También brindamos soporte por horas bajo demanda.</p>
+            </div>
+          </div>
+
+          <div class="faq-item glass-card reveal" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-4">
+              <span data-i18n="contact.058">¿Cuáles son las formas de pago aceptadas?</span>
+              <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
+            </button>
+            <div class="faq-answer" id="faq-4" hidden>
+              <p data-i18n="contact.059">Aceptamos transferencia SINPE Móvil, depósito bancario (BAC, BCR, BN), PayPal para clientes internacionales y tarjeta de crédito/débito. Los proyectos se pagan típicamente en 3 cuotas: 40% inicio, 40% mitad y 20% al entregable final.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <!-- EmailJS SDK: cargado primero, sin defer para que esté disponible inmediatamente -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <!-- Componentes y lógica -->
+  <script src="../components/i18n.js" defer></script>
+  <script src="../components/header.js" defer></script>
+  <script src="../components/footer.js" defer></script>
+  <script src="../main.js" defer></script>
+  <script src="../config.js"></script>
+  <script src="contact.js" defer></script>
+</body>
+</html>

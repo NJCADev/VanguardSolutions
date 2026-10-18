@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta data-i18n-attr="content:home.002" name="description" content="Vanguard Solutions – Firma de servicios tecnológicos de élite. Desarrollamos apps móviles, sitios web, soluciones en la nube y más para empresas que lideran el cambio digital." />
+  <meta name="robots" content="index, follow" />
+  <title data-i18n="home.001">Vanguard Solutions – Ingeniería del Futuro</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../components/global.css" />
+  <link rel="stylesheet" href="../components/header.css" />
+  <link rel="stylesheet" href="../components/footer.css" />
+  <link rel="stylesheet" href="home.css" />
+</head>
+<body>
+  <!-- SCROLL PROGRESS -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- PAGE LOADER -->
+  <div id="page-loader" aria-hidden="true">
+    <div class="loader-ring"></div>
+  </div>
+
+  <!-- HEADER PLACEHOLDER -->
+  <div id="header-placeholder"></div>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content" id="main-content">
+
+    <!-- ══════════════════════════════════════════════════════
+         HERO SECTION
+    ══════════════════════════════════════════════════════ -->
+    <section data-i18n-attr="aria-label:home.003" class="hero-section" id="hero" aria-label="Sección principal">
+      <!-- Particles Canvas -->
+      <canvas class="hero-canvas" id="hero-canvas" aria-hidden="true"></canvas>
+
+      <!-- Radial glow orbs -->
+      <div class="hero-orb hero-orb--cyan" aria-hidden="true"></div>
+      <div class="hero-orb hero-orb--purple" aria-hidden="true"></div>
+      <div class="hero-orb hero-orb--green" aria-hidden="true"></div>
+
+      <!-- Grid lines -->
+      <div class="hero-grid" aria-hidden="true"></div>
+
+      <div class="container hero-content">
+        <div class="hero-badge">
+          <span class="neon-badge">
+            <i class="fa-solid fa-bolt" aria-hidden="true"></i>&nbsp;
+            <span data-i18n="home.004">Innovación de Vanguardia</span>
+          </span>
+        </div>
+
+        <h1 data-i18n-html="home.005" class="hero-title" id="hero-title">
+          Vanguard Solutions<br />
+          <span class="hero-title-accent">Ingeniería del Futuro</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          <span data-i18n="home.006" class="typing-prefix">Nosotros </span>
+          <span class="typing-text" id="typing-text"></span>
+          <span class="typing-cursor" aria-hidden="true">|</span>
+        </p>
+
+        <p data-i18n="home.007" class="hero-desc">
+          Somos una empresa de tecnología ubicada en Costa Rica. Transformamos visiones empresariales 
+          en productos digitales de alta calidad, combinando arquitecturas modernas, diseño de vanguardia 
+          y una obsesión por la excelencia.
+        </p>
+
+        <div class="hero-actions">
+          <a href="../contact/contact.html" class="btn btn-primary hero-btn">
+            <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+            <span data-i18n="home.008">Iniciar Proyecto</span>
+          </a>
+          <a href="../services/services.html" class="btn btn-outline hero-btn">
+            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+            <span data-i18n="home.009">Explorar Servicios</span>
+          </a>
+        </div>
+
+        <!-- STATS
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="hero-stat-num" data-counter="50" data-suffix="+">0+</span>
+            <span class="hero-stat-label">Proyectos Entregados</span>
+          </div>
+          <div class="hero-stat-divider" aria-hidden="true"></div>
+          <div class="hero-stat">
+            <span class="hero-stat-num" data-counter="30" data-suffix="+">0+</span>
+            <span class="hero-stat-label">Clientes Satisfechos</span>
+          </div>
+          <div class="hero-stat-divider" aria-hidden="true"></div>
+          <div class="hero-stat">
+            <span class="hero-stat-num" data-counter="99" data-suffix="%">0%</span>
+            <span class="hero-stat-label">Uptime Garantizado</span>
+          </div>
+          <div class="hero-stat-divider" aria-hidden="true"></div>
+          <div class="hero-stat">
+            <span class="hero-stat-num" data-counter="5" data-suffix=" Años">0</span>
+            <span class="hero-stat-label">de Experiencia</span>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- Scroll indicator -->
+      <!-- <div class="hero-scroll-indicator" aria-hidden="true">
+        <div class="scroll-mouse">
+          <div class="scroll-wheel"></div>
+        </div>
+        <span>Scroll</span>
+      </div> -->
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         SERVICES PREVIEW
+    ══════════════════════════════════════════════════════ -->
+    <section class="services-preview section" aria-labelledby="services-heading">
+      <div class="container">
+        <div class="section-header">
+          <span data-i18n="home.010" class="neon-badge mb-sm">Lo que hacemos</span><br><br>
+          <h2 data-i18n-html="home.011" id="services-heading">Soluciones que <span class="accent">Transforman</span></h2>
+          <div class="section-divider"></div>
+          <p data-i18n="home.012">Un portafolio completo de servicios tecnológicos diseñados para impulsar tu empresa al siguiente nivel.</p>
+        </div>
+
+        <div class="services-preview-grid">
+          <article data-i18n-attr="aria-label:home.013" class="service-preview-card glass-card reveal" aria-label="Apps Móviles">
+            <div class="spc-icon-wrap">
+              <i class="fa-solid fa-mobile-screen-button spc-icon" aria-hidden="true"></i>
+            </div>
+            <h3 data-i18n="home.013">Apps Móviles</h3>
+            <p data-i18n="home.014">Aplicaciones para iOS y Android con experiencias de usuario premium.</p>
+            <a data-i18n-attr="aria-label:home.015" href="../services/services.html" class="spc-link" aria-label="Ver más sobre Apps Móviles">
+              <span data-i18n="home.016">Ver más</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </article>
+
+          <article data-i18n-attr="aria-label:home.017" class="service-preview-card glass-card reveal" aria-label="Desarrollo Web">
+            <div class="spc-icon-wrap spc-icon-wrap--purple">
+              <i class="fa-solid fa-code spc-icon" aria-hidden="true"></i>
+            </div>
+            <h3 data-i18n="home.017">Desarrollo Web</h3>
+            <p data-i18n="home.018">Sitios corporativos, e‑commerce y portales de alta performance y diseño impactante.</p>
+            <a data-i18n-attr="aria-label:home.019" href="../services/services.html" class="spc-link" aria-label="Ver más sobre Desarrollo Web">
+              <span data-i18n="home.016">Ver más</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </article>
+
+          <article data-i18n-attr="aria-label:home.020" class="service-preview-card glass-card reveal" aria-label="Cloud Hosting">
+            <div class="spc-icon-wrap spc-icon-wrap--green">
+              <i class="fa-solid fa-cloud spc-icon" aria-hidden="true"></i>
+            </div>
+            <h3 data-i18n="home.020">Cloud Hosting</h3>
+            <p data-i18n="home.021">Infraestructura en la nube con disponibilidad y seguridad de alta confianza.</p>
+            <a data-i18n-attr="aria-label:home.022" href="../services/services.html" class="spc-link" aria-label="Ver más sobre Cloud Hosting">
+              <span data-i18n="home.016">Ver más</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </article>
+
+          <article data-i18n-attr="aria-label:home.023" class="service-preview-card glass-card reveal" aria-label="Gestión de Dominios">
+            <div class="spc-icon-wrap">
+              <i class="fa-solid fa-globe spc-icon" aria-hidden="true"></i>
+            </div>
+            <h3 data-i18n="home.023">Gestión de Dominios</h3>
+            <p data-i18n="home.024">Registro, renovación y transferencia de dominios con gestión DNS completa.</p>
+            <a data-i18n-attr="aria-label:home.025" href="../services/services.html" class="spc-link" aria-label="Ver más sobre Gestión de Dominios">
+              <span data-i18n="home.016">Ver más</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </article>
+
+          <article data-i18n-attr="aria-label:home.026" class="service-preview-card glass-card reveal" aria-label="Soporte Técnico">
+            <div class="spc-icon-wrap spc-icon-wrap--purple">
+              <i class="fa-solid fa-headset spc-icon" aria-hidden="true"></i>
+            </div>
+            <h3 data-i18n="home.026">Soporte Técnico</h3>
+            <p data-i18n="home.027">Equipo especializado en reparaciones para resolver cualquier desafío técnico.</p>
+            <a data-i18n-attr="aria-label:home.028" href="../services/services.html" class="spc-link" aria-label="Ver más sobre Soporte Técnico">
+              <span data-i18n="home.016">Ver más</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </article>
+        </div>
+
+        <div class="text-center mt-lg">
+          <a href="../services/services.html" class="btn btn-outline">
+            <span data-i18n="home.029">Ver todos los servicios</span>
+            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         WHY US SECTION
+    ══════════════════════════════════════════════════════ -->
+    <section class="why-us section" aria-labelledby="why-heading">
+      <div class="why-us-bg" aria-hidden="true"></div>
+      <div class="container">
+        <div class="why-us-grid">
+          <div class="why-us-text reveal reveal-left">
+            <span data-i18n="home.030" class="neon-badge mb-sm">¿Por qué elegirnos?</span>
+            <h2 data-i18n-html="home.031" id="why-heading" class="neon-line mt-sm">
+              Tecnología de Élite<br />
+              <span style="background: var(--grad-main); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Para Empresas Visionarias</span>
+            </h2>
+            <p data-i18n="home.032" class="mt-md">En Vanguard Solutions, no solo construimos software. Creamos ecosistemas digitales que escalan, evolucionan y generan ventajas competitivas reales.</p>
+            <ul class="why-list mt-md">
+              <li class="why-item">
+                <span class="why-check" aria-hidden="true"><i class="fa-solid fa-check"></i></span>
+                <div>
+                  <strong data-i18n="home.033">Arquitectura Modular</strong>
+                  <p data-i18n="home.034">Soluciones escalables diseñadas para crecer con tu negocio sin fricciones técnicas.</p>
+                </div>
+              </li>
+              <li class="why-item">
+                <span class="why-check" aria-hidden="true"><i class="fa-solid fa-check"></i></span>
+                <div>
+                  <strong data-i18n="home.035">Equipo Especializado</strong>
+                  <p data-i18n="home.036">Personal certificados con experiencia en las tecnologías más demandadas del mercado.</p>
+                </div>
+              </li>
+              <!-- <li class="why-item">
+                <span class="why-check" aria-hidden="true"><i class="fa-solid fa-check"></i></span>
+                <div>
+                  <strong>Metodologías Ágiles</strong>
+                  <p>Sistemas construidos bajo metodologías ágiles para asegurar entregas consecutivas de gran calidad</p>
+                </div>
+              </li> -->
+              <li class="why-item">
+                <span class="why-check" aria-hidden="true"><i class="fa-solid fa-check"></i></span>
+                <div>
+                  <strong data-i18n="home.037">Soporte Continuo</strong>
+                  <p data-i18n="home.038">No desaparecemos al entregar. Somos socios tecnológicos de largo plazo.</p>
+                </div>
+              </li>
+            </ul>
+            <div class="mt-lg">
+              <a href="../contact/contact.html" class="btn btn-primary">
+                <i class="fa-solid fa-rocket" aria-hidden="true"></i>
+                <span data-i18n="home.039">Hablemos de tu Proyecto</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="why-us-visual reveal reveal-right" aria-hidden="true">
+            <div class="why-visual-card">
+              <div class="wvc-inner">
+                <div class="wvc-hex-grid">
+                  <div class="wvc-hex h1"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                  <div class="wvc-hex h2"><i class="fa-solid fa-code"></i></div>
+                  <div class="wvc-hex h3"><i class="fa-solid fa-cloud"></i></div>
+                  <div class="wvc-hex h4"><i class="fa-solid fa-shield-halved"></i></div>
+                  <div class="wvc-hex h5 center-hex"><i class="fa-solid fa-bolt"></i></div>
+                  <div class="wvc-hex h6"><i class="fa-solid fa-chart-line"></i></div>
+                  <div class="wvc-hex h7"><i class="fa-solid fa-database"></i></div>
+                </div>
+                <div class="wvc-label">
+                  <span data-i18n="home.040">Tech Stack</span>
+                  <span data-i18n="home.041" class="wvc-sublabel">Full-Spectrum Solutions</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         BLOG / INSIGHTS SECTION
+    ══════════════════════════════════════════════════════ -->
+    <section class="blog-section section" aria-labelledby="blog-heading">
+      <div class="container">
+        <div class="section-header">
+          <span data-i18n="home.042" class="neon-badge mb-sm">Insights</span><br>
+          <h2 data-i18n-html="home.043" id="blog-heading">Conocimiento que <span class="accent">Impulsa</span></h2>
+          <div class="section-divider"></div>
+          <p data-i18n="home.044">Artículos especializados sobre tecnología, estrategia digital y transformación empresarial.</p>
+        </div>
+
+        <div class="blog-grid">
+
+          <!-- Blog Card 1 -->
+          <article data-i18n-attr="aria-label:home.045" class="blog-card glass-card reveal" aria-label="Artículo: Tecnología de punta">
+            <div class="blog-card-image">
+              <img data-i18n-attr="alt:home.046"
+                src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80"
+                alt="Circuito tecnológico representando innovación empresarial"
+                loading="lazy"
+                width="600"
+                height="300"
+              />
+              <span data-i18n="home.047" class="blog-card-tag">Estrategia Digital</span>
+            </div>
+            <div class="blog-card-body">
+              <!-- <div class="blog-meta">
+                <span><i class="fa-regular fa-calendar" aria-hidden="true"></i> Enero 2025</span>
+                <span><i class="fa-regular fa-clock" aria-hidden="true"></i> 5 min</span>
+              </div> -->
+              <h3 data-i18n="home.048">¿Por qué mi empresa debe integrar tecnología de punta?</h3>
+              <p data-i18n="home.049">
+                Automatización inteligente, análisis de datos en tiempo real y arquitecturas cloud 
+                no son lujos — son los pilares de la competitividad moderna. Descubre cómo las 
+                empresas líderes están redefiniendo sus operaciones con tecnología de vanguardia.
+              </p>
+              <a data-i18n-attr="aria-label:home.050" href="../blogs/blogs.html" class="blog-read-more" aria-label="Leer más sobre tecnología de punta">
+                <span data-i18n="home.051">Leer más</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Blog Card 2 -->
+          <article data-i18n-attr="aria-label:home.052" class="blog-card glass-card reveal" aria-label="Artículo: Presencia web profesional">
+            <div class="blog-card-image">
+              <img data-i18n-attr="alt:home.053"
+                src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&q=80"
+                alt="Pantalla de computadora con código web y diseño profesional"
+                loading="lazy"
+                width="600"
+                height="300"
+              />
+              <span data-i18n="home.054" class="blog-card-tag blog-card-tag--purple">Diseño Web</span>
+            </div>
+            <div class="blog-card-body">
+              <!-- <div class="blog-meta">
+                <span><i class="fa-regular fa-calendar" aria-hidden="true"></i> Febrero 2025</span>
+                <span><i class="fa-regular fa-clock" aria-hidden="true"></i> 4 min</span>
+              </div> -->
+              <h3 data-i18n="home.055">El impacto crítico de tener presencia web profesional</h3>
+              <p data-i18n="home.056">
+                Tu sitio web es la puerta de entrada al mundo digital. La credibilidad empresarial, 
+                el alcance global y la experiencia del usuario pueden hacer la diferencia entre captar 
+                o perder un cliente en los primeros 3 segundos.
+              </p>
+              <a data-i18n-attr="aria-label:home.057" href="../blogs/blogs.html" class="blog-read-more" aria-label="Leer más sobre presencia web profesional">
+                <span data-i18n="home.051">Leer más</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Blog Card 3 -->
+          <article data-i18n-attr="aria-label:home.058" class="blog-card glass-card reveal" aria-label="Artículo: App móvil propia">
+            <div class="blog-card-image">
+              <img data-i18n-attr="alt:home.059"
+                src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&q=80"
+                alt="Smartphone mostrando una aplicación móvil moderna"
+                loading="lazy"
+                width="600"
+                height="300"
+              />
+              <span data-i18n="home.013" class="blog-card-tag blog-card-tag--green">Apps Móviles</span>
+            </div>
+            <div class="blog-card-body">
+              <!-- <div class="blog-meta">
+                <span><i class="fa-regular fa-calendar" aria-hidden="true"></i> Marzo 2025</span>
+                <span><i class="fa-regular fa-clock" aria-hidden="true"></i> 6 min</span>
+              </div> -->
+              <h3 data-i18n="home.060">Ventajas competitivas de una aplicación móvil propia</h3>
+              <p data-i18n="home.061">
+                Fidelización de clientes, accesibilidad 24/7, notificaciones push personalizadas 
+                y diferenciación de marca. Una app propia no es un gasto — es una inversión 
+                estratégica con retorno comprobable.
+              </p>
+              <a data-i18n-attr="aria-label:home.062" href="../blogs/blogs.html" class="blog-read-more" aria-label="Leer más sobre aplicaciones móviles">
+                <span data-i18n="home.051">Leer más</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         CTA FINAL
+    ══════════════════════════════════════════════════════ -->
+    <section class="cta-section section" aria-labelledby="cta-heading">
+      <div class="cta-bg" aria-hidden="true"></div>
+      <div class="container">
+        <div class="cta-content glass reveal reveal-scale">
+          <div class="cta-orb cta-orb--left" aria-hidden="true"></div>
+          <div class="cta-orb cta-orb--right" aria-hidden="true"></div>
+          <span data-i18n="home.063" class="neon-badge mb-md">¿Listo para el siguiente nivel?</span>
+          <h2 data-i18n-html="home.064" id="cta-heading">Hablemos del Futuro<br />de tu Empresa</h2>
+          <p data-i18n="home.065" class="mt-sm">
+            Contáctanos hoy y recibe una consulta gratuita. Nuestro equipo está listo 
+            para diseñar la solución tecnológica que tu empresa necesita.
+          </p>
+          <div class="cta-actions mt-lg">
+            <a href="https://wa.me/50671358066?text=%E2%9A%A1%20%C2%A1Hola%20equipo%20de%20Vanguard%20Solutions!%20%F0%9F%91%8B%20Encontr%C3%A9%20su%20sitio%20web%20y%20me%20interesa%20saber%20m%C3%A1s%20sobre%20sus%20servicios.%20%C2%BFPodr%C3%ADamos%20hablar%3F%20%F0%9F%9A%80" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+              <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+              <span data-i18n="home.066">Contactar por WhatsApp</span>
+            </a>
+            <a data-i18n="home.009" href="../services/services.html" class="btn btn-outline">
+              Explorar Servicios
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER PLACEHOLDER -->
+  <div id="footer-placeholder"></div>
+
+  <!-- SCRIPTS -->
+  <script src="../components/i18n.js" defer></script>
+  <script src="../components/header.js" defer></script>
+  <script src="../components/footer.js" defer></script>
+  <script src="../main.js" defer></script>
+  <script src="home.js" defer></script>
+</body>
+</html>
