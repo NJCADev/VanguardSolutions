@@ -604,5 +604,8 @@
  "js.val.service": "Select a service.",
  "js.val.message": "The message must be at least 10 characters long.",
  "header.lang_aria": "Switch language to Spanish",
- "header.lang_label": "ES"
+ "header.lang_label": "ES",
+ "counter.screens": " screens",
+ "counter.months": " months",
+ "counter.platforms": " platforms"
 }

@@ -604,5 +604,8 @@
  "js.val.service": "Selecciona un servicio.",
  "js.val.message": "El mensaje debe tener al menos 10 caracteres.",
  "header.lang_aria": "Cambiar idioma a inglés",
- "header.lang_label": "EN"
+ "header.lang_label": "EN",
+ "counter.screens": " pantallas",
+ "counter.months": " meses",
+ "counter.platforms": " plataformas"
 }

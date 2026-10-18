@@ -206,6 +206,9 @@
     // ── INIT ──────────────────────────────────────────────
     buildDots();
     render(false);
+
+    // Al cambiar de idioma, volver a etiquetar los puntos (render los actualiza)
+    document.addEventListener('vanguard:langchange', () => render(false));
   }
 
 })();

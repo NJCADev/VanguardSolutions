@@ -200,7 +200,10 @@
       const value    = Math.round(target * easeOut(progress));
       el.textContent = value + suffix;
       if (progress < 1) requestAnimationFrame(update);
-      else el.textContent = target + suffix; // ensure exact final value
+      else {
+        el.textContent = target + suffix; // ensure exact final value
+        el.dataset.counterDone = '1';
+      }
     }
     requestAnimationFrame(update);
   }
