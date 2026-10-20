@@ -34,6 +34,12 @@ jobs:
             node --check "$f"
           done
 
+      - name: Evitar manejadores en línea (onclick=…), que bloquea la CSP
+        run: |
+          if grep -rnE 'on(click|load|error|change|submit|input|keydown)=' --include='*.html' .                --exclude-dir=.git --exclude-dir=node_modules --exclude-dir=graphify-out --exclude=404.html; then
+            echo "::error::Hay manejadores en línea. Usa addEventListener (la CSP los bloquea)."; exit 1
+          fi
+
       - name: Revisar traducciones (es / en)
         run: npm run check:i18n
 

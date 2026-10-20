@@ -9,7 +9,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <link rel="stylesheet" href="../components/global.css" />
   <link rel="stylesheet" href="../components/header.css" />
@@ -121,7 +123,7 @@
                 <span data-i18n="blogs.025" class="bf-stat-lbl">de consumidores en LATAM usan IA para guiar sus compras</span>
               </div>
             </div>
-            <button class="btn btn-primary bf-btn" onclick="openArticle('article-1')">
+            <button class="btn btn-primary bf-btn" data-open-article="article-1">
               <i class="fa-solid fa-book-open" aria-hidden="true"></i>
               <span data-i18n="blogs.026">Leer artículo completo</span>
             </button>
@@ -166,7 +168,7 @@
                 <span data-i18n="blogs.033" class="bf-stat-lbl">de las compras online en CR son servicios profesionales</span>
               </div>
             </div>
-            <button class="btn btn-primary bf-btn bf-btn--purple" onclick="openArticle('article-2')">
+            <button class="btn btn-primary bf-btn bf-btn--purple" data-open-article="article-2">
               <i class="fa-solid fa-book-open" aria-hidden="true"></i>
               <span data-i18n="blogs.026">Leer artículo completo</span>
             </button>
@@ -211,7 +213,7 @@
                 <span data-i18n="blogs.038" class="bf-stat-lbl">de adultos costarricenses están bancarizados y compran online</span>
               </div>
             </div>
-            <button class="btn btn-primary bf-btn bf-btn--green" onclick="openArticle('article-3')">
+            <button class="btn btn-primary bf-btn bf-btn--green" data-open-article="article-3">
               <i class="fa-solid fa-book-open" aria-hidden="true"></i>
               <span data-i18n="blogs.026">Leer artículo completo</span>
             </button>
@@ -253,9 +255,9 @@
 
   <!-- Modal 1: Tecnología -->
   <div data-i18n-attr="aria-label:blogs.017" class="article-modal" id="article-1" role="dialog" aria-modal="true" aria-label="Artículo: La Nueva Frontera Competitiva" hidden>
-    <div class="modal-backdrop" onclick="closeArticle('article-1')"></div>
+    <div class="modal-backdrop" data-close-article="article-1"></div>
     <div class="modal-panel">
-      <button data-i18n-attr="aria-label:blogs.043" class="modal-close" onclick="closeArticle('article-1')" aria-label="Cerrar artículo">
+      <button data-i18n-attr="aria-label:blogs.043" class="modal-close" data-close-article="article-1" aria-label="Cerrar artículo">
         <i class="fa-solid fa-xmark" aria-hidden="true"></i>
       </button>
       <div class="modal-scroll">
@@ -308,9 +310,9 @@
 
   <!-- Modal 2: Presencia Web -->
   <div data-i18n-attr="aria-label:blogs.027" class="article-modal" id="article-2" role="dialog" aria-modal="true" aria-label="Artículo: Los Primeros 3 Segundos" hidden>
-    <div class="modal-backdrop" onclick="closeArticle('article-2')"></div>
+    <div class="modal-backdrop" data-close-article="article-2"></div>
     <div class="modal-panel">
-      <button data-i18n-attr="aria-label:blogs.043" class="modal-close" onclick="closeArticle('article-2')" aria-label="Cerrar artículo">
+      <button data-i18n-attr="aria-label:blogs.043" class="modal-close" data-close-article="article-2" aria-label="Cerrar artículo">
         <i class="fa-solid fa-xmark" aria-hidden="true"></i>
       </button>
       <div class="modal-scroll">
@@ -377,9 +379,9 @@
 
   <!-- Modal 3: Apps -->
   <div data-i18n-attr="aria-label:blogs.034" class="article-modal" id="article-3" role="dialog" aria-modal="true" aria-label="Artículo: Más Allá del Botón de Descarga" hidden>
-    <div class="modal-backdrop" onclick="closeArticle('article-3')"></div>
+    <div class="modal-backdrop" data-close-article="article-3"></div>
     <div class="modal-panel">
-      <button data-i18n-attr="aria-label:blogs.043" class="modal-close" onclick="closeArticle('article-3')" aria-label="Cerrar artículo">
+      <button data-i18n-attr="aria-label:blogs.043" class="modal-close" data-close-article="article-3" aria-label="Cerrar artículo">
         <i class="fa-solid fa-xmark" aria-hidden="true"></i>
       </button>
       <div class="modal-scroll">

@@ -1,0 +1,56 @@
+# Monitoreo de disponibilidad: cada 30 minutos comprueba que el sitio responde
+# y que el certificado no está por caducar. Si algo falla, el workflow queda en
+# rojo y GitHub avisa por correo (ver Settings > Notifications > Actions).
+name: Disponibilidad
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:      # permite lanzarlo a mano desde la pestaña Actions
+
+permissions: {}           # no necesita acceso al repositorio
+
+jobs:
+  uptime:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Comprobar las páginas clave
+        run: |
+          BASE="https://vanguardsolutionscr.com"
+          fail=0
+
+          # check RUTA CÓDIGO_ESPERADO [TEXTO_QUE_DEBE_APARECER]
+          check() {
+            code=$(curl -sS -o /tmp/body -w '%{http_code}' --retry 3 --retry-delay 10 \
+                   --retry-all-errors --max-time 30 "$BASE$1") || code=000
+            if [ "$code" != "$2" ]; then
+              echo "::error::$1 respondió $code (se esperaba $2)"; fail=1; return
+            fi
+            if [ -n "${3:-}" ] && ! grep -q "$3" /tmp/body; then
+              echo "::error::$1 no contiene '$3'"; fail=1; return
+            fi
+            echo "OK  $1 ($code)"
+          }
+
+          check /home/home.html        200 'Vanguard Solutions'
+          check /services/services.html 200
+          check /products/products.html 200
+          check /contact/contact.html  200 'contact-form'
+          check /privacy/privacy.html  200
+          check /config.js             200 'VS_CONFIG'
+          check /lang/en.json          200 'home.001'
+          check /proyects/proyects.html 404     # debe seguir oculta
+
+          exit $fail
+
+      - name: Comprobar que el certificado no caduca pronto (14 días)
+        run: |
+          host=vanguardsolutionscr.com
+          end=$(echo | openssl s_client -servername "$host" -connect "$host:443" 2>/dev/null \
+                | openssl x509 -noout -enddate | cut -d= -f2)
+          secs=$(( $(date -d "$end" +%s) - $(date +%s) ))
+          echo "El certificado caduca el: $end"
+          if [ "$secs" -lt $((14*86400)) ]; then
+            echo "::error::El certificado caduca en menos de 14 días"; exit 1
+          fi
