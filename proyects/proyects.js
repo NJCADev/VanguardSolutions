@@ -145,6 +145,12 @@
     /* Init */
     buildDots();
     requestAnimationFrame(() => requestAnimationFrame(() => render(false)));
+
+    // Al cambiar de idioma, rehacer los puntos con las etiquetas traducidas
+    document.addEventListener('vanguard:langchange', () => {
+      buildDots();
+      render(false);
+    });
   }
 
 })();

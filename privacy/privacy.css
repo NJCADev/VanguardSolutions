@@ -1,0 +1,196 @@
+/* ============================================================
+   VANGUARD SOLUTIONS — PRIVACY CSS
+   ============================================================ */
+
+/* ── HERO ─────────────────────────────────────────────────── */
+.privacy-hero {
+  min-height: 42vh;
+  background:
+    radial-gradient(ellipse at 60% 0%, rgba(0, 240, 255, 0.08) 0%, transparent 55%),
+    radial-gradient(ellipse at 10% 100%, rgba(191, 0, 255, 0.07) 0%, transparent 50%),
+    var(--bg-secondary);
+}
+
+.privacy-hero-grid {
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(0deg, transparent, transparent 50px, rgba(0, 240, 255, 0.015) 50px, rgba(0, 240, 255, 0.015) 51px),
+    repeating-linear-gradient(90deg, transparent, transparent 50px, rgba(0, 240, 255, 0.015) 50px, rgba(0, 240, 255, 0.015) 51px);
+  pointer-events: none;
+}
+
+.policy-updated {
+  margin-top: 1rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  opacity: 0.65;
+}
+
+/* ── CONTENEDOR ───────────────────────────────────────────── */
+.policy-wrap {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 3rem var(--container-pad) 5rem;
+}
+
+/* ── ÍNDICE ───────────────────────────────────────────────── */
+.policy-toc {
+  padding: 1.5rem 1.75rem;
+}
+
+.policy-toc-title {
+  margin: 0 0 1rem;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cyan);
+}
+
+.policy-toc ol {
+  margin: 0;
+  padding-left: 1.25rem;
+  columns: 2;
+  column-gap: 2rem;
+}
+
+.policy-toc li {
+  margin-bottom: 0.45rem;
+  break-inside: avoid;
+}
+
+.policy-toc a {
+  color: rgba(224, 224, 224, 0.85);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.policy-toc a:hover,
+.policy-toc a:focus-visible {
+  color: var(--cyan);
+  outline: none;
+}
+
+/* ── SECCIONES ────────────────────────────────────────────── */
+.policy-section {
+  margin-top: 3.25rem;
+  scroll-margin-top: calc(var(--header-height) + 1rem);
+}
+
+.policy-section h2 {
+  margin: 0 0 1rem;
+  padding-left: 0.9rem;
+  border-left: 3px solid var(--cyan);
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2.4vw, 1.4rem);
+  line-height: 1.35;
+  color: #fff;
+}
+
+.policy-section p,
+.policy-list li {
+  line-height: 1.75;
+}
+
+.policy-section p { margin: 0 0 1rem; }
+
+.policy-section a,
+.policy-contact a:not(.btn) {
+  color: var(--cyan);
+  text-underline-offset: 3px;
+}
+
+.policy-section strong { color: #fff; }
+
+.policy-list {
+  margin: 0 0 1rem;
+  padding-left: 1.25rem;
+}
+
+.policy-list li { margin-bottom: 0.6rem; }
+
+/* ── TARJETAS DE DATOS ────────────────────────────────────── */
+.policy-card {
+  margin-top: 1.25rem;
+  padding: 1.5rem 1.75rem;
+}
+
+.policy-card h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 0 0.9rem;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  color: #fff;
+}
+
+.policy-card h3 i { color: var(--cyan); }
+
+.policy-card p:last-child { margin-bottom: 0; }
+
+/* ── TABLA DE COOKIES ─────────────────────────────────────── */
+.table-wrap {
+  margin: 1.25rem 0 1.5rem;
+  overflow-x: auto;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+}
+
+.policy-table {
+  width: 100%;
+  min-width: 620px;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.policy-table th,
+.policy-table td {
+  padding: 0.85rem 1rem;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.policy-table thead th {
+  background: rgba(0, 240, 255, 0.06);
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cyan);
+}
+
+.policy-table tbody tr:last-child td { border-bottom: 0; }
+
+.policy-table code {
+  padding: 0.15rem 0.45rem;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 4px;
+  font-size: 0.85em;
+  color: #fff;
+}
+
+/* ── CONTACTO FINAL ───────────────────────────────────────── */
+.policy-contact {
+  margin-top: 3.5rem;
+  padding: 2rem 1.75rem;
+  text-align: center;
+}
+
+.policy-contact h2 {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.policy-contact p { margin: 0 0 1.25rem; }
+
+/* ── RESPONSIVE ───────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .policy-toc ol { columns: 1; }
+  .policy-toc,
+  .policy-card { padding: 1.25rem; }
+}

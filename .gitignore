@@ -74,7 +74,7 @@ config.js
 !.env.example
 
 # Herramientas y caché
-graphify-out/cache/
+graphify-out/
 .vscode/
 
 # Claude Code

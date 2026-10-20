@@ -8,15 +8,15 @@ const path = require('path');
 const root = path.join(__dirname, '..');
 const envPath = path.join(root, '.env');
 
-if (!fs.existsSync(envPath)) {
-  console.error('Falta el archivo .env. Copia .env.example a .env y rellénalo.');
-  process.exit(1);
-}
-
+// Origen de los valores: el archivo .env (desarrollo local) y, si existen,
+// las variables de entorno del sistema (CI: secretos de GitHub). Estas
+// últimas tienen prioridad.
 const env = {};
-for (const line of fs.readFileSync(envPath, 'utf8').split(/\r?\n/)) {
-  const m = line.match(/^\s*([A-Z0-9_]+)\s*=\s*(.*?)\s*$/);
-  if (m && !line.trim().startsWith('#')) env[m[1]] = m[2].replace(/^(['"])(.*)\1$/, '$2');
+if (fs.existsSync(envPath)) {
+  for (const line of fs.readFileSync(envPath, 'utf8').split(/\r?\n/)) {
+    const m = line.match(/^\s*([A-Z0-9_]+)\s*=\s*(.*?)\s*$/);
+    if (m && !line.trim().startsWith('#')) env[m[1]] = m[2].replace(/^(['"])(.*)\1$/, '$2');
+  }
 }
 
 const required = [
@@ -24,9 +24,10 @@ const required = [
   'FIREBASE_MESSAGING_SENDER_ID', 'FIREBASE_APP_ID', 'FIREBASE_MEASUREMENT_ID',
   'EMAILJS_PUBLIC_KEY', 'EMAILJS_SERVICE_ID', 'EMAILJS_TEMPLATE_ID'
 ];
+for (const k of required) if (process.env[k]) env[k] = process.env[k];
 const missing = required.filter((k) => !env[k]);
 if (missing.length) {
-  console.error('Faltan variables en .env: ' + missing.join(', '));
+  console.error('Faltan variables (.env o entorno): ' + missing.join(', ') + '. Copia .env.example a .env y rellénalo.');
   process.exit(1);
 }
 

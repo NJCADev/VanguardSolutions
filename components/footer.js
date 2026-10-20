@@ -24,7 +24,7 @@ async function loadFooter() {
 }
 
 function getPathDepthFooter() {
-  const knownFolders = ['home', 'services', 'products', 'proyects', 'contact', 'blog', 'blogs'];
+  const knownFolders = ['home', 'services', 'products', 'proyects', 'privacy', 'contact', 'blog', 'blogs'];
   const path = window.location.pathname.toLowerCase();
   const parts = path.split('/').filter(Boolean);
   const parentFolder = parts[parts.length - 2] || '';

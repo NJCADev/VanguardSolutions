@@ -84,6 +84,11 @@
       });
     });
 
+    // Los contadores ya animados llevan el sufijo dentro del texto: rehacerlo
+    root.querySelectorAll('[data-counter-done]').forEach((el) => {
+      el.textContent = el.dataset.counter + (el.dataset.suffix || '');
+    });
+
     document.documentElement.lang = current;
 
     // El efecto glitch duplica el texto en data-text: mantenerlo sincronizado

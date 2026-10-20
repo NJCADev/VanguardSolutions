@@ -9,6 +9,7 @@
   // ── DETECCIÓN DE PÁGINA ACTIVA ─────────────────────────────
   function detectActivePage() {
     const path = window.location.pathname.toLowerCase();
+    if (path.includes('/privacy/')) return '';
     if (path.includes('/home/') || path.endsWith('/') || path.endsWith('index.html')) return 'home';
     if (path.includes('/blogs/')) return 'blogs';
     if (path.includes('/services/')) return 'services';
@@ -200,7 +201,10 @@
       const value    = Math.round(target * easeOut(progress));
       el.textContent = value + suffix;
       if (progress < 1) requestAnimationFrame(update);
-      else el.textContent = target + suffix; // ensure exact final value
+      else {
+        el.textContent = target + suffix; // ensure exact final value
+        el.dataset.counterDone = '1';
+      }
     }
     requestAnimationFrame(update);
   }
