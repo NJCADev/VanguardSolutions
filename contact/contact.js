@@ -149,7 +149,11 @@
         const result = await ejs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, params);
         console.log('EmailJS OK:', result.status, result.text);
 
-        // ✅ Éxito
+        // ✅ Éxito: registrar el contacto en Analytics (solo la categoría de servicio, sin datos personales)
+        if (window.VanguardAnalytics) {
+          window.VanguardAnalytics.track('generate_lead', { form_name: 'contact', service: val('cf-service') });
+        }
+
         form.setAttribute('aria-hidden', 'true');
         success.setAttribute('aria-hidden', 'false');
         success.style.display = 'flex';

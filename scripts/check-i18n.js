@@ -85,7 +85,7 @@ for (const file of htmlFiles(root)) {
 
 // Claves que nadie usa (las js.* y similares se usan desde JavaScript)
 for (const k of esKeys) {
-  if (!used.has(k) && !k.startsWith('js.') && !k.startsWith('counter.')) warnings.push(`Clave sin usar: ${k}`);
+  if (!used.has(k) && !k.startsWith('js.') && !k.startsWith('counter.') && !k.startsWith('consent.')) warnings.push(`Clave sin usar: ${k}`);
 }
 
 finish();

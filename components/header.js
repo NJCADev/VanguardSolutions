@@ -34,7 +34,7 @@ async function loadHeader(activePage = '') {
  * Determina cuántos niveles de profundidad tiene la página actual.
  */
 function getPathDepth() {
-  const knownFolders = ['home', 'services', 'products', 'proyects', 'contact', 'blog', 'blogs'];
+  const knownFolders = ['home', 'services', 'products', 'proyects', 'privacy', 'contact', 'blog', 'blogs'];
   const path = window.location.pathname.toLowerCase();
 
   // Método 1: pathname con slashes (Firebase / servidor)
