@@ -88,28 +88,28 @@
   }
 
   function buildBanner() {
-    let el = document.getElementById('cookie-banner');
+    let el = document.getElementById('vs-consent');
     if (el) return el;
 
     el = document.createElement('div');
-    el.id = 'cookie-banner';
-    el.className = 'cookie-banner';
+    el.id = 'vs-consent';
+    el.className = 'vs-consent';
     el.setAttribute('role', 'dialog');
-    el.setAttribute('aria-labelledby', 'cookie-title');
-    el.setAttribute('aria-describedby', 'cookie-text');
+    el.setAttribute('aria-labelledby', 'vs-consent-title');
+    el.setAttribute('aria-describedby', 'vs-consent-text');
     el.hidden = true;
     el.innerHTML =
-      '<div class="cookie-body">' +
-        '<strong id="cookie-title" data-i18n="consent.title">Cookies y privacidad</strong>' +
+      '<div class="vs-consent-body">' +
+        '<strong id="vs-consent-title" data-i18n="consent.title">Cookies y privacidad</strong>' +
         // El texto y el enlace van en elementos separados: la traducción reemplaza
         // el contenido de cada elemento marcado y borraría el enlace si fuera hijo.
-        '<p id="cookie-text"><span data-i18n="consent.text">Usamos cookies de Google Analytics para entender cómo se usa el sitio y mejorarlo. ' +
+        '<p id="vs-consent-text"><span data-i18n="consent.text">Usamos cookies de Google Analytics para entender cómo se usa el sitio y mejorarlo. ' +
         'Solo se activan si las aceptas; puedes cambiar tu decisión cuando quieras desde el pie de página.</span> ' +
-        '<a class="cookie-link" href="' + POLICY_URL + '" data-i18n="consent.policy">Política de privacidad</a></p>' +
+        '<a class="vs-consent-link" href="' + POLICY_URL + '" data-i18n="consent.policy">Política de privacidad</a></p>' +
       '</div>' +
-      '<div class="cookie-actions">' +
-        '<button type="button" class="cookie-btn cookie-btn--reject" data-consent="denied" data-i18n="consent.reject">Rechazar</button>' +
-        '<button type="button" class="cookie-btn cookie-btn--accept" data-consent="granted" data-i18n="consent.accept">Aceptar</button>' +
+      '<div class="vs-consent-actions">' +
+        '<button type="button" class="vs-consent-btn vs-consent-btn--reject" data-consent="denied" data-i18n="consent.reject">Rechazar</button>' +
+        '<button type="button" class="vs-consent-btn vs-consent-btn--accept" data-consent="granted" data-i18n="consent.accept">Aceptar</button>' +
       '</div>';
     document.body.appendChild(el);
     if (window.VanguardI18n) window.VanguardI18n.apply(el);   // traducir según el idioma activo
@@ -120,12 +120,12 @@
     const el = buildBanner();
     el.hidden = false;
     bannerShown = true;
-    const first = el.querySelector('.cookie-btn--reject');
+    const first = el.querySelector('.vs-consent-btn--reject');
     if (first) first.focus({ preventScroll: true });
   }
 
   function hideBanner() {
-    const el = document.getElementById('cookie-banner');
+    const el = document.getElementById('vs-consent');
     if (el) el.hidden = true;
   }
 
@@ -138,9 +138,9 @@
   }
 
   document.addEventListener('click', (e) => {
-    const target = e.target.closest && e.target.closest('[data-consent], #cookie-settings');
+    const target = e.target.closest && e.target.closest('[data-consent], #vs-consent-settings');
     if (!target) return;
-    if (target.id === 'cookie-settings') {
+    if (target.id === 'vs-consent-settings') {
       e.preventDefault();
       showBanner();
     } else {
