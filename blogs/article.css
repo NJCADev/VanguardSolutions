@@ -1,0 +1,117 @@
+/* ============================================================
+   VANGUARD SOLUTIONS — ARTÍCULO DEL BLOG (página propia)
+   Se usa junto a blogs.css (hero) y global.css (tokens).
+   ============================================================ */
+
+.article-hero { padding-bottom: var(--space-lg); }
+
+.article-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: var(--space-sm);
+  font-family: var(--font-tech);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  text-decoration: none;
+}
+.article-back:hover,
+.article-back:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
+
+.article-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: var(--space-sm);
+  font-size: 0.9rem;
+  color: rgba(224, 224, 224, 0.65);
+}
+.article-meta i { color: var(--cyan); }
+
+.article-wrap { max-width: 780px; }
+
+.article h2 {
+  margin: var(--space-xl) 0 var(--space-sm);
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 2.6vw, 1.7rem);
+  line-height: 1.25;
+  color: #fff;
+  padding-left: 0.9rem;
+  border-left: 3px solid var(--cyan);
+}
+
+.article h3 {
+  margin: var(--space-md) 0 var(--space-xs);
+  font-family: var(--font-tech);
+  font-size: 1.1rem;
+  letter-spacing: 0.04em;
+  color: var(--cyan);
+}
+
+.article p {
+  margin: 0 0 var(--space-sm);
+  font-size: 1rem;
+  line-height: 1.85;
+  color: rgba(224, 224, 224, 0.82);
+}
+
+.article-lead {
+  font-size: 1.12rem;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.article strong { color: #fff; }
+
+.article a { color: var(--cyan); text-decoration: underline; text-underline-offset: 3px; }
+.article a.btn { text-decoration: none; }
+
+.article-list {
+  margin: 0 0 var(--space-sm);
+  padding-left: 1.3rem;
+  display: grid;
+  gap: 0.55rem;
+  color: rgba(224, 224, 224, 0.82);
+  line-height: 1.75;
+}
+.article-list li::marker { color: var(--cyan); }
+
+/* Tabla de decisión */
+.article-table-wrap {
+  margin: var(--space-sm) 0 var(--space-md);
+  overflow-x: auto;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+}
+.article-table { width: 100%; border-collapse: collapse; min-width: 480px; }
+.article-table th,
+.article-table td { padding: 0.9rem 1.1rem; text-align: left; vertical-align: top; line-height: 1.6; }
+.article-table thead th {
+  font-family: var(--font-tech);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  background: rgba(0, 240, 255, 0.06);
+}
+.article-table tbody tr + tr td { border-top: 1px solid rgba(255, 255, 255, 0.07); }
+.article-table tbody td:first-child { color: rgba(224, 224, 224, 0.85); }
+.article-table tbody td:last-child { color: #fff; font-weight: 600; }
+
+/* Llamado final */
+.article-cta {
+  margin-top: var(--space-xl);
+  padding: var(--space-lg);
+  text-align: center;
+}
+.article .article-cta h2 { margin-top: 0; padding-left: 0; border-left: 0; }
+.article-cta p { max-width: 60ch; margin-inline: auto; }
+.article-cta .cta-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-sm); margin-top: var(--space-sm); }
+
+@media (max-width: 600px) {
+  .article-table th,
+  .article-table td { padding: 0.75rem 0.8rem; }
+}

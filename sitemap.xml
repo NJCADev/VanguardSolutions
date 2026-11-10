@@ -32,4 +32,8 @@
     <loc>https://vanguardsolutionscr.com/privacy/privacy.html</loc>
     <priority>0.3</priority>
   </url>
+  <url>
+    <loc>https://vanguardsolutionscr.com/blogs/articulo-sitio-tienda-app.html</loc>
+    <priority>0.7</priority>
+  </url>
 </urlset>
