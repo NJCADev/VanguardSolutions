@@ -260,15 +260,28 @@
   /** Mensaje según la página (NovaTienda y Proyectos usan el suyo) y el idioma activo. */
   function waMessage() {
     const ctx = (document.querySelector('[data-wa-context]') || {}).dataset;
-    const key = ctx && ctx.waContext === 'novatienda' ? 'wa.novatienda' : 'wa.generic';
-    const fallback = key === 'wa.novatienda'
-      ? 'Hola, vi NovaTienda en su sitio y quiero una demo para mi negocio.'
-      : 'Hola, vi su sitio web y me gustaría recibir más información.';
+    const where = ctx && ctx.waContext;
+    const key = where === 'novatienda' ? 'wa.novatienda' : where === 'products' ? 'wa.products' : 'wa.generic';
+    const fallback = {
+      'wa.novatienda': 'Hola, vi NovaTienda en su sitio y quiero una demo para mi negocio.',
+      'wa.products': 'Hola, vi su catálogo de licencias y quiero una cotización.',
+      'wa.generic': 'Hola, vi su sitio web y me gustaría recibir más información.'
+    }[key];
     return (window.VanguardI18n && window.VanguardI18n.t(key)) || fallback;
   }
 
+  /** Mensaje para un producto concreto (enlaces con data-wa-product="Nombre"). */
+  function waProductMessage(name) {
+    const tpl = (window.VanguardI18n && window.VanguardI18n.t('wa.product', { name })) || '';
+    return tpl || ('Hola, quiero adquirir ' + name + '. ¿Me pueden dar información?');
+  }
+
+  function waLink(text) {
+    return 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(text);
+  }
+
   function waHref() {
-    return 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(waMessage());
+    return waLink(waMessage());
   }
 
   function renderWhatsApp() {
@@ -276,7 +289,9 @@
     const href = waHref();
 
     // Enlaces de las páginas marcados con data-wa
-    document.querySelectorAll('a[data-wa]').forEach((a) => { a.href = href; });
+    document.querySelectorAll('a[data-wa]').forEach((a) => {
+      a.href = a.dataset.waProduct ? waLink(waProductMessage(a.dataset.waProduct)) : href;
+    });
 
     let btn = document.getElementById('wa-float');
     if (!btn) {
