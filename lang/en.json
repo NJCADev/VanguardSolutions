@@ -496,7 +496,7 @@
  "privacy.004": "Legal",
  "privacy.005": "Privacy <span class=\"accent\">Policy</span>",
  "privacy.006": "We explain clearly what data we collect when you use this site, what we use it for, who we share it with and how you can exercise your rights.",
- "privacy.007": "Last updated: November 9, 2026",
+ "privacy.007": "Last updated: November 10, 2026",
  "privacy.008": "Policy contents",
  "privacy.009": "Contents",
  "privacy.010": "Who is responsible",
@@ -858,5 +858,6 @@
  "blogs.new.aria": "Article: Website, online store or mobile app",
  "blogs.new.title": "Website, online store or mobile app: what does your business need?",
  "blogs.new.excerpt": "All three options work, but they solve different problems. A guide to decide where to start based on what you sell, who you sell to and how you want to be found.",
- "blogs.new.btn": "Read article"
+ "blogs.new.btn": "Read article",
+ "privacy.095": "<strong>Cloudflare</strong> (domain registration and DNS service: it translates the site name into its address, without relaying the page traffic) — <a href=\"https://www.cloudflare.com/privacypolicy/\" target=\"_blank\" rel=\"noopener noreferrer\">privacy policy</a>"
 }
