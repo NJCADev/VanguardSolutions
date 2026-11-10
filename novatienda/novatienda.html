@@ -62,6 +62,15 @@
             </a>
           </div>
 
+          <div class="plat-strip">
+            <ul class="plat-chips">
+              <li><i class="fa-solid fa-globe" aria-hidden="true"></i> <span data-i18n="pj.plat.web">Web</span></li>
+              <li><i class="fa-brands fa-android" aria-hidden="true"></i> <span data-i18n="pj.plat.android">Android</span></li>
+              <li><i class="fa-brands fa-apple" aria-hidden="true"></i> <span data-i18n="pj.plat.ios">iOS</span></li>
+              <li><i class="fa-solid fa-download" aria-hidden="true"></i> <span data-i18n="pj.plat.pwa">Instalable (PWA)</span></li>
+            </ul>
+            <p data-i18n="pj.plat.text">Hecha para la web y para celulares Android e iOS. Tus clientes pueden instalar la versión móvil como app desde el navegador (PWA), sin pasar por una tienda de aplicaciones.</p>
+          </div>
           <p class="nt-fineprint" data-i18n="novatienda.007">Ya está construida: la adaptamos a tu negocio y sale al aire en 15 a 20 días hábiles.</p>
         </div>
 
@@ -94,20 +103,21 @@
             <button data-i18n="novatienda.021" type="button" class="nt-seg-btn" data-group="cliente" aria-pressed="true">Lo que ve tu cliente</button>
             <button data-i18n="novatienda.022" type="button" class="nt-seg-btn" data-group="negocio" aria-pressed="false">Lo que controlas tú</button>
           </div>
-          <div data-i18n-attr="aria-label:novatienda.023" class="nt-seg nt-seg--device" role="group" aria-label="Dispositivo">
-            <button type="button" class="nt-seg-btn" data-device="desktop" aria-pressed="true"><i class="fa-solid fa-desktop" aria-hidden="true"></i> <span data-i18n="novatienda.024">Escritorio</span></button>
-            <button type="button" class="nt-seg-btn" data-device="mobile" aria-pressed="false"><i class="fa-solid fa-mobile-screen" aria-hidden="true"></i> <span data-i18n="novatienda.025">Móvil</span></button>
-          </div>
         </div>
 
-        <div class="nt-stage" id="nt-stage" data-view="desktop">
+        <div class="nt-stage" id="nt-stage" data-view="both">
           <ul data-i18n-attr="aria-label:novatienda.026" class="nt-rail" id="nt-rail" aria-label="Pantallas"></ul>
 
           <div class="nt-view">
-            <figure class="nt-screen" id="nt-screen">
-              <div class="nt-frame-bar" aria-hidden="true"><span class="nt-frame-dot"></span><span data-i18n="novatienda.008">Demo</span></div>
-              <img id="nt-shot" src="../assets/novatienda/desktop/cliente-01-login.webp" width="1600" height="900" alt="" />
-            </figure>
+            <div class="nt-media" id="nt-media">
+              <figure class="nt-screen" id="nt-screen">
+                <div class="nt-frame-bar" aria-hidden="true"><span class="nt-frame-dot"></span><span data-i18n="novatienda.008">Demo</span></div>
+                <img id="nt-shot" src="../assets/novatienda/desktop/cliente-01-login.webp" width="1600" height="900" alt="" />
+              </figure>
+              <figure class="nt-phone-shot" id="nt-phone">
+                <img id="nt-shot-m" src="../assets/novatienda/mobile/cliente-01-login.webp" width="780" height="1688" alt="" />
+              </figure>
+            </div>
 
             <div class="nt-caption" aria-live="polite">
               <h3 id="nt-cap-title"></h3>

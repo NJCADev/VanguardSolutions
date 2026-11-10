@@ -24,7 +24,7 @@
 
   const state = {
     group: 'cliente',
-    device: window.matchMedia('(max-width: 700px)').matches ? 'mobile' : 'desktop',
+    device: 'both',
     id: 'cliente-01-login'
   };
 
@@ -47,7 +47,7 @@
       btn.className = 'nt-rail-item';
       btn.dataset.id = s.id;
       btn.setAttribute('aria-current', s.id === state.id ? 'true' : 'false');
-      const thumb = state.device === 'mobile' ? 'thumb-m' : 'thumb-d';
+      const thumb = 'thumb-d';
       btn.innerHTML = '<span class="nt-rail-thumb"><img loading="lazy" alt="" width="64" height="38"></span><span class="nt-rail-title"></span>';
       $('img', btn).src = BASE + thumb + '/' + s.id + '.webp';
       $('.nt-rail-title', btn).textContent = t('novatienda.s.' + s.id + '.title');
@@ -57,26 +57,25 @@
   }
 
   function renderScreen(opts) {
-    const stage = $('#nt-stage');
     const shot = $('#nt-shot');
-    if (!stage || !shot) return;
-    stage.dataset.view = state.device;
+    const shotM = $('#nt-shot-m');
+    if (!shot || !shotM) return;
 
     const list = inGroup();
     const idx = Math.max(0, list.findIndex((s) => s.id === state.id));
-    const portrait = state.device === 'mobile';
-    const src = BASE + (portrait ? 'mobile' : 'desktop') + '/' + state.id + '.webp';
+    const src = BASE + 'desktop/' + state.id + '.webp';
+    const srcM = BASE + 'mobile/' + state.id + '.webp';
 
     const apply = () => {
-      shot.width = portrait ? 780 : 1600;
-      shot.height = portrait ? 1688 : 900;
       shot.alt = t('novatienda.s.' + state.id + '.alt');
       shot.src = src;
+      shotM.alt = t('novatienda.s.' + state.id + '.alt');
+      shotM.src = srcM;
     };
     if (opts && opts.animate && shot.getAttribute('src') !== src) {
-      const fig = $('#nt-screen');
-      fig.classList.add('is-swapping');
-      const done = () => { fig.classList.remove('is-swapping'); };
+      const media = $('#nt-media');
+      media.classList.add('is-swapping');
+      const done = () => { media.classList.remove('is-swapping'); };
       shot.addEventListener('load', done, { once: true });
       setTimeout(() => { apply(); setTimeout(done, 1200); }, 140);
     } else {
@@ -93,12 +92,12 @@
 
     // Pantalla siguiente, lista de antemano
     const next = list[(idx + 1) % list.length];
-    new Image().src = BASE + (portrait ? 'mobile' : 'desktop') + '/' + next.id + '.webp';
+    new Image().src = BASE + 'desktop/' + next.id + '.webp';
+    new Image().src = BASE + 'mobile/' + next.id + '.webp';
   }
 
   function syncControls() {
     $$('button[data-group]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.group === state.group)));
-    $$('button[data-device]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.device === state.device)));
   }
 
   function select(id, userAction) {
@@ -130,9 +129,92 @@
       track('novatienda_view_screen', { screen_id: state.id, group: state.group, device: state.device });
     }));
 
-    $$('button[data-device]').forEach((b) => b.addEventListener('click', () => {
-      if (b.dataset.device === state.device) return;
-      state.device = b.dataset.device;
+    const rail = $('#nt-rail');
+    if (!rail) return;
+    rail.textContent = '';
+    inGroup().forEach((s) => {
+      const li = document.createElement('li');
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'nt-rail-item';
+      btn.dataset.id = s.id;
+      btn.setAttribute('aria-current', s.id === state.id ? 'true' : 'false');
+      const thumb = 'thumb-d';
+      btn.innerHTML = '<span class="nt-rail-thumb"><img loading="lazy" alt="" width="64" height="38"></span><span class="nt-rail-title"></span>';
+      $('img', btn).src = BASE + thumb + '/' + s.id + '.webp';
+      $('.nt-rail-title', btn).textContent = t('novatienda.s.' + s.id + '.title');
+      li.appendChild(btn);
+      rail.appendChild(li);
+    });
+  }
+
+  function renderScreen(opts) {
+    const shot = $('#nt-shot');
+    const shotM = $('#nt-shot-m');
+    if (!shot || !shotM) return;
+
+    const list = inGroup();
+    const idx = Math.max(0, list.findIndex((s) => s.id === state.id));
+    const src = BASE + 'desktop/' + state.id + '.webp';
+    const srcM = BASE + 'mobile/' + state.id + '.webp';
+
+    const apply = () => {
+      shot.alt = t('novatienda.s.' + state.id + '.alt');
+      shot.src = src;
+      shotM.alt = t('novatienda.s.' + state.id + '.alt');
+      shotM.src = srcM;
+    };
+    if (opts && opts.animate && shot.getAttribute('src') !== src) {
+      const media = $('#nt-media');
+      media.classList.add('is-swapping');
+      const done = () => { media.classList.remove('is-swapping'); };
+      shot.addEventListener('load', done, { once: true });
+      setTimeout(() => { apply(); setTimeout(done, 1200); }, 140);
+    } else {
+      apply();
+    }
+
+    $('#nt-cap-title').textContent = t('novatienda.s.' + state.id + '.title');
+    $('#nt-cap-desc').textContent = t('novatienda.s.' + state.id + '.desc');
+    $('#nt-count').textContent = t('novatienda.count', { n: idx + 1, total: list.length });
+
+    $$('.nt-rail-item').forEach((b) => b.setAttribute('aria-current', b.dataset.id === state.id ? 'true' : 'false'));
+    const current = $('.nt-rail-item[aria-current="true"]');
+    if (current && opts && opts.scrollRail) current.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+
+    // Pantalla siguiente, lista de antemano
+    const next = list[(idx + 1) % list.length];
+    new Image().src = BASE + 'desktop/' + next.id + '.webp';
+    new Image().src = BASE + 'mobile/' + next.id + '.webp';
+  }
+
+  function syncControls() {
+    $$('button[data-group]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.group === state.group)));
+  }
+
+  function select(id, userAction) {
+    const screen = SCREENS.find((s) => s.id === id);
+    if (!screen) return;
+    const groupChanged = screen.group !== state.group;
+    state.id = id;
+    state.group = screen.group;
+    syncControls();
+    if (groupChanged) renderRail();
+    renderScreen({ animate: true, scrollRail: true });
+    if (userAction) track('novatienda_view_screen', { screen_id: id, group: state.group, device: state.device });
+  }
+
+  function step(delta) {
+    const list = inGroup();
+    const idx = list.findIndex((s) => s.id === state.id);
+    select(list[(idx + delta + list.length) % list.length].id, true);
+  }
+
+  function bindTour() {
+    $$('button[data-group]').forEach((b) => b.addEventListener('click', () => {
+      if (b.dataset.group === state.group) return;
+      state.group = b.dataset.group;
+      state.id = inGroup()[0].id;
       syncControls();
       renderRail();
       renderScreen({ animate: true });
