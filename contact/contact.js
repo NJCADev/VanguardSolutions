@@ -48,6 +48,7 @@
     if (window._contactInited) return;
     window._contactInited = true;
     initWhatsAppButton();
+    initMap();
     initForm();
     initFaq();
     initFloatingLabels();
@@ -75,6 +76,27 @@
         '%F0%9F%9A%80';
 
       window.open(url, '_blank', 'noopener,noreferrer');
+    });
+  }
+
+  /* ── MAPA (Google): solo se conecta a Google cuando el visitante pulsa el botón ── */
+  function initMap() {
+    const holder = document.getElementById('map-placeholder');
+    const btn = document.getElementById('map-load');
+    if (!holder || !btn) return;
+    btn.addEventListener('click', () => {
+      const f = document.createElement('iframe');
+      f.className = 'map-iframe';
+      f.src = holder.dataset.src;
+      f.width = '100%';
+      f.height = '420';
+      f.title = tr('contact.048', 'Ubicación de Vanguard Solutions en Cartago, Costa Rica');
+      f.setAttribute('aria-label', tr('contact.049', 'Google Maps mostrando Cartago, Costa Rica'));
+      f.setAttribute('allowfullscreen', '');
+      f.setAttribute('loading', 'lazy');
+      f.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+      f.setAttribute('sandbox', 'allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox');
+      holder.replaceWith(f);
     });
   }
 

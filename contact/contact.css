@@ -739,4 +739,16 @@ a.cdi-value:hover {
 .phone-code-wrap .form-select-arrow { right: 0.75rem; }
 .phone-field > .form-input { flex: 1 1 7.5rem; min-width: 0; }
 
+.form-privacy-note { font-size: 0.78rem; line-height: 1.6; color: rgba(224, 224, 224, 0.55); margin: 0 0 var(--space-sm); }
+.form-privacy-note a { color: var(--cyan); text-decoration: underline; text-underline-offset: 2px; }
 .map-iframe { border: 0; }
+
+/* Mapa: se carga solo cuando el visitante lo pide */
+.map-placeholder {
+  position: relative; z-index: 1; min-height: 420px; padding: var(--space-lg);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--space-sm);
+  text-align: center; background: rgba(255, 255, 255, 0.02); border-radius: var(--radius-md);
+}
+.map-placeholder > i { font-size: 2.2rem; color: var(--cyan); }
+.map-placeholder p { max-width: 46ch; color: rgba(224, 224, 224, 0.7); }
+@media (max-width: 767px) { .map-placeholder { min-height: 280px; } }

@@ -12,8 +12,9 @@ permissions:
 
 jobs:
   preview:
-    # Los PR que vienen de forks no tienen acceso a los secretos: se omiten.
-    if: github.event.pull_request.head.repo.full_name == github.repository
+    # Los PR de forks y los de Dependabot no tienen acceso a los secretos de Actions: se omiten.
+    # (el check obligatorio "checks" sí corre en ellos)
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.actor != 'dependabot[bot]'
     runs-on: ubuntu-latest
     # Los secretos se leen una sola vez y quedan disponibles para todos los pasos.
     env:
@@ -24,10 +25,10 @@ jobs:
       EMAILJS_TEMPLATE_ID: ${{ secrets.EMAILJS_TEMPLATE_ID }}
     steps:
       - name: Descargar el código
-        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       - name: Instalar Node.js
-        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: 20
 
