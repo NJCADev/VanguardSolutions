@@ -496,7 +496,7 @@
  "privacy.004": "Legal",
  "privacy.005": "Política de <span class=\"accent\">Privacidad</span>",
  "privacy.006": "Te explicamos de forma clara qué datos recopilamos cuando usas este sitio, para qué los usamos, con quién los compartimos y cómo puedes ejercer tus derechos.",
- "privacy.007": "Última actualización: 9 de noviembre de 2026",
+ "privacy.007": "Última actualización: 10 de noviembre de 2026",
  "privacy.008": "Contenido de la política",
  "privacy.009": "Contenido",
  "privacy.010": "Quién es el responsable",
@@ -858,5 +858,6 @@
  "blogs.new.aria": "Artículo: Sitio web, tienda en línea o app móvil",
  "blogs.new.title": "Sitio web, tienda en línea o app móvil: ¿qué necesita tu negocio?",
  "blogs.new.excerpt": "Las tres opciones sirven, pero resuelven problemas distintos. Una guía para decidir con qué empezar según lo que vendes, a quién se lo vendes y cómo quieres que te encuentren.",
- "blogs.new.btn": "Leer artículo"
+ "blogs.new.btn": "Leer artículo",
+ "privacy.095": "<strong>Cloudflare</strong> (registro del dominio y servicio DNS: traduce el nombre del sitio a su dirección, sin intermediar el tráfico de la página) — <a href=\"https://www.cloudflare.com/privacypolicy/\" target=\"_blank\" rel=\"noopener noreferrer\">política de privacidad</a>"
 }
