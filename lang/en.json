@@ -550,8 +550,6 @@
  "privacy.058": "To display the site we load resources from other providers. When we do, your browser connects to their servers and they may receive your IP address and technical data. We do not control how they process it; you can read their policies:",
  "privacy.059": "<strong>Google</strong> (the map on the Contact page, which only loads if you press “Show map”; Analytics, only with your consent; and Firebase Hosting) — <a href=\"https://policies.google.com/privacy\" target=\"_blank\" rel=\"noopener noreferrer\">privacy policy</a>",
  "privacy.060": "<strong>EmailJS</strong> (sending the contact form) — <a href=\"https://www.emailjs.com/legal/privacy-policy/\" target=\"_blank\" rel=\"noopener noreferrer\">privacy policy</a>",
- "privacy.062": "<strong>jsDelivr</strong> (code libraries)",
- "privacy.063": "<strong>Unsplash</strong> (photographs on the home page) — <a href=\"https://unsplash.com/privacy\" target=\"_blank\" rel=\"noopener noreferrer\">privacy policy</a>",
  "privacy.064": "<strong>WhatsApp (Meta)</strong> (contact buttons) — <a href=\"https://www.whatsapp.com/legal/privacy-policy\" target=\"_blank\" rel=\"noopener noreferrer\">privacy policy</a>",
  "privacy.065": "5. Who we share your data with",
  "privacy.066": "We do not sell or rent your personal data. We only share it with the providers listed in this policy, who process it on our behalf to provide their service, and with authorities when a law requires us to.",
