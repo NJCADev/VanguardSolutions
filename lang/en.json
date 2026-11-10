@@ -784,5 +784,6 @@
  "pj.plat.web": "Web",
  "pj.plat.android": "Android",
  "pj.plat.ios": "iOS",
- "pj.plat.pwa": "Installable (PWA)"
+ "pj.plat.pwa": "Installable (PWA)",
+ "pj.quote": "Request a custom project quote"
 }
