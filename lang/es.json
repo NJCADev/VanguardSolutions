@@ -785,5 +785,8 @@
  "pj.plat.android": "Android",
  "pj.plat.ios": "iOS",
  "pj.plat.pwa": "Instalable (PWA)",
- "pj.quote": "Cotizar un proyecto personalizado"
+ "pj.quote": "Cotizar un proyecto personalizado",
+ "js.val.name": "Usa solo letras y espacios (sin números ni símbolos).",
+ "js.val.phone": "Ingresa un número de {n} dígitos.",
+ "contact.phonecode": "Código de país"
 }

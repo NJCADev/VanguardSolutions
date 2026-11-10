@@ -113,8 +113,23 @@
       });
     }
 
+    /* Nombre: solo letras y espacios. Teléfono: solo 8 números, con formato 8888-8888. */
+    const nameInput  = document.getElementById('cf-name');
+    const phoneInput = document.getElementById('cf-phone');
+    if (nameInput) {
+      nameInput.addEventListener('input', () => {
+        const clean = nameInput.value.replace(/[^\p{L} ]/gu, '').replace(/ {2,}/g, ' ').replace(/^ /, '');
+        if (clean !== nameInput.value) nameInput.value = clean;
+      });
+      nameInput.addEventListener('blur', () => { nameInput.value = nameInput.value.trim(); });
+    }
+    if (phoneInput) {
+      phoneInput.addEventListener('input', () => { phoneInput.value = formatPhone(phoneInput.value); });
+      initPhone();
+    }
+
     /* Validación en tiempo real */
-    form.querySelectorAll('.form-input').forEach(input => {
+    form.querySelectorAll('.form-input:not(.phone-code)').forEach(input => {
       input.addEventListener('blur',  () => validateField(input));
       input.addEventListener('input', () => {
         if (input.classList.contains('error')) validateField(input);
@@ -146,7 +161,7 @@
         from_email : val('cf-email'),
         reply_to   : val('cf-email'),
         company    : val('cf-company') || 'No indicada',
-        phone      : val('cf-phone')   || 'No indicado',
+        phone      : val('cf-phone')   ? current.d + ' ' + val('cf-phone') : 'No indicado',
         service    : serviceLabel(val('cf-service')),
         message    : val('cf-message'),
         sent_at    : now.toLocaleString('es-CR', {
@@ -237,6 +252,75 @@
   }
 
   /* ── VALIDACIÓN ─────────────────────────────────────────── */
+  /* ── TELÉFONO POR PAÍS ──────────────────────────────────── */
+  const countries = [];           // { c, es, en, d, l } desde countries.json
+  let current = { c: 'CR', d: '+506', l: [8] };
+
+  /** Deja solo números (hasta el largo máximo del país) y los agrupa: 8888-8888, 888-888-8888… */
+  function formatPhone(raw) {
+    const max = Math.max.apply(null, current.l);
+    const d = String(raw).replace(/\D/g, '').slice(0, max);
+    const groups = { 7: [3, 4], 8: [4, 4], 9: [3, 3, 3], 10: [3, 3, 4] }[d.length];
+    if (!groups) return d;
+    const parts = []; let i = 0;
+    groups.forEach(n => { parts.push(d.slice(i, i + n)); i += n; });
+    return parts.join('-');
+  }
+
+  function langKey() { return document.documentElement.lang === 'en' ? 'en' : 'es'; }
+
+  /** Rellena el selector (ordenado por nombre en el idioma activo) y mantiene el país elegido. */
+  function renderCountries() {
+    const select = document.getElementById('cf-phone-code');
+    if (!select || !countries.length) return;
+    const key = langKey();
+    const keep = select.value || current.c;
+    const sorted = countries.slice().sort((x, y) => x[key].localeCompare(y[key], key));
+    select.textContent = '';
+    sorted.forEach(c => {
+      const o = document.createElement('option');
+      o.value = c.c;
+      o.dataset.dial = c.d;
+      o.dataset.full = c[key] + ' (' + c.d + ')';
+      o.dataset.short = c.c + ' ' + c.d;
+      o.textContent = o.dataset.short;
+      select.appendChild(o);
+    });
+    select.value = countries.some(c => c.c === keep) ? keep : 'CR';
+    applyCountry();
+  }
+
+  /** En la lista abierta se ve el nombre completo; cerrada, solo "CR +506". */
+  function showNames(select, full) {
+    Array.from(select.options).forEach(o => { if (o.dataset.full) o.textContent = full ? o.dataset.full : o.dataset.short; });
+  }
+
+  function applyCountry() {
+    const select = document.getElementById('cf-phone-code');
+    const phone  = document.getElementById('cf-phone');
+    const c = countries.find(x => x.c === select.value);
+    if (c) current = c;
+    if (phone) {
+      phone.maxLength = Math.max.apply(null, current.l) + 3;
+      phone.value = formatPhone(phone.value);
+      if (phone.classList.contains('error')) validateField(phone);
+    }
+  }
+
+  function initPhone() {
+    const select = document.getElementById('cf-phone-code');
+    if (!select) return;
+    select.addEventListener('mousedown', () => showNames(select, true));
+    select.addEventListener('focus',     () => showNames(select, true));
+    select.addEventListener('blur',      () => showNames(select, false));
+    select.addEventListener('change',    () => { applyCountry(); showNames(select, false); });
+    document.addEventListener('vanguard:langchange', renderCountries);
+    fetch('countries.json')
+      .then(r => (r.ok ? r.json() : Promise.reject(new Error('HTTP ' + r.status))))
+      .then(list => { countries.push.apply(countries, list); renderCountries(); })
+      .catch(() => { /* queda Costa Rica (+506) con 8 números */ });
+  }
+
   function validateField(input) {
     const name  = input.name;
     const value = input.value.trim();
@@ -245,9 +329,17 @@
 
     if (input.hasAttribute('required') && !value) {
       error = tr('js.val.required', 'Este campo es obligatorio.');
+    } else if (name === 'name' && value) {
+      if (!/^\p{L}+(?: \p{L}+)*$/u.test(value))
+        error = tr('js.val.name', 'Usa solo letras y espacios (sin números ni símbolos).');
     } else if (name === 'email' && value) {
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value))
+      if (!/^[A-Za-z0-9._%+-]+@(?:[A-Za-z0-9-]+\.)+[A-Za-z]{2,}$/.test(value))
         error = tr('js.val.email', 'Ingresa un correo electrónico válido.');
+    } else if (name === 'phone' && value) {
+      if (current.l.indexOf(value.replace(/\D/g, '').length) === -1) {
+        const n = current.l.join(' / ');
+        error = (window.VanguardI18n && window.VanguardI18n.t('js.val.phone', { n })) || ('Ingresa un número de ' + n + ' dígitos.');
+      }
     } else if (name === 'service' && input.tagName === 'SELECT' && !value) {
       error = tr('js.val.service', 'Selecciona un servicio.');
     } else if (name === 'message' && value.length > 0 && value.length < 10) {
@@ -261,7 +353,7 @@
   }
 
   function validateForm(form) {
-    const fields = form.querySelectorAll('.form-input[required]');
+    const fields = form.querySelectorAll('.form-input[required], #cf-phone');
     let ok = true;
     fields.forEach(f => { if (!validateField(f)) ok = false; });
     if (!ok) form.querySelector('.form-input.error')?.focus();

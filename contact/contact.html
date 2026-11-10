@@ -167,6 +167,7 @@
                       id="cf-name"
                       name="name"
                       class="form-input"
+                      maxlength="80"
                       placeholder="Juan Pérez"
                       autocomplete="name"
                       required
@@ -217,14 +218,26 @@
                       <i class="fa-solid fa-phone" aria-hidden="true"></i>
                       Teléfono <span class="form-optional">(Opcional)</span>
                     </label>
-                    <input
-                      type="tel"
-                      id="cf-phone"
-                      name="phone"
-                      class="form-input"
-                      placeholder="+506 7135-8066"
-                      autocomplete="tel"
-                    />
+                    <div class="phone-field">
+                      <div class="form-select-wrap phone-code-wrap">
+                        <select data-i18n-attr="aria-label:contact.phonecode" id="cf-phone-code" name="phone_code" class="form-input form-select phone-code" aria-label="Código de país">
+                          <option value="CR" data-dial="+506" selected>CR +506</option>
+                        </select>
+                        <i class="fa-solid fa-chevron-down form-select-arrow" aria-hidden="true"></i>
+                      </div>
+                      <input
+                        type="tel"
+                        id="cf-phone"
+                        name="phone"
+                        class="form-input"
+                        placeholder="8888-8888"
+                        inputmode="numeric"
+                        maxlength="14"
+                        autocomplete="tel-national"
+                        aria-describedby="err-phone"
+                      />
+                    </div>
+                    <span class="form-error" id="err-phone" role="alert" aria-live="polite"></span>
                   </div>
                 </div>
 
