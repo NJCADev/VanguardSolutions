@@ -79,7 +79,19 @@
   }
 
   /* ── FORMULARIO ─────────────────────────────────────────── */
+  /** Llegada desde la página de NovaTienda: ?servicio=ecommerce deja el servicio elegido y un mensaje de inicio. */
+  function prefillFromUrl() {
+    const wanted = new URLSearchParams(location.search).get('servicio');
+    const select = document.getElementById('cf-service');
+    if (!wanted || !select || !Array.from(select.options).some((o) => o.value === wanted)) return;
+    select.value = wanted;
+    const textarea = document.getElementById('cf-message');
+    const text = wanted === 'ecommerce' ? tr('js.prefill.ecommerce', 'Hola, quiero una demo de NovaTienda para mi negocio. Tengo __ sucursales.') : '';
+    if (textarea && text && !textarea.value) textarea.value = text;
+  }
+
   function initForm() {
+    prefillFromUrl();
     const form      = document.getElementById('contact-form');
     const success   = document.getElementById('form-success');
     const resetBtn  = document.getElementById('form-reset-btn');
@@ -219,6 +231,7 @@
       hosting : 'Hosting de Alta Disponibilidad',
       domains : 'Gestión de Dominios',
       support : 'Soporte Técnico Especializado',
+      ecommerce: 'Tienda en Línea (NovaTienda)',
       other   : 'Otro / Consulta General',
     })[v] || v || 'No especificado';
   }

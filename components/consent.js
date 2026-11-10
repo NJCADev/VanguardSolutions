@@ -84,6 +84,7 @@
     const link = document.createElement('link');
     link.rel = 'stylesheet';
     link.href = new URL('consent.css', SCRIPT_URL || location.href).href;
+    link.addEventListener('load', updateBannerOffset);
     document.head.appendChild(link);
   }
 
@@ -122,11 +123,31 @@
     bannerShown = true;
     const first = el.querySelector('.vs-consent-btn--reject');
     if (first) first.focus({ preventScroll: true });
+    updateBannerOffset();
+    document.dispatchEvent(new Event('vs:banner'));
+    setTimeout(updateBannerOffset, 400);   // por si los estilos terminan de cargar justo después
   }
 
   function hideBanner() {
     const el = document.getElementById('vs-consent');
     if (el) el.hidden = true;
+    updateBannerOffset();
+  }
+
+  /** Publica la altura del aviso para que el botón flotante de WhatsApp se suba y no lo tape. */
+  function updateBannerOffset() {
+    const el = document.getElementById('vs-consent');
+    // tope: si la hoja de estilos aún no cargó, el aviso mide mucho más de lo real
+    const h = el && !el.hidden ? Math.min(el.offsetHeight + 16, window.innerHeight * 0.4) : 0;
+    document.documentElement.style.setProperty('--vs-consent-h', h + 'px');
+  }
+  window.addEventListener('resize', updateBannerOffset);
+  if ('ResizeObserver' in window) {
+    // se recalcula cuando el aviso cambia de tamaño (estilos cargados, otro idioma, otra pantalla)
+    document.addEventListener('vs:banner', () => {
+      const el = document.getElementById('vs-consent');
+      if (el) new ResizeObserver(updateBannerOffset).observe(el);
+    }, { once: true });
   }
 
   /* ── ACCIONES ────────────────────────────────────────────── */

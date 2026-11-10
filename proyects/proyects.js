@@ -12,7 +12,7 @@
   function initProyects() {
     if (window._proyectsInited) return;
     window._proyectsInited = true;
-    initScreenCarousel('restaurante-track', 'restaurante-prev', 'restaurante-next', 'restaurante-dots');
+    initScreenCarousel('nova-track', 'nova-prev', 'nova-next', 'nova-dots');
   }
 
   function initScreenCarousel(trackId, prevId, nextId, dotsId) {

@@ -811,3 +811,13 @@
   from { opacity: 0; transform: translateY(-20px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+
+/* ── NOVATIENDA (destacado en la portada) ───────────────────── */
+.nt-teaser { background: linear-gradient(180deg, transparent, rgba(0, 240, 255, 0.04), transparent); }
+.nt-teaser-inner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: center; }
+.nt-teaser-text h2 { margin-top: 0.6rem; }
+.nt-teaser-visual { position: relative; padding-bottom: 8%; }
+.nt-teaser-desktop { width: 92%; border: 1px solid var(--glass-border); border-radius: var(--radius-md); box-shadow: 0 30px 70px -30px rgba(0, 0, 0, 0.85); }
+.nt-teaser-phone { position: absolute; right: 0; bottom: 0; width: 26%; padding: 4px; border-radius: 20px; background: #1A1C22; border: 1px solid var(--glass-border); box-shadow: 0 24px 50px -20px rgba(0, 0, 0, 0.85); }
+@media (max-width: 800px) { .nt-teaser-inner { grid-template-columns: 1fr; } }
+

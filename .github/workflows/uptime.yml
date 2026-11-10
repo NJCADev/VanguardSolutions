@@ -40,7 +40,8 @@ jobs:
           check /privacy/privacy.html  200
           check /config.js             200 'VS_CONFIG'
           check /lang/en.json          200 'home.001'
-          check /proyects/proyects.html 404     # debe seguir oculta
+          check /proyects/proyects.html 200 'NovaTienda'
+          check /novatienda/novatienda.html 200 'NovaTienda'
 
           exit $fail
 

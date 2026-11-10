@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta data-i18n-attr="content:nt.desc" name="description" content="NovaTienda es una tienda en línea con panel de negocio: catálogo, pago con tarjeta, inventario, pedidos, facturación electrónica y roles. Disponible para tu negocio, lista en 15 a 20 días hábiles." />
+  <meta name="robots" content="index, follow" />
+  <title data-i18n="nt.title">NovaTienda: tienda en línea con panel de negocio – Vanguard Solutions</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="../components/global.css" />
+  <link rel="stylesheet" href="../components/header.css" />
+  <link rel="stylesheet" href="../components/footer.css" />
+  <link rel="stylesheet" href="../proyects/proyects.css" />
+  <link rel="stylesheet" href="novatienda.css" />
+</head>
+<body>
+  <!-- SCROLL PROGRESS -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- PAGE LOADER -->
+  <div id="page-loader" aria-hidden="true">
+    <div class="loader-ring"></div>
+  </div>
+
+  <!-- HEADER PLACEHOLDER -->
+  <div id="header-placeholder"></div>
+
+  <main class="main-content nt" id="main-content" data-wa-context="novatienda">
+
+    <!-- ═══════════════ HERO ═══════════════ -->
+    <section class="page-hero proyects-hero nt-hero" aria-labelledby="nt-title">
+      <div class="proyects-hero-grid" aria-hidden="true"></div>
+      <div class="proyects-hero-orb proyects-hero-orb--l" aria-hidden="true"></div>
+      <div class="proyects-hero-orb proyects-hero-orb--r" aria-hidden="true"></div>
+
+      <div class="container nt-hero-grid">
+        <div class="nt-hero-copy">
+          <a class="nt-back" href="../proyects/proyects.html">
+            <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+            <span data-i18n="nt.back">Todos los proyectos</span>
+          </a>
+          <span class="neon-badge mb-sm">
+            <i class="fa-solid fa-store" aria-hidden="true"></i>&nbsp; <span data-i18n="nt.badge">Proyecto disponible para contratar</span>
+          </span>
+          <h1 id="nt-title" data-i18n-html="nt.h1">Vende 24/7 en línea y gestiona <span class="accent">todo tu negocio</span> desde la palma de tu mano</h1>
+          <p class="nt-lead" data-i18n="nt.lead">NovaTienda es una tienda en línea con su propio panel de negocio. Tus clientes compran con tarjeta a cualquier hora, y tú controlas catálogo, inventario, pedidos y facturación desde cualquier dispositivo.</p>
+
+          <div class="cta-actions nt-actions">
+            <a class="btn btn-primary" data-wa data-cta="hero_demo" href="https://wa.me/50671358066?text=Hola%2C%20vi%20NovaTienda%20en%20su%20sitio%20y%20quiero%20una%20demo%20para%20mi%20negocio." target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+              <span data-i18n="novatienda.005">Pedir una demo por WhatsApp</span>
+            </a>
+            <a class="btn btn-outline" data-cta="hero_tour" href="#por-dentro">
+              <i class="fa-solid fa-images" aria-hidden="true"></i>
+              <span data-i18n="novatienda.006">Recorrer la plataforma</span>
+            </a>
+          </div>
+
+          <p class="nt-fineprint" data-i18n="novatienda.007">Ya está construida: la adaptamos a tu negocio y sale al aire en 15 a 20 días hábiles.</p>
+        </div>
+
+        <div class="nt-devices" aria-hidden="false">
+          <div class="nt-glow" aria-hidden="true"></div>
+          <figure class="nt-frame nt-frame--desktop">
+            <div class="nt-frame-bar" aria-hidden="true"><span class="nt-frame-dot"></span><span data-i18n="novatienda.008">Demo</span></div>
+            <img data-i18n-attr="alt:novatienda.009" src="../assets/novatienda/desktop/negocio-01-dashboard.webp" width="1600" height="900" fetchpriority="high"
+                 alt="Panel de NovaTienda con ventas, pedidos, ganancias y gráficos por tienda" />
+          </figure>
+          <figure class="nt-frame nt-frame--phone">
+            <img data-i18n-attr="alt:novatienda.010" src="../assets/novatienda/mobile/cliente-04-inicio.webp" width="780" height="1688"
+                 alt="La tienda de NovaTienda vista desde un celular" />
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ RECORRIDO ═══════════════ -->
+    <section class="nt-section nt-tour" id="por-dentro" aria-labelledby="nt-tour-title">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="nt-tour-title" data-i18n-html="nt.tour.title">Recórrela <span class="accent">por dentro</span></h2>
+          <div class="section-divider"></div>
+          <p data-i18n="nt.tour.sub">Pantallas reales, con datos de ejemplo. Elige qué quieres ver y en qué dispositivo.</p>
+        </div>
+
+        <div class="nt-controls">
+          <div data-i18n-attr="aria-label:novatienda.020" class="nt-seg" role="group" aria-label="Qué parte de la plataforma ver">
+            <button data-i18n="novatienda.021" type="button" class="nt-seg-btn" data-group="cliente" aria-pressed="true">Lo que ve tu cliente</button>
+            <button data-i18n="novatienda.022" type="button" class="nt-seg-btn" data-group="negocio" aria-pressed="false">Lo que controlas tú</button>
+          </div>
+          <div data-i18n-attr="aria-label:novatienda.023" class="nt-seg nt-seg--device" role="group" aria-label="Dispositivo">
+            <button type="button" class="nt-seg-btn" data-device="desktop" aria-pressed="true"><i class="fa-solid fa-desktop" aria-hidden="true"></i> <span data-i18n="novatienda.024">Escritorio</span></button>
+            <button type="button" class="nt-seg-btn" data-device="mobile" aria-pressed="false"><i class="fa-solid fa-mobile-screen" aria-hidden="true"></i> <span data-i18n="novatienda.025">Móvil</span></button>
+          </div>
+        </div>
+
+        <div class="nt-stage" id="nt-stage" data-view="desktop">
+          <ul data-i18n-attr="aria-label:novatienda.026" class="nt-rail" id="nt-rail" aria-label="Pantallas"></ul>
+
+          <div class="nt-view">
+            <figure class="nt-screen" id="nt-screen">
+              <div class="nt-frame-bar" aria-hidden="true"><span class="nt-frame-dot"></span><span data-i18n="novatienda.008">Demo</span></div>
+              <img id="nt-shot" src="../assets/novatienda/desktop/cliente-01-login.webp" width="1600" height="900" alt="" />
+            </figure>
+
+            <div class="nt-caption" aria-live="polite">
+              <h3 id="nt-cap-title"></h3>
+              <p id="nt-cap-desc"></p>
+              <div class="nt-pager">
+                <button data-i18n-attr="aria-label:novatienda.027" type="button" class="nt-pager-btn" id="nt-prev" aria-label="Pantalla anterior"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+                <span class="nt-count" id="nt-count"></span>
+                <button data-i18n-attr="aria-label:novatienda.028" type="button" class="nt-pager-btn" id="nt-next" aria-label="Pantalla siguiente"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="nt-footnote" data-i18n="nt.footnote">Capturas con datos de demostración: las tiendas, productos, personas, correos, teléfonos y cifras son ficticios. La facturación electrónica de la demo funciona en modo de pruebas. Las marcas de los productos que aparecen pertenecen a sus dueños.</p>
+      </div>
+    </section>
+
+    <!-- ═══════════════ LO QUE CAMBIA ═══════════════ -->
+    <section class="nt-section nt-change" aria-labelledby="nt-change-title">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="nt-change-title" data-i18n-html="nt.change.title">Lo que cambia en <span class="accent">tu negocio</span></h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <article class="nt-row reveal">
+          <div class="nt-row-text">
+            <h3 data-i18n="nt.row1.t">Vende a cualquier hora, sin atender uno por uno</h3>
+            <p data-i18n="novatienda.032">El catálogo, el carrito y el pago con tarjeta funcionan las 24 horas. El pago se completa en la pasarela segura Onvopay: tu tienda nunca ve ni guarda los datos de la tarjeta.</p>
+            <a data-i18n="novatienda.033" class="nt-link" href="#por-dentro" data-nt-show="cliente-12-checkout">Ver el pago</a>
+          </div>
+          <figure class="nt-crop"><img data-i18n-attr="alt:novatienda.034" src="../assets/novatienda/desktop/cliente-12-checkout.webp" width="1600" height="900" loading="lazy" alt="Pantalla de pago de NovaTienda con datos de entrega y resumen del pedido" /></figure>
+        </article>
+
+        <article class="nt-row reveal">
+          <div class="nt-row-text">
+            <h3 data-i18n="nt.row2.t">Controla tu negocio desde el celular</h3>
+            <p data-i18n="novatienda.036">El inventario se lleva por tienda, con alertas de stock bajo y traslados entre sucursales. El dashboard se filtra por tienda y por fechas, y los reportes se exportan a Excel y PDF.</p>
+            <a data-i18n="novatienda.037" class="nt-link" href="#por-dentro" data-nt-show="negocio-04-inventario">Ver el inventario</a>
+          </div>
+          <figure class="nt-crop"><img data-i18n-attr="alt:novatienda.038" src="../assets/novatienda/desktop/negocio-04-inventario.webp" width="1600" height="900" loading="lazy" alt="Inventario de NovaTienda con una columna de stock por sucursal" /></figure>
+        </article>
+
+        <article class="nt-row reveal">
+          <div class="nt-row-text">
+            <h3 data-i18n="novatienda.039">Factura sola, como lo pide Hacienda</h3>
+            <p data-i18n="novatienda.040">Los comprobantes electrónicos salen automáticamente cuando se confirma el pago. Cada uno muestra su estado, y un envío fallido se puede reintentar con un clic.</p>
+            <a data-i18n="novatienda.041" class="nt-link" href="#por-dentro" data-nt-show="negocio-07-facturacion">Ver la facturación</a>
+          </div>
+          <figure class="nt-crop"><img data-i18n-attr="alt:novatienda.042" src="../assets/novatienda/desktop/negocio-07-facturacion.webp" width="1600" height="900" loading="lazy" alt="Lista de comprobantes electrónicos de NovaTienda con su estado" /></figure>
+        </article>
+
+        <article class="nt-row reveal">
+          <div class="nt-row-text">
+            <h3 data-i18n="novatienda.043">Cada persona ve solo lo que le toca</h3>
+            <p data-i18n="novatienda.044">Los roles definen, módulo por módulo, quién puede ver, crear, editar o eliminar. La verificación en dos pasos protege las cuentas, y la bitácora registra quién cambió qué y cuándo.</p>
+            <a data-i18n="novatienda.045" class="nt-link" href="#por-dentro" data-nt-show="negocio-12-auditoria">Ver la bitácora</a>
+          </div>
+          <figure class="nt-crop"><img data-i18n-attr="alt:novatienda.046" src="../assets/novatienda/desktop/negocio-12-auditoria.webp" width="1600" height="900" loading="lazy" alt="Bitácora de auditoría de NovaTienda con filtros por módulo y usuario" /></figure>
+        </article>
+
+        <p class="nt-also" data-i18n="novatienda.047">Además trae puntos de fidelidad que se canjean como descuento, favoritos y reseñas, envío por peso o retiro en la sucursal que tiene todo el pedido, notificaciones para cada tienda y contacto por WhatsApp.</p>
+      </div>
+    </section>
+
+    <!-- ═══════════════ PASOS ═══════════════ -->
+    <section class="nt-section nt-steps-section" aria-labelledby="nt-steps-title">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="nt-steps-title" data-i18n-html="nt.steps.title">Cómo <span class="accent">arrancamos</span></h2>
+          <div class="section-divider"></div>
+        </div>
+        <ol class="nt-steps">
+          <li class="glass-card reveal">
+            <h3 data-i18n="novatienda.071">Una demo de 10 minutos</h3>
+            <p data-i18n="novatienda.072">Te mostramos la tienda y el panel pensando en tu tipo de productos. Si no es para ti, no hay compromiso.</p>
+          </li>
+          <li class="glass-card reveal">
+            <h3 data-i18n="novatienda.073">Tú envías, nosotros cargamos</h3>
+            <p data-i18n="novatienda.074">Nos das fotos, videos y los datos de cada producto (título, precio de venta, costo, garantía y descripción), y una persona que conozca el negocio para resolver dudas. Nosotros cargamos el catálogo.</p>
+          </li>
+          <li class="glass-card reveal">
+            <h3 data-i18n="novatienda.075">Capacitación y apertura</h3>
+            <p data-i18n="novatienda.076">Una sesión con todo tu personal para aprender el panel, y tu tienda sale al aire en 15 a 20 días hábiles.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ═══════════════ PREGUNTAS ═══════════════ -->
+    <section class="nt-section nt-faq-section" aria-labelledby="nt-faq-title">
+      <div class="container nt-narrow">
+        <div class="section-header">
+          <h2 id="nt-faq-title" data-i18n-html="nt.faq.title">Preguntas <span class="accent">frecuentes</span></h2>
+          <div class="section-divider"></div>
+        </div>
+        <div class="nt-faq">
+          <details class="glass-card">
+            <summary data-i18n="novatienda.078">¿Necesito comprar un dominio?</summary>
+            <p data-i18n="nt.faq.domain.a">El dominio se gestiona aparte. Podemos encargarnos de él por ti, o puedes comprarlo y darnos acceso.</p>
+          </details>
+          <details class="glass-card">
+            <summary data-i18n="novatienda.082">¿Funciona con la factura electrónica de Hacienda?</summary>
+            <p data-i18n="novatienda.083">Sí. Los tiquetes, facturas y notas de crédito se emiten automáticamente al confirmarse el pago. En la demo, la facturación corre en un entorno de pruebas sin validez fiscal.</p>
+          </details>
+          <details class="glass-card">
+            <summary data-i18n="novatienda.084">¿Puedo adaptarla a mi negocio?</summary>
+            <p data-i18n="novatienda.085">Sí. Los cambios pequeños para ajustarla a tu negocio están incluidos. Si un cambio es grande, te lo cotizamos antes de hacerlo.</p>
+          </details>
+          <details class="glass-card">
+            <summary data-i18n="novatienda.088">¿Con quién hablo si necesito ayuda?</summary>
+            <p data-i18n="novatienda.089">Hablas directamente con quien desarrolló el sistema, de lunes a viernes de 8 a. m. a 5 p. m., por WhatsApp.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ CIERRE ═══════════════ -->
+    <section class="proyects-cta section" aria-labelledby="nt-close-title">
+      <div class="container">
+        <div class="proyects-cta-box glass reveal reveal-scale">
+          <div class="pcta-orb pcta-orb--l" aria-hidden="true"></div>
+          <div class="pcta-orb pcta-orb--r" aria-hidden="true"></div>
+          <h2 id="nt-close-title" data-i18n-html="nt.close.title">Cuéntanos sobre <span class="accent">tu negocio</span></h2><br>
+          <p class="mt-sm" data-i18n="novatienda.091">Te mostramos la demo pensando en tu negocio. Hablas directamente con quien desarrolló el sistema, sin intermediarios.</p>
+          <div class="cta-actions mt-lg">
+            <a class="btn btn-primary" data-wa data-cta="close_demo" href="https://wa.me/50671358066?text=Hola%2C%20vi%20NovaTienda%20en%20su%20sitio%20y%20quiero%20una%20demo%20para%20mi%20negocio." target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+              <span data-i18n="novatienda.005">Pedir una demo por WhatsApp</span>
+            </a>
+            <a class="btn btn-outline" data-cta="close_form" href="../contact/contact.html?servicio=ecommerce">
+              <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+              <span data-i18n="novatienda.092">Escribir desde el formulario</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER PLACEHOLDER -->
+  <div id="footer-placeholder"></div>
+
+  <!-- SCRIPTS -->
+  <script src="../config.js"></script>
+  <script src="../components/i18n.js" defer></script>
+  <script src="../components/consent.js" defer></script>
+  <script src="../components/header.js" defer></script>
+  <script src="../components/footer.js" defer></script>
+  <script src="../main.js" defer></script>
+  <script src="novatienda.js" defer></script>
+</body>
+</html>
