@@ -16,7 +16,11 @@
       "package.json",
       "package-lock.json",
       "SETUP_EMAILJS.md",
-      "email-template.html"
+      "email-template.html",
+      ".git/**",
+      ".github/**",
+      "**/.*/**",
+      "README.md"
     ],
     "headers": [
       {
