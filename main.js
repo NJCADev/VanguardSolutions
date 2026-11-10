@@ -14,6 +14,7 @@
     if (path.includes('/blogs/')) return 'blogs';
     if (path.includes('/services/')) return 'services';
     if (path.includes('/products/')) return 'products';
+    if (path.includes('/novatienda/')) return 'proyects';   // NovaTienda se alcanza desde Proyectos
     if (path.includes('/proyects/')) return 'proyects';
     if (path.includes('/contact/')) return 'contact';
     return 'home';
@@ -253,6 +254,50 @@
     });
   }
 
+  // ── WHATSAPP: botón flotante y enlaces según idioma ────────
+  const WA_NUMBER = '50671358066';
+
+  /** Mensaje según la página (NovaTienda y Proyectos usan el suyo) y el idioma activo. */
+  function waMessage() {
+    const ctx = (document.querySelector('[data-wa-context]') || {}).dataset;
+    const key = ctx && ctx.waContext === 'novatienda' ? 'wa.novatienda' : 'wa.generic';
+    const fallback = key === 'wa.novatienda'
+      ? 'Hola, vi NovaTienda en su sitio y quiero una demo para mi negocio.'
+      : 'Hola, vi su sitio web y me gustaría recibir más información.';
+    return (window.VanguardI18n && window.VanguardI18n.t(key)) || fallback;
+  }
+
+  function waHref() {
+    return 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(waMessage());
+  }
+
+  function renderWhatsApp() {
+    const t = (k, d) => (window.VanguardI18n && window.VanguardI18n.t(k)) || d;
+    const href = waHref();
+
+    // Enlaces de las páginas marcados con data-wa
+    document.querySelectorAll('a[data-wa]').forEach((a) => { a.href = href; });
+
+    let btn = document.getElementById('wa-float');
+    if (!btn) {
+      btn = document.createElement('a');
+      btn.id = 'wa-float';
+      btn.className = 'wa-float';
+      btn.target = '_blank';
+      btn.rel = 'noopener noreferrer';
+      btn.innerHTML = '<span class="wa-float-label"></span><span class="wa-float-btn"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></span>';
+      document.body.appendChild(btn);
+    }
+    btn.href = href;
+    btn.setAttribute('aria-label', t('wa.float.aria', 'Escribir por WhatsApp'));
+    btn.querySelector('.wa-float-label').textContent = t('wa.float.label', '¿Hablamos?');
+  }
+
+  function initWhatsApp() {
+    renderWhatsApp();
+    document.addEventListener('vanguard:langchange', renderWhatsApp);
+  }
+
   // ── INIT PRINCIPAL ────────────────────────────────────────
   async function init() {
     const activePage = detectActivePage();
@@ -277,6 +322,7 @@
     initCounters();
     initSmoothScroll();
     initScrollProgress();
+    initWhatsApp();
     hideLoader();
 
     // Disparar evento para que páginas individuales sepan que header/footer ya están

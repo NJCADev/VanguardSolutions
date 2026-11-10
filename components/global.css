@@ -571,3 +571,90 @@ html {
   body { background: white; color: black; }
   .main-content { padding-top: 0; }
 }
+
+/* ── BOTÓN FLOTANTE DE WHATSAPP (todas las páginas) ───────────── */
+.wa-float {
+  position: fixed;
+  right: 1.25rem;
+  bottom: calc(1.25rem + var(--vs-consent-h, 0px));
+  z-index: 1500;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  text-decoration: none;
+  transition: bottom 0.3s ease;
+}
+
+.wa-float-btn {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: var(--bg-secondary);
+  border: 2px solid var(--green);
+  color: var(--green);
+  font-size: 1.75rem;
+  box-shadow: 0 0 18px rgba(57, 255, 20, 0.35), 0 8px 24px rgba(0, 0, 0, 0.55);
+  transition: transform var(--transition-fast), background var(--transition-fast), color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+/* anillo que se expande: llama la atención sin gritar */
+.wa-float-btn::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  border: 2px solid var(--green);
+  opacity: 0;
+  animation: waPulse 2.8s ease-out infinite;
+}
+
+.wa-float-label {
+  padding: 0.45rem 0.95rem;
+  border-radius: 50px;
+  background: rgba(5, 5, 8, 0.92);
+  border: 1px solid var(--glass-border);
+  font-family: var(--font-tech);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fff;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(10px);
+  pointer-events: none;
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.wa-float:hover .wa-float-btn,
+.wa-float:focus-visible .wa-float-btn {
+  background: var(--green);
+  color: #000;
+  transform: scale(1.07);
+  box-shadow: var(--glow-green);
+}
+.wa-float:hover .wa-float-label,
+.wa-float:focus-visible .wa-float-label { opacity: 1; transform: none; }
+.wa-float:focus-visible { outline: none; }
+.wa-float:focus-visible .wa-float-btn { outline: 2px solid #fff; outline-offset: 3px; }
+
+@keyframes waPulse {
+  0%   { transform: scale(1);   opacity: 0.55; }
+  70%  { transform: scale(1.65); opacity: 0; }
+  100% { transform: scale(1.65); opacity: 0; }
+}
+
+@media (max-width: 700px) {
+  .wa-float { right: 1rem; bottom: calc(1rem + var(--vs-consent-h, 0px) + env(safe-area-inset-bottom)); }
+  .wa-float-btn { width: 54px; height: 54px; font-size: 1.6rem; }
+  .wa-float-label { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wa-float-btn::before { animation: none; }
+  .wa-float, .wa-float-btn, .wa-float-label { transition: none; }
+}
+

@@ -1,0 +1,292 @@
+/* ============================================================
+   VANGUARD SOLUTIONS — NOVATIENDA (página del proyecto)
+   Usa la identidad del sitio (cian, morado y verde neón, Orbitron,
+   Montserrat, .btn, .glass-card, .section-header, .reveal) y la
+   cabecera y el cierre de Proyectos. Solo añade lo específico.
+   ============================================================ */
+
+/* ── HERO ───────────────────────────────────────────────────── */
+.page-hero.nt-hero {
+  display: block;
+  min-height: 0;
+  text-align: left;
+  padding: calc(var(--header-height) + 2.5rem) 0 clamp(3rem, 6vw, 4.5rem);
+}
+
+.nt-hero-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+}
+
+.nt-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: var(--space-md);
+  font-family: var(--font-tech);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(224, 224, 224, 0.6);
+  transition: color var(--transition-fast);
+}
+.nt-back:hover,
+.nt-back:focus-visible { color: var(--cyan); outline: none; }
+.nt-back i { font-size: 0.7rem; }
+
+.nt-hero-copy { display: flex; flex-direction: column; align-items: flex-start; }
+.nt-hero .page-hero-content { max-width: none; }
+
+.page-hero.nt-hero h1 {
+  max-width: 18ch;
+  margin-bottom: var(--space-sm);
+  font-size: clamp(1.7rem, 3.6vw, 2.8rem);
+  line-height: 1.18;
+}
+
+.page-hero.nt-hero .nt-lead {
+  max-width: 54ch;
+  margin: 0;
+  text-align: left;
+  font-size: clamp(0.98rem, 1.5vw, 1.12rem);
+  color: rgba(224, 224, 224, 0.78);
+}
+
+.nt-actions { justify-content: flex-start; margin-top: var(--space-md); }
+.nt .nt-fineprint { margin-top: var(--space-sm); font-size: 0.85rem; color: rgba(224, 224, 224, 0.55); max-width: 52ch; }
+
+/* ── DISPOSITIVOS ───────────────────────────────────────────── */
+.nt-devices { position: relative; padding-bottom: 8%; }
+.nt-glow {
+  position: absolute;
+  inset: 8% 10% 0 6%;
+  background: radial-gradient(ellipse at 60% 50%, rgba(0, 240, 255, 0.16), rgba(191, 0, 255, 0.12) 45%, transparent 72%);
+  filter: blur(40px);
+  pointer-events: none;
+}
+.nt-frame {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  background: #07070B;
+  border: 1px solid var(--glass-border);
+}
+.nt-frame img { width: 100%; height: auto; }
+.nt-frame--desktop {
+  width: 92%;
+  border-radius: var(--radius-md);
+  box-shadow: 0 30px 80px -30px rgba(0, 0, 0, 0.9), 0 0 30px rgba(0, 240, 255, 0.1);
+}
+.nt-frame--phone {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 27%;
+  padding: 5px;
+  border-radius: 24px;
+  border-color: rgba(0, 240, 255, 0.35);
+  background: #0D0D18;
+  box-shadow: 0 24px 60px -20px rgba(0, 0, 0, 0.9), 0 0 26px rgba(191, 0, 255, 0.25);
+}
+.nt-frame--phone img { border-radius: 19px; }
+
+.nt-frame-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: 26px;
+  padding: 0 0.8rem;
+  background: #0D0D18;
+  border-bottom: 1px solid var(--glass-border);
+  font-size: 0.7rem;
+  color: rgba(224, 224, 224, 0.55);
+  letter-spacing: 0.03em;
+}
+.nt-frame-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); box-shadow: 0 0 8px var(--green); }
+
+/* ── SECCIONES ──────────────────────────────────────────────── */
+.nt-section { padding: var(--space-2xl) 0; position: relative; }
+.nt-tour,
+.nt-faq-section { background: var(--bg-secondary); }
+.nt-change,
+.nt-steps-section { background: var(--bg-primary); }
+.nt-narrow { max-width: 860px; }
+.nt .section-header { margin-bottom: var(--space-xl); }
+.nt-footnote { margin-top: var(--space-md); font-size: 0.8rem; color: rgba(224, 224, 224, 0.5); max-width: 78ch; }
+
+/* ── RECORRIDO ──────────────────────────────────────────────── */
+.nt-controls { display: flex; flex-wrap: wrap; gap: 0.8rem 1.4rem; align-items: center; justify-content: space-between; margin-bottom: var(--space-md); }
+.nt-seg {
+  display: inline-flex;
+  padding: 4px;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.03);
+}
+.nt-seg-btn {
+  min-height: 42px;
+  padding: 0.45rem 1.1rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-tech);
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(224, 224, 224, 0.65);
+  transition: background var(--transition-fast), color var(--transition-fast), box-shadow var(--transition-fast);
+}
+.nt-seg-btn i { margin-right: 0.4rem; }
+.nt-seg-btn:hover { color: #fff; }
+.nt-seg-btn[aria-pressed="true"] { background: var(--grad-main); color: #000; box-shadow: 0 0 14px rgba(0, 240, 255, 0.3); }
+.nt-seg-btn:focus-visible,
+.nt-rail-item:focus-visible,
+.nt-pager-btn:focus-visible,
+.nt-link:focus-visible,
+.nt-faq summary:focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; }
+
+.nt-stage { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: var(--space-md); align-items: start; }
+
+.nt-rail { max-height: 620px; overflow-y: auto; padding-right: 0.4rem; display: flex; flex-direction: column; gap: 0.4rem; scrollbar-width: thin; scrollbar-color: rgba(0, 240, 255, 0.3) transparent; }
+.nt-rail-item {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  gap: 0.75rem;
+  align-items: center;
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  text-align: left;
+  color: rgba(224, 224, 224, 0.65);
+  transition: background var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+}
+.nt-rail-item:hover { background: rgba(0, 240, 255, 0.05); color: #fff; }
+.nt-rail-item[aria-current="true"] { background: rgba(0, 240, 255, 0.08); border-color: rgba(0, 240, 255, 0.5); color: #fff; box-shadow: 0 0 16px rgba(0, 240, 255, 0.12); }
+.nt-rail-thumb { display: grid; place-items: center; height: 38px; border-radius: 4px; background: #07070B; overflow: hidden; }
+.nt-rail-thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.nt-stage[data-view="mobile"] .nt-rail-thumb img { width: auto; height: 100%; object-fit: contain; }
+.nt-rail-title { font-size: 0.86rem; font-weight: 600; line-height: 1.25; }
+
+.nt-view { min-width: 0; display: grid; gap: var(--space-md); }
+.nt-screen {
+  margin: 0;
+  overflow: hidden;
+  background: #07070B;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  box-shadow: 0 30px 80px -40px rgba(0, 0, 0, 0.95), 0 0 30px rgba(0, 240, 255, 0.07);
+}
+#nt-shot { width: 100%; height: auto; transition: opacity 0.18s ease; }
+.nt-screen.is-swapping #nt-shot { opacity: 0; }
+
+.nt .nt-caption h3 { font-size: clamp(1.05rem, 2vw, 1.4rem); color: #fff; letter-spacing: 0.03em; }
+.nt .nt-caption p { margin-top: 0.7rem; max-width: 62ch; }
+.nt-pager { display: flex; align-items: center; gap: 0.9rem; margin-top: var(--space-sm); }
+.nt-pager-btn { width: 44px; height: 44px; border: 1px solid var(--glass-border); border-radius: var(--radius-sm); color: var(--cyan); transition: border-color var(--transition-fast), box-shadow var(--transition-fast); }
+.nt-pager-btn:hover { border-color: var(--cyan); box-shadow: 0 0 14px rgba(0, 240, 255, 0.25); }
+.nt-count { font-family: var(--font-tech); font-size: 0.95rem; letter-spacing: 0.06em; color: rgba(224, 224, 224, 0.6); min-width: 4.5rem; text-align: center; }
+
+/* Modo móvil del recorrido: el teléfono a la izquierda, el texto a la derecha */
+.nt-stage[data-view="mobile"] .nt-view { grid-template-columns: minmax(200px, 290px) minmax(0, 1fr); align-items: start; gap: var(--space-lg); }
+.nt-stage[data-view="mobile"] .nt-screen { border-radius: 30px; padding: 7px; background: #0D0D18; border-color: rgba(0, 240, 255, 0.35); box-shadow: 0 0 30px rgba(191, 0, 255, 0.2); }
+.nt-stage[data-view="mobile"] .nt-screen .nt-frame-bar { display: none; }
+.nt-stage[data-view="mobile"] #nt-shot { border-radius: 24px; }
+
+/* ── LO QUE CAMBIA ──────────────────────────────────────────── */
+.nt-row {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(1.6rem, 4vw, 3.5rem);
+  align-items: center;
+  padding: var(--space-lg) 0;
+  border-top: 1px solid rgba(0, 240, 255, 0.1);
+}
+.nt-row:last-of-type { border-bottom: 1px solid rgba(0, 240, 255, 0.1); }
+.nt .nt-row-text h3 { font-size: clamp(1.05rem, 2vw, 1.45rem); color: #fff; letter-spacing: 0.03em; }
+.nt-row-text p { margin-top: 0.8rem; }
+.nt-link {
+  display: inline-block;
+  margin-top: var(--space-sm);
+  font-family: var(--font-tech);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  border-bottom: 1px solid rgba(0, 240, 255, 0.4);
+  transition: color var(--transition-fast), border-color var(--transition-fast), text-shadow var(--transition-fast);
+}
+.nt-link:hover { color: #fff; border-color: var(--cyan); text-shadow: 0 0 10px rgba(0, 240, 255, 0.6); }
+.nt-crop { margin: 0; aspect-ratio: 16 / 10; overflow: hidden; border: 1px solid var(--glass-border); border-radius: var(--radius-md); background: #07070B; transition: border-color var(--transition-med), box-shadow var(--transition-med); }
+.nt-row:hover .nt-crop { border-color: rgba(0, 240, 255, 0.4); box-shadow: 0 0 24px rgba(0, 240, 255, 0.12); }
+.nt-crop img { width: 100%; height: 100%; object-fit: cover; object-position: left top; }
+.nt-also { margin-top: var(--space-md); font-size: 0.95rem; max-width: 78ch; }
+
+/* ── PASOS ──────────────────────────────────────────────────── */
+.nt-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-md); counter-reset: paso; }
+.nt-steps li { counter-increment: paso; padding: var(--space-lg) var(--space-md); }
+.nt-steps li::before {
+  content: counter(paso);
+  display: block;
+  margin-bottom: var(--space-sm);
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  font-weight: 900;
+  line-height: 1;
+  background: var(--grad-main);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.nt .nt-steps h3 { font-size: 1.05rem; color: #fff; letter-spacing: 0.03em; margin-bottom: 0.6rem; }
+
+/* ── PREGUNTAS ──────────────────────────────────────────────── */
+.nt-faq { display: grid; gap: 0.75rem; }
+.nt-faq details { padding: 0; overflow: hidden; }
+.nt-faq details:hover { transform: none; }
+.nt-faq summary {
+  position: relative;
+  padding: 1.1rem 3rem 1.1rem 1.3rem;
+  list-style: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1rem;
+  color: #fff;
+}
+.nt-faq summary::-webkit-details-marker { display: none; }
+.nt-faq summary::before,
+.nt-faq summary::after { content: ''; position: absolute; right: 1.3rem; top: 50%; width: 14px; height: 2px; background: var(--cyan); box-shadow: 0 0 6px rgba(0, 240, 255, 0.6); transition: transform var(--transition-fast); }
+.nt-faq summary::after { transform: rotate(90deg); }
+.nt-faq details[open] summary::after { transform: rotate(0deg); }
+.nt-faq details p { padding: 0 3rem 1.3rem 1.3rem; }
+
+/* ── RESPONSIVE ─────────────────────────────────────────────── */
+@media (max-width: 1000px) {
+  .nt-hero-grid { grid-template-columns: 1fr; }
+  .nt-devices { max-width: 640px; }
+  .page-hero.nt-hero h1 { max-width: none; }
+  .nt-stage { grid-template-columns: 1fr; }
+  .nt-rail { flex-direction: row; max-height: none; overflow-x: auto; overflow-y: visible; padding: 0 0 0.6rem; }
+  .nt-rail-item { grid-template-columns: 1fr; width: 190px; flex: 0 0 auto; align-content: start; }
+  .nt-row { grid-template-columns: 1fr; }
+  .nt-steps { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 700px) {
+  .nt-seg { width: 100%; }
+  .nt-seg-btn { flex: 1; padding-inline: 0.5rem; }
+  .nt-stage[data-view="mobile"] .nt-view { grid-template-columns: 1fr; justify-items: center; }
+  .nt-stage[data-view="mobile"] .nt-screen { width: min(260px, 72vw); }
+  .nt-stage[data-view="mobile"] .nt-caption { width: 100%; }
+  .nt-actions .btn { width: 100%; justify-content: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #nt-shot, .nt-screen { transition: none; }
+}

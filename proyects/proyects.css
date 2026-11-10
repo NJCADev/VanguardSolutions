@@ -679,3 +679,29 @@
   .phone-island { width: 70px; height: 20px; }
   .screen-features { padding: var(--space-sm); }
 }
+
+/* ── NOVATIENDA EN PROYECTOS ────────────────────────────────── */
+.nt-proj-actions { justify-content: flex-start; margin-top: var(--space-md); }
+.nt-proj-note { margin-top: var(--space-md); text-align: center; font-size: 0.8rem; color: rgba(224, 224, 224, 0.5); }
+@media (max-width: 700px) { .nt-proj-actions .btn { width: 100%; justify-content: center; } }
+
+
+/* ── NOVATIENDA: capturas de escritorio (marco de navegador) ── */
+.screen-desktop-wrap { position: relative; display: flex; align-items: center; justify-content: center; min-width: 0; }
+.screen-desktop {
+  position: relative; z-index: 1; margin: 0; width: 100%;
+  border-radius: 12px; overflow: hidden; background: #111116;
+  border: 2px solid #2a2a35;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.04), 0 30px 80px rgba(0,0,0,0.7);
+}
+.desktop-bar { display: flex; gap: 6px; padding: 8px 12px; background: #1a1a22; border-bottom: 1px solid #2a2a35; }
+.desktop-bar span { width: 9px; height: 9px; border-radius: 50%; background: #3a3a48; }
+.desktop-bar span:nth-child(1) { background: #ff5f57; }
+.desktop-bar span:nth-child(2) { background: #febc2e; }
+.desktop-bar span:nth-child(3) { background: #28c840; }
+.desktop-screenshot { display: block; width: 100%; height: auto; }
+.screen-features li i { color: var(--neon-green, #39FF14); margin-right: 0.4rem; font-size: 0.75rem; }
+@media (min-width: 768px) {
+  .screen-slide--desktop { grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); }
+  .screen-slide { gap: var(--space-lg); }
+}

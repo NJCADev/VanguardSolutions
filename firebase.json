@@ -9,7 +9,7 @@
       "**/.*",
       "**/node_modules/**",
       "graphify-out/**",
-      "proyects/**",
+      "assets/proyects/**",
       "scripts/**",
       "package.json",
       "package-lock.json",
