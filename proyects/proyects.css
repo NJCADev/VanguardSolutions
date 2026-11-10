@@ -727,3 +727,21 @@
 }
 .plat-chips li i { color: var(--cyan, #00F0FF); }
 .plat-strip p { font-size: 0.9rem; line-height: 1.7; color: rgba(224, 224, 224, 0.7); }
+
+/* Flechas del carrusel a los costados (la imagen es grande y las de abajo quedaban lejos) */
+.screens-carousel-wrapper { padding-left: 4.5rem; padding-right: 4.5rem; }
+.screens-controls .screen-btn {
+  position: absolute;
+  top: calc(50% - 1.75rem);
+  transform: translateY(-50%);
+  z-index: 3;
+  background: rgba(13, 13, 24, 0.75);
+}
+.screens-controls .screen-btn--prev { left: 0.9rem; }
+.screens-controls .screen-btn--next { right: 0.9rem; }
+@media (max-width: 767px) {
+  .screens-carousel-wrapper { padding-left: 3rem; padding-right: 3rem; }
+  .screens-controls .screen-btn { width: 36px; height: 36px; }
+  .screens-controls .screen-btn--prev { left: 0.4rem; }
+  .screens-controls .screen-btn--next { right: 0.4rem; }
+}
