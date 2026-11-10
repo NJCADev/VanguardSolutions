@@ -12,8 +12,9 @@ permissions:
 
 jobs:
   preview:
-    # Los PR que vienen de forks no tienen acceso a los secretos: se omiten.
-    if: github.event.pull_request.head.repo.full_name == github.repository
+    # Los PR de forks y los de Dependabot no tienen acceso a los secretos de Actions: se omiten.
+    # (el check obligatorio "checks" sí corre en ellos)
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.actor != 'dependabot[bot]'
     runs-on: ubuntu-latest
     # Los secretos se leen una sola vez y quedan disponibles para todos los pasos.
     env:
