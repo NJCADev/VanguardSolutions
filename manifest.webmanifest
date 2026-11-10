@@ -1,0 +1,29 @@
+{
+  "name": "Vanguard Solutions",
+  "short_name": "Vanguard",
+  "description": "Desarrollo de sitios web, apps móviles, hosting y soporte técnico en Costa Rica.",
+  "lang": "es",
+  "start_url": "/home/home.html",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0A0A0F",
+  "theme_color": "#0A0A0F",
+  "icons": [
+    {
+      "src": "/assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

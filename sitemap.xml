@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://vanguardsolutionscr.com/home/home.html</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://vanguardsolutionscr.com/services/services.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://vanguardsolutionscr.com/products/products.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vanguardsolutionscr.com/proyects/proyects.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vanguardsolutionscr.com/novatienda/novatienda.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vanguardsolutionscr.com/blogs/blogs.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://vanguardsolutionscr.com/contact/contact.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://vanguardsolutionscr.com/privacy/privacy.html</loc>
+    <priority>0.3</priority>
+  </url>
+</urlset>
