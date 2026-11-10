@@ -15,6 +15,8 @@
   'use strict';
 
   const STORAGE_KEY = 'vs_consent';           // 'granted' | 'denied'
+  const VERSION_KEY = 'vs_consent_v';         // versión del aviso a la que respondió el visitante
+  const CONSENT_VERSION = '2026-11';          // súbela si cambia lo que se mide: se volverá a preguntar
   const SCRIPT_URL = document.currentScript && document.currentScript.src;
   const cfg = window.VS_CONFIG && window.VS_CONFIG.firebase;
   const GA_ID = cfg && cfg.measurementId;
@@ -28,6 +30,7 @@
   function getChoice() {
     try {
       const v = localStorage.getItem(STORAGE_KEY);
+      if (localStorage.getItem(VERSION_KEY) !== CONSENT_VERSION) return null;   // otra versión: se vuelve a preguntar
       return v === 'granted' || v === 'denied' ? v : null;
     } catch (e) {
       return null;   // sin almacenamiento: se tratará como "sin decidir"
@@ -35,7 +38,10 @@
   }
 
   function saveChoice(value) {
-    try { localStorage.setItem(STORAGE_KEY, value); } catch (e) { /* ignorar */ }
+    try {
+      localStorage.setItem(STORAGE_KEY, value);
+      localStorage.setItem(VERSION_KEY, CONSENT_VERSION);
+    } catch (e) { /* ignorar */ }
   }
 
   /* ── GOOGLE ANALYTICS ────────────────────────────────────── */
@@ -48,7 +54,8 @@
     window.dataLayer = window.dataLayer || [];
     window.gtag = function () { window.dataLayer.push(arguments); };
     window.gtag('js', new Date());
-    window.gtag('config', GA_ID);
+    // Sin señales de Google ni personalización de anuncios (coincide con la política de privacidad)
+    window.gtag('config', GA_ID, { allow_google_signals: false, allow_ad_personalization_signals: false });
 
     const s = document.createElement('script');
     s.async = true;

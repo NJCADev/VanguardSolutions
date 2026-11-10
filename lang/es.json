@@ -496,7 +496,7 @@
  "privacy.004": "Legal",
  "privacy.005": "Política de <span class=\"accent\">Privacidad</span>",
  "privacy.006": "Te explicamos de forma clara qué datos recopilamos cuando usas este sitio, para qué los usamos, con quién los compartimos y cómo puedes ejercer tus derechos.",
- "privacy.007": "Última actualización: 19 de octubre de 2026",
+ "privacy.007": "Última actualización: 9 de noviembre de 2026",
  "privacy.008": "Contenido de la política",
  "privacy.009": "Contenido",
  "privacy.010": "Quién es el responsable",
@@ -528,7 +528,7 @@
  "privacy.036": "Datos técnicos de la visita",
  "privacy.037": "Al abrir cualquier página, los servidores que entregan el sitio (Firebase Hosting, de Google) reciben de forma automática datos como tu dirección IP y la información de tu navegador. Es imprescindible para que el sitio se muestre y para mantenerlo seguro.",
  "privacy.038": "3. Cookies y almacenamiento local",
- "privacy.039": "Las cookies de analítica solo se activan si tú las aceptas. Además guardamos dos preferencias en tu navegador para recordar tus decisiones.",
+ "privacy.039": "Las cookies de analítica solo se activan si tú las aceptas. Además guardamos algunas preferencias y datos técnicos en tu navegador para recordar tus decisiones y proteger el formulario, y el sitio puede guardar una copia de las páginas que visitas para que carguen más rápido y funcionen sin conexión.",
  "privacy.040": "Nombre",
  "privacy.041": "Tipo",
  "privacy.042": "Finalidad",
@@ -788,5 +788,8 @@
  "pj.quote": "Cotizar un proyecto personalizado",
  "js.val.name": "Usa solo letras y espacios (sin números ni símbolos).",
  "js.val.phone": "Ingresa un número de {n} dígitos.",
- "contact.phonecode": "Código de país"
+ "contact.phonecode": "Código de país",
+ "contact.privacy": "Al enviar este formulario aceptas que usemos tus datos para responderte. Más información en nuestra <a href=\"../privacy/privacy.html\">Política de privacidad</a>.",
+ "privacy.093": "Evita envíos repetidos del formulario (guarda la hora del último envío).",
+ "privacy.094": "Recuerda a qué versión de este aviso respondiste, para volver a preguntarte si cambia."
 }

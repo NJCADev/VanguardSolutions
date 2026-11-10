@@ -496,7 +496,7 @@
  "privacy.004": "Legal",
  "privacy.005": "Privacy <span class=\"accent\">Policy</span>",
  "privacy.006": "We explain clearly what data we collect when you use this site, what we use it for, who we share it with and how you can exercise your rights.",
- "privacy.007": "Last updated: October 19, 2026",
+ "privacy.007": "Last updated: November 9, 2026",
  "privacy.008": "Policy contents",
  "privacy.009": "Contents",
  "privacy.010": "Who is responsible",
@@ -528,7 +528,7 @@
  "privacy.036": "Technical data from your visit",
  "privacy.037": "When you open any page, the servers that deliver the site (Firebase Hosting, by Google) automatically receive data such as your IP address and your browser information. This is essential for the site to display and to keep it secure.",
  "privacy.038": "3. Cookies and local storage",
- "privacy.039": "Analytics cookies are only activated if you accept them. We also store two preferences in your browser to remember your choices.",
+ "privacy.039": "Analytics cookies are only activated if you accept them. We also store some preferences and technical data in your browser to remember your choices and protect the form, and the site may keep a copy of the pages you visit so they load faster and work offline.",
  "privacy.040": "Name",
  "privacy.041": "Type",
  "privacy.042": "Purpose",
@@ -788,5 +788,8 @@
  "pj.quote": "Request a custom project quote",
  "js.val.name": "Use letters and spaces only (no numbers or symbols).",
  "js.val.phone": "Enter a number with {n} digits.",
- "contact.phonecode": "Country code"
+ "contact.phonecode": "Country code",
+ "contact.privacy": "By submitting this form you agree that we use your data to reply to you. More information in our <a href=\"../privacy/privacy.html\">Privacy Policy</a>.",
+ "privacy.093": "Prevents repeated form submissions (stores the time of the last submission).",
+ "privacy.094": "Remembers which version of this notice you answered, so we ask again if it changes."
 }
