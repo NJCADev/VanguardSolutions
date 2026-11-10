@@ -732,3 +732,9 @@ a.cdi-value:hover {
   border-color: rgba(0, 240, 255, 0.5) !important;
   transition: background-color 99999s ease-in-out 0s; /* bloquea la animación del navegador */
 }
+/* Teléfono: selector de código de país + número */
+.phone-field { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.phone-code-wrap { flex: 0 0 6.6rem; }
+.phone-code-wrap .form-select { padding-left: 0.75rem; padding-right: 2rem; }
+.phone-code-wrap .form-select-arrow { right: 0.75rem; }
+.phone-field > .form-input { flex: 1 1 7.5rem; min-width: 0; }
