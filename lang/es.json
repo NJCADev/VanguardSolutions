@@ -592,9 +592,6 @@
  "novatienda.020": "Qué parte de la plataforma ver",
  "novatienda.021": "Lo que ve tu cliente",
  "novatienda.022": "Lo que controlas tú",
- "novatienda.023": "Dispositivo",
- "novatienda.024": "Escritorio",
- "novatienda.025": "Móvil",
  "novatienda.026": "Pantallas",
  "novatienda.027": "Pantalla anterior",
  "novatienda.028": "Pantalla siguiente",
@@ -782,5 +779,10 @@
  "pj.b.negocio-12-auditoria.1": "Quién hizo qué, en qué módulo y cuándo",
  "pj.b.negocio-12-auditoria.2": "Filtros por módulo, acción, usuario, tienda y fechas",
  "pj.b.negocio-12-auditoria.3": "Detalle exacto del valor que cambió",
- "pj.features": "Funcionalidades"
+ "pj.features": "Funcionalidades",
+ "pj.plat.text": "Hecha para la web y para celulares Android e iOS. Tus clientes pueden instalar la versión móvil como app desde el navegador (PWA), sin pasar por una tienda de aplicaciones.",
+ "pj.plat.web": "Web",
+ "pj.plat.android": "Android",
+ "pj.plat.ios": "iOS",
+ "pj.plat.pwa": "Instalable (PWA)"
 }

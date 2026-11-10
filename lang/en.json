@@ -592,9 +592,6 @@
  "novatienda.020": "Which part of the platform to view",
  "novatienda.021": "What your customer sees",
  "novatienda.022": "What you control",
- "novatienda.023": "Device",
- "novatienda.024": "Desktop",
- "novatienda.025": "Mobile",
  "novatienda.026": "Screens",
  "novatienda.027": "Previous screen",
  "novatienda.028": "Next screen",
@@ -782,5 +779,10 @@
  "pj.b.negocio-12-auditoria.1": "Who did what, in which module and when",
  "pj.b.negocio-12-auditoria.2": "Filters by module, action, user, store and dates",
  "pj.b.negocio-12-auditoria.3": "Exact detail of the value that changed",
- "pj.features": "Features"
+ "pj.features": "Features",
+ "pj.plat.text": "Built for the web and for Android and iOS phones. Your customers can install the mobile version as an app straight from the browser (PWA), with no app store needed.",
+ "pj.plat.web": "Web",
+ "pj.plat.android": "Android",
+ "pj.plat.ios": "iOS",
+ "pj.plat.pwa": "Installable (PWA)"
 }

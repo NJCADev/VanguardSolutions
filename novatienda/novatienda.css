@@ -169,7 +169,6 @@
 .nt-rail-item[aria-current="true"] { background: rgba(0, 240, 255, 0.08); border-color: rgba(0, 240, 255, 0.5); color: #fff; box-shadow: 0 0 16px rgba(0, 240, 255, 0.12); }
 .nt-rail-thumb { display: grid; place-items: center; height: 38px; border-radius: 4px; background: #07070B; overflow: hidden; }
 .nt-rail-thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
-.nt-stage[data-view="mobile"] .nt-rail-thumb img { width: auto; height: 100%; object-fit: contain; }
 .nt-rail-title { font-size: 0.86rem; font-weight: 600; line-height: 1.25; }
 
 .nt-view { min-width: 0; display: grid; gap: var(--space-md); }
@@ -191,11 +190,16 @@
 .nt-pager-btn:hover { border-color: var(--cyan); box-shadow: 0 0 14px rgba(0, 240, 255, 0.25); }
 .nt-count { font-family: var(--font-tech); font-size: 0.95rem; letter-spacing: 0.06em; color: rgba(224, 224, 224, 0.6); min-width: 4.5rem; text-align: center; }
 
-/* Modo móvil del recorrido: el teléfono a la izquierda, el texto a la derecha */
-.nt-stage[data-view="mobile"] .nt-view { grid-template-columns: minmax(200px, 290px) minmax(0, 1fr); align-items: start; gap: var(--space-lg); }
-.nt-stage[data-view="mobile"] .nt-screen { border-radius: 30px; padding: 7px; background: #0D0D18; border-color: rgba(0, 240, 255, 0.35); box-shadow: 0 0 30px rgba(191, 0, 255, 0.2); }
-.nt-stage[data-view="mobile"] .nt-screen .nt-frame-bar { display: none; }
-.nt-stage[data-view="mobile"] #nt-shot { border-radius: 24px; }
+/* Escritorio y móvil a la vez: el teléfono se superpone abajo a la derecha */
+.nt-media { position: relative; padding-bottom: 2.5rem; }
+.nt-media.is-swapping img { opacity: 0; }
+.nt-phone-shot {
+  position: absolute; right: 3%; bottom: 0; width: clamp(96px, 20%, 170px); margin: 0;
+  padding: 5px; border-radius: 22px; background: #0D0D18;
+  border: 1px solid rgba(0, 240, 255, 0.35);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 26px rgba(191, 0, 255, 0.25);
+}
+.nt-phone-shot img { display: block; width: 100%; height: auto; border-radius: 17px; transition: opacity 0.18s ease; }
 
 /* ── LO QUE CAMBIA ──────────────────────────────────────────── */
 .nt-row {
@@ -281,9 +285,6 @@
 @media (max-width: 700px) {
   .nt-seg { width: 100%; }
   .nt-seg-btn { flex: 1; padding-inline: 0.5rem; }
-  .nt-stage[data-view="mobile"] .nt-view { grid-template-columns: 1fr; justify-items: center; }
-  .nt-stage[data-view="mobile"] .nt-screen { width: min(260px, 72vw); }
-  .nt-stage[data-view="mobile"] .nt-caption { width: 100%; }
   .nt-actions .btn { width: 100%; justify-content: center; }
 }
 

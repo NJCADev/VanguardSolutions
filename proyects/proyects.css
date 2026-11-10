@@ -705,3 +705,25 @@
   .screen-slide--desktop { grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); }
   .screen-slide { gap: var(--space-lg); }
 }
+
+/* Captura de escritorio con el móvil superpuesto (se muestran ambas) */
+.screen-both { padding-bottom: 1.5rem; }
+.screen-phone-mini {
+  position: absolute; right: 3%; bottom: 0; z-index: 2; margin: 0;
+  width: clamp(70px, 17%, 120px); padding: 4px; border-radius: 18px;
+  background: #0D0D18; border: 2px solid #2a2a35;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.8);
+}
+.screen-phone-mini img { display: block; width: 100%; height: auto; border-radius: 14px; }
+
+/* Plataformas: web, Android, iOS y PWA */
+.plat-strip { margin: var(--space-sm) 0; max-width: 60ch; }
+.plat-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; list-style: none; padding: 0; margin: 0 0 0.7rem; }
+.plat-chips li {
+  display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.3rem 0.75rem;
+  border: 1px solid rgba(0, 240, 255, 0.35); border-radius: 999px;
+  font-family: var(--font-tech); font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase;
+  color: #fff; background: rgba(0, 240, 255, 0.06);
+}
+.plat-chips li i { color: var(--cyan, #00F0FF); }
+.plat-strip p { font-size: 0.9rem; line-height: 1.7; color: rgba(224, 224, 224, 0.7); }
