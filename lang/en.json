@@ -548,9 +548,8 @@
  "privacy.056": "You can change your decision at any time with the <strong>Cookie preferences</strong> link in the footer; if you reject, we delete the analytics cookies. You can also delete them from your browser settings.",
  "privacy.057": "4. Third-party services",
  "privacy.058": "To display the site we load resources from other providers. When we do, your browser connects to their servers and they may receive your IP address and technical data. We do not control how they process it; you can read their policies:",
- "privacy.059": "<strong>Google</strong> (fonts, the map on the Contact page, Analytics and Firebase Hosting) — <a href=\"https://policies.google.com/privacy\" target=\"_blank\" rel=\"noopener noreferrer\">privacy policy</a>",
+ "privacy.059": "<strong>Google</strong> (the map on the Contact page, which only loads if you press “Show map”; Analytics, only with your consent; and Firebase Hosting) — <a href=\"https://policies.google.com/privacy\" target=\"_blank\" rel=\"noopener noreferrer\">privacy policy</a>",
  "privacy.060": "<strong>EmailJS</strong> (sending the contact form) — <a href=\"https://www.emailjs.com/legal/privacy-policy/\" target=\"_blank\" rel=\"noopener noreferrer\">privacy policy</a>",
- "privacy.061": "<strong>Cloudflare</strong> (icons) — <a href=\"https://www.cloudflare.com/privacypolicy/\" target=\"_blank\" rel=\"noopener noreferrer\">privacy policy</a>",
  "privacy.062": "<strong>jsDelivr</strong> (code libraries)",
  "privacy.063": "<strong>Unsplash</strong> (photographs on the home page) — <a href=\"https://unsplash.com/privacy\" target=\"_blank\" rel=\"noopener noreferrer\">privacy policy</a>",
  "privacy.064": "<strong>WhatsApp (Meta)</strong> (contact buttons) — <a href=\"https://www.whatsapp.com/legal/privacy-policy\" target=\"_blank\" rel=\"noopener noreferrer\">privacy policy</a>",
@@ -792,5 +791,7 @@
  "contact.privacy": "By submitting this form you agree that we use your data to reply to you. More information in our <a href=\"../privacy/privacy.html\">Privacy Policy</a>.",
  "privacy.093": "Prevents repeated form submissions (stores the time of the last submission).",
  "privacy.094": "Remembers which version of this notice you answered, so we ask again if it changes.",
- "js.err.wait": "Please wait a moment before sending another message."
+ "js.err.wait": "Please wait a moment before sending another message.",
+ "contact.map.note": "The map is provided by Google: when you show it, your browser will connect to their servers.",
+ "contact.map.btn": "Show map"
 }
