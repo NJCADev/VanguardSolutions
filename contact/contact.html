@@ -201,6 +201,7 @@
                       id="cf-company"
                       name="company"
                       class="form-input"
+                      maxlength="100"
                       placeholder="Mi Empresa S.A."
                       autocomplete="organization"
                     />
@@ -218,6 +219,7 @@
                       id="cf-email"
                       name="email"
                       class="form-input"
+                      maxlength="254"
                       placeholder="correo@empresa.com"
                       autocomplete="email"
                       required
@@ -368,10 +370,10 @@
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.847!2d-83.91176!3d9.877207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOcKwNTInMzguMiJOIDgzwrA1NCc0Mi4zIlc!5e0!3m2!1ses-419!2scr!4v1710000000000"            class="map-iframe"
             width="100%"
             height="420"
-            style="border:0;"
             allowfullscreen=""
             loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
+            referrerpolicy="strict-origin-when-cross-origin"
+            sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
             aria-label="Google Maps mostrando Cartago, Costa Rica"
           ></iframe>
           <div class="map-overlay-badge" aria-hidden="true">

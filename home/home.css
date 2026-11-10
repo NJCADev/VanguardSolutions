@@ -821,3 +821,9 @@
 .nt-teaser-phone { position: absolute; right: 0; bottom: 0; width: 26%; padding: 4px; border-radius: 20px; background: #1A1C22; border: 1px solid var(--glass-border); box-shadow: 0 24px 50px -20px rgba(0, 0, 0, 0.85); }
 @media (max-width: 800px) { .nt-teaser-inner { grid-template-columns: 1fr; } }
 
+.grad-text {
+  background: var(--grad-main);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

@@ -90,6 +90,11 @@
     if (textarea && text && !textarea.value) textarea.value = text;
   }
 
+  const formOpenedAt = Date.now();
+  function lastSentAt() {
+    try { return Number(localStorage.getItem('vs_last_send')) || 0; } catch (e) { return 0; }
+  }
+
   function initForm() {
     prefillFromUrl();
     const form      = document.getElementById('contact-form');
@@ -144,6 +149,15 @@
       const trap = form.querySelector('[name="_trap"]');
       if (trap && trap.value) return;
 
+      // Anti-spam: un formulario enviado en menos de 3 s desde que se abrió no lo llenó una persona,
+      // y entre un envío y otro se pide esperar 60 s. (Frena formularios automáticos simples;
+      // el control real contra abuso de la API está en el panel de EmailJS.)
+      if (Date.now() - formOpenedAt < 3000) return;
+      if (Date.now() - lastSentAt() < 60000) {
+        showError(errorMsg, tr('js.err.wait', 'Espera un momento antes de enviar otro mensaje.'));
+        return;
+      }
+
       // Validar todos los campos
       if (!validateForm(form)) return;
 
@@ -175,6 +189,8 @@
         const ejs = await getEmailJS();
         const result = await ejs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, params);
         console.log('EmailJS OK:', result.status, result.text);
+
+        try { localStorage.setItem('vs_last_send', String(Date.now())); } catch (e2) { /* ignorar */ }
 
         // ✅ Éxito: registrar el contacto en Analytics (solo la categoría de servicio, sin datos personales)
         if (window.VanguardAnalytics) {
