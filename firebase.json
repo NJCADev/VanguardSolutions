@@ -9,6 +9,8 @@
       "**/.*",
       "**/node_modules/**",
       "graphify-out/**",
+      ".claude/**",
+      ".agents/**",
       "assets/proyects/**",
       "scripts/**",
       "package.json",
