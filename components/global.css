@@ -767,3 +767,9 @@ html {
 .site-header--fallback { position: fixed; top: 0; left: 0; right: 0; height: 72px; background: rgba(5, 5, 8, 0.95); z-index: 1000; display: flex; align-items: center; padding: 0 2rem; }
 .site-header-fallback-name { font-family: Orbitron, monospace; color: #00F0FF; font-size: 1.1rem; }
 .site-footer-fallback { text-align: center; padding: 2rem; background: #020205; color: rgba(255, 255, 255, 0.3); font-size: 0.8rem; font-family: Montserrat, sans-serif; }
+
+/* Menú escrito en el HTML para buscadores y para cuando no carga el JavaScript.
+   El JavaScript lo reemplaza por el encabezado y el pie completos. */
+.static-nav { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; padding: 1rem 2rem; }
+.static-nav a { color: var(--cyan); font-family: var(--font-tech); font-size: 0.9rem; letter-spacing: 0.06em; text-transform: uppercase; }
+.static-nav--footer { justify-content: center; border-top: 1px solid var(--glass-border); }
