@@ -29,7 +29,7 @@
  "home.028": "Learn more about Technical Support",
  "home.029": "View all services",
  "home.030": "Why choose us?",
- "home.031": "Elite Technology<br /> <span style=\"background: var(--grad-main); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;\">For Visionary Companies</span>",
+ "home.031": "Elite Technology<br /> <span class=\"grad-text\">For Visionary Companies</span>",
  "home.032": "At Vanguard Solutions, we don't just build software. We create digital ecosystems that scale, evolve and generate real competitive advantages.",
  "home.033": "Modular Architecture",
  "home.034": "Scalable solutions designed to grow with your business without technical friction.",
@@ -788,5 +788,6 @@
  "pj.quote": "Request a custom project quote",
  "js.val.name": "Use letters and spaces only (no numbers or symbols).",
  "js.val.phone": "Enter a number with {n} digits.",
- "contact.phonecode": "Country code"
+ "contact.phonecode": "Country code",
+ "js.err.wait": "Please wait a moment before sending another message."
 }

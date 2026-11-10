@@ -19,7 +19,7 @@ async function loadFooter() {
     initFooter();
   } catch (err) {
     console.warn('Footer load error:', err);
-    placeholder.innerHTML = `<footer style="text-align:center;padding:2rem;background:#020205;color:rgba(255,255,255,.3);font-size:.8rem;font-family:Montserrat,sans-serif">© ${new Date().getFullYear()} Vanguard Solutions</footer>`;
+    placeholder.innerHTML = `<footer class="site-footer-fallback">© ${new Date().getFullYear()} Vanguard Solutions</footer>`;
   }
 }
 

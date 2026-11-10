@@ -19,9 +19,11 @@ if (fs.existsSync(envPath)) {
   }
 }
 
+// Solo se publica lo que el sitio realmente usa: el ID de medición de GA4 y los datos
+// públicos de EmailJS. La configuración web de Firebase (apiKey, appId…) no se expone
+// porque el sitio no usa el SDK de Firebase.
 const required = [
-  'FIREBASE_API_KEY', 'FIREBASE_AUTH_DOMAIN', 'FIREBASE_PROJECT_ID', 'FIREBASE_STORAGE_BUCKET',
-  'FIREBASE_MESSAGING_SENDER_ID', 'FIREBASE_APP_ID', 'FIREBASE_MEASUREMENT_ID',
+  'FIREBASE_MEASUREMENT_ID',
   'EMAILJS_PUBLIC_KEY', 'EMAILJS_SERVICE_ID', 'EMAILJS_TEMPLATE_ID'
 ];
 for (const k of required) if (process.env[k]) env[k] = process.env[k];
@@ -33,12 +35,6 @@ if (missing.length) {
 
 const config = {
   firebase: {
-    apiKey: env.FIREBASE_API_KEY,
-    authDomain: env.FIREBASE_AUTH_DOMAIN,
-    projectId: env.FIREBASE_PROJECT_ID,
-    storageBucket: env.FIREBASE_STORAGE_BUCKET,
-    messagingSenderId: env.FIREBASE_MESSAGING_SENDER_ID,
-    appId: env.FIREBASE_APP_ID,
     measurementId: env.FIREBASE_MEASUREMENT_ID
   },
   emailjs: {

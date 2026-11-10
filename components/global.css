@@ -658,3 +658,7 @@ html {
   .wa-float, .wa-float-btn, .wa-float-label { transition: none; }
 }
 
+/* Respaldos si no carga el encabezado o el pie (sin estilos en línea por la CSP) */
+.site-header--fallback { position: fixed; top: 0; left: 0; right: 0; height: 72px; background: rgba(5, 5, 8, 0.95); z-index: 1000; display: flex; align-items: center; padding: 0 2rem; }
+.site-header-fallback-name { font-family: Orbitron, monospace; color: #00F0FF; font-size: 1.1rem; }
+.site-footer-fallback { text-align: center; padding: 2rem; background: #020205; color: rgba(255, 255, 255, 0.3); font-size: 0.8rem; font-family: Montserrat, sans-serif; }

@@ -26,7 +26,7 @@ async function loadHeader(activePage = '') {
   } catch (err) {
     console.warn('Header load error:', err);
     // Fallback: insertar header mínimo
-    placeholder.innerHTML = `<header class="site-header" id="site-header" style="position:fixed;top:0;left:0;right:0;height:72px;background:rgba(5,5,8,.95);z-index:1000;display:flex;align-items:center;padding:0 2rem;"><span style="font-family:Orbitron,monospace;color:#00F0FF;font-size:1.1rem">Vanguard Solutions</span></header>`;
+    placeholder.innerHTML = `<header class="site-header site-header--fallback" id="site-header"><span class="site-header-fallback-name">Vanguard Solutions</span></header>`;
   }
 }
 

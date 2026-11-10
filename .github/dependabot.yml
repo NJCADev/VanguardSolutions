@@ -1,0 +1,8 @@
+# Revisa cada semana si hay versiones nuevas de las acciones de GitHub que usan los workflows
+# (están fijadas por hash; Dependabot propone el cambio como PR).
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
