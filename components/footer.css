@@ -52,7 +52,7 @@
   margin-bottom: 0.1rem;
 }
 
-.footer-logo svg {
+.footer-logo img {
   filter: drop-shadow(0 0 6px rgba(0,240,255,0.4));
   flex-shrink: 0;
 }
