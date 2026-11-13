@@ -235,7 +235,7 @@
         else if (err && err.status === 404) msg = tr('js.err.404', 'Servicio o plantilla no encontrada (error 404). Verifica que el Service ID y Template ID existen en tu cuenta.');
         else if (err && err.status === 422) msg = tr('js.err.422', 'Variables de plantilla inválidas (error 422). Asegúrate que los nombres coincidan exactamente con los del código.');
 
-        msg += tr('js.err.suffix', ' — Escríbenos directamente a vanguardsolutionscr@gmail.com o por WhatsApp.');
+        msg += tr('js.err.suffix', ' — Escríbenos directamente a info@vanguardsolutionscr.com o por WhatsApp.');
         showError(errorMsg, msg);
 
         submitBtn.classList.remove('loading');
