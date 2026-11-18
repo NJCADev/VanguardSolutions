@@ -281,7 +281,7 @@
     return ({
       apps    : 'Desarrollo de Apps Móviles',
       web     : 'Diseño y Desarrollo Web',
-      hosting : 'Hosting de Alta Disponibilidad',
+      hosting : 'Hosting para tu sitio o tienda',
       domains : 'Gestión de Dominios',
       support : 'Soporte Técnico Especializado',
       ecommerce: 'Tienda en Línea (NovaTienda)',
