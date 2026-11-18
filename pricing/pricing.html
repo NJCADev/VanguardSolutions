@@ -216,6 +216,7 @@
         <span class="neon-badge mb-sm" data-i18n="pricing.badge">Planes y precios</span><br>
         <h1 data-i18n-html="pricing.h1" id="pricing-heading">Elige tu plan, <span class="accent">paga con claridad</span></h1>
         <p data-i18n="pricing.lead">Pagas el desarrollo una vez y una mensualidad fija desde que tu sitio o tu tienda sale en línea. Montos en dólares, sin IVA.</p>
+        <p class="pq-hero-link"><a href="#cotizador" data-i18n="pricing.q.herolink">Cotiza en 1 minuto</a></p>
       </div>
     </section>
 
@@ -469,6 +470,52 @@
       </div>
     </section>
 
+    <section class="pr-quote-section section" id="cotizador" aria-labelledby="pq-heading">
+      <div class="container">
+        <div class="section-header">
+          <span data-i18n="pricing.q.badge" class="neon-badge mb-sm">Cotizador de 1 minuto</span><br>
+          <h2 data-i18n-html="pricing.q.title" id="pq-heading">Encuentra tu plan <span class="accent">en 1 minuto</span></h2>
+          <div class="section-divider"></div>
+          <p data-i18n="pricing.q.intro">Responde unas preguntas y te mostramos el plan que encaja, con su precio y su plazo.</p>
+        </div>
+
+        <div class="pq-grid">
+          <form class="pq-form glass-card" id="pq-form" data-i18n-attr="aria-label:pricing.q.aria" aria-label="Cotizador de 1 minuto" novalidate>
+            <fieldset class="pq-field"><legend data-i18n="pricing.q.kind.legend">¿Qué necesitas?</legend><div class="pq-opts"><label class="pq-opt"><input type="radio" name="kind" value="web"> <span data-i18n="pricing.q.kind.web">Un sitio web</span></label><label class="pq-opt"><input type="radio" name="kind" value="store"> <span data-i18n="pricing.q.kind.store">Una tienda en línea</span></label><label class="pq-opt"><input type="radio" name="kind" value="custom"> <span data-i18n="pricing.q.kind.custom">Un sistema o una app a medida</span></label></div></fieldset>
+            <div class="pq-branch" data-branch="web" hidden>
+              <fieldset class="pq-field"><legend data-i18n="pricing.q.web.shape">¿Cómo es tu sitio?</legend><div class="pq-opts"><label class="pq-opt"><input type="radio" name="webShape" value="0" checked> <span data-i18n="pricing.q.web.s0">Una sola página con secciones</span></label><label class="pq-opt"><input type="radio" name="webShape" value="1"> <span data-i18n="pricing.q.web.s1">Varias páginas, cada servicio con la suya</span></label><label class="pq-opt"><input type="radio" name="webShape" value="2"> <span data-i18n="pricing.q.web.s2">Un sitio completo con filtros y buscador</span></label></div></fieldset>
+              <fieldset class="pq-field"><legend data-i18n="pricing.q.more">¿Qué más necesitas?</legend><div class="pq-opts"><label class="pq-opt"><input type="checkbox" name="webExtra" value="lang"> <span data-i18n="pricing.q.web.e1">Español e inglés</span></label><label class="pq-opt"><input type="checkbox" name="webExtra" value="pwa"> <span data-i18n="pricing.q.web.e2">Que se instale en el celular (PWA)</span></label><label class="pq-opt"><input type="checkbox" name="webExtra" value="ga4"> <span data-i18n="pricing.q.web.e3">Google Analytics con reporte mensual</span></label></div></fieldset>
+            </div>
+            <div class="pq-branch" data-branch="store" hidden>
+              <fieldset class="pq-field"><legend data-i18n="pricing.q.store.stores">¿Cuántas tiendas físicas tienes?</legend><div class="pq-opts"><label class="pq-opt"><input type="radio" name="storeStores" value="0" checked> <span data-i18n="pricing.q.store.t0">Una</span></label><label class="pq-opt"><input type="radio" name="storeStores" value="2"> <span data-i18n="pricing.q.store.t1">Varias</span></label></div></fieldset>
+              <fieldset class="pq-field"><legend data-i18n="pricing.q.store.products">¿Cuántos productos vas a vender?</legend><div class="pq-opts"><label class="pq-opt"><input type="radio" name="storeProducts" value="0" checked> <span data-i18n="pricing.q.store.p0">Hasta 250</span></label><label class="pq-opt"><input type="radio" name="storeProducts" value="1"> <span data-i18n="pricing.q.store.p1">Hasta 500</span></label><label class="pq-opt"><input type="radio" name="storeProducts" value="2"> <span data-i18n="pricing.q.store.p2">Más de 500</span></label></div></fieldset>
+              <fieldset class="pq-field"><legend data-i18n="pricing.q.more">¿Qué más necesitas?</legend><div class="pq-opts"><label class="pq-opt"><input type="checkbox" name="storeExtra" value="std"> <span data-i18n="pricing.q.store.e1">Pago por transferencia o SINPE, reseñas, promociones o inventario con alertas</span></label><label class="pq-opt"><input type="checkbox" name="storeExtra" value="pro"> <span data-i18n="pricing.q.store.e2">Puntos de fidelidad o roles y permisos personalizados</span></label><label class="pq-opt"><input type="checkbox" name="storeExtra" value="einvoice"> <span data-i18n="pricing.q.store.e3">Factura electrónica</span></label></div></fieldset>
+            </div>
+            <div class="pq-branch" data-branch="custom" hidden>
+              <p class="pq-custom-note" data-i18n="pricing.q.custom.note">No hay preguntas: cada sistema es distinto. Te enviamos una propuesta por escrito.</p>
+            </div>
+          </form>
+
+          <div class="pq-result glass-card" id="pq-result" aria-live="polite">
+            <p class="pq-prompt" id="pq-prompt" data-i18n="pricing.q.prompt">Elige una opción para ver tu plan.</p>
+            <div class="pq-result-body" id="pq-result-body" hidden>
+              <p class="pq-kicker" data-i18n="pricing.q.res.kicker">Plan sugerido</p>
+              <h3 class="pq-plan" id="pq-plan"></h3>
+              <p class="pq-for" id="pq-for"></p>
+              <dl class="pq-lines" id="pq-lines"></dl>
+              <p class="pq-addon" id="pq-addon" hidden></p>
+              <p class="pq-answers" id="pq-answers"><span data-i18n="pricing.q.res.answers">Tus respuestas:</span> <span id="pq-answers-text"></span></p>
+              <p class="pq-note" data-i18n="pricing.q.res.note">Es una guía, no una cotización formal: te confirmamos el alcance y el precio por escrito. Montos en dólares, sin IVA.</p>
+              <a class="btn btn-primary pq-wa" id="pq-wa" href="https://wa.me/50671358066" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                <span id="pq-wa-text" data-i18n="pricing.q.res.btn">Enviar este resumen por WhatsApp</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="pr-conditions section" aria-labelledby="pr-cond-heading">
       <div class="container">
         <div class="section-header">
@@ -518,5 +565,6 @@
   <script src="../components/footer.js" defer></script>
   <script src="../main.js" defer></script>
   <script src="pricing.js" defer></script>
+  <script src="quote.js" defer></script>
 </body>
 </html>
