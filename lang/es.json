@@ -1107,5 +1107,17 @@
  "plans.custom.title": "Software a medida",
  "plans.custom.text": "Sistemas y apps hechos para tu operación. Te enviamos una propuesta por escrito.",
  "plans.custom.from": "Se cotiza según el alcance",
- "plans.custom.link": "Ver cómo cotizamos"
+ "plans.custom.link": "Ver cómo cotizamos",
+ "fit.badge": "¿Es para ti?",
+ "fit.title": "Cada servicio, <span class=\"accent\">para quién es</span>",
+ "fit.intro": "Preferimos decírtelo antes de empezar, para que sepas si encajamos.",
+ "fit.lead": "Es para ti si:",
+ "fit.web.1": "Quieres que tus clientes te encuentren en Google y vean tus servicios, tu ubicación y tu contacto.",
+ "fit.web.2": "Prefieres que nosotros carguemos tu contenido, y tú entregas los textos y las fotos listos.",
+ "fit.web.3": "Quieres editar tu contenido tú mismo, con una sesión de capacitación.",
+ "fit.store.1": "Quieres vender por internet con pago con tarjeta y envío a domicilio o retiro en tienda.",
+ "fit.store.2": "Necesitas un panel para controlar catálogo, inventario y pedidos desde cualquier dispositivo.",
+ "fit.store.3": "Tienes una o varias tiendas físicas y quieres vender en línea con tu marca y tus datos.",
+ "fit.custom.1": "Necesitas un sistema o una app hechos para la operación de tu negocio.",
+ "fit.custom.2": "Estás de acuerdo en empezar con una conversación y una propuesta por escrito, con alcance, plazo y precio."
 }
