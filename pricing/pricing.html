@@ -46,6 +46,148 @@
     ]
   }
   </script>
+  <!-- Datos estructurados de los planes. Los montos salen de pricing/prices.json: si cambian allá, actualizarlos aquí.
+       Si showPrices pasa a false, quitar los "offers" (los datos no deben mostrar precios que la página oculta). -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": "https://vanguardsolutionscr.com/pricing/pricing.html#sitio-web",
+        "name": "Sitio web",
+        "serviceType": "Desarrollo de sitios web",
+        "description": "Sitio web profesional para tu negocio, con prototipo, CMS Sanity para editar tu contenido y 12 meses de garantía.",
+        "provider": {
+          "@id": "https://vanguardsolutionscr.com/#organization"
+        },
+        "areaServed": {
+          "@type": "Country",
+          "name": "Costa Rica"
+        },
+        "url": "https://vanguardsolutionscr.com/pricing/pricing.html#sitio",
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "Sitio web Base",
+            "description": "Desarrollo (pago único): una sola página con secciones. Plazo de 2 a 4 semanas. Mensualidad de 30 USD desde la publicación, con un mínimo de 12 meses. Montos sin IVA.",
+            "price": "775",
+            "priceCurrency": "USD",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "775",
+              "priceCurrency": "USD",
+              "valueAddedTaxIncluded": false
+            },
+            "url": "https://vanguardsolutionscr.com/pricing/pricing.html#sitio"
+          },
+          {
+            "@type": "Offer",
+            "name": "Sitio web Standard",
+            "description": "Desarrollo (pago único): un sitio de varias páginas. Plazo de 3 a 5 semanas. Mensualidad de 45 USD desde la publicación, con un mínimo de 12 meses. Montos sin IVA.",
+            "price": "1350",
+            "priceCurrency": "USD",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "1350",
+              "priceCurrency": "USD",
+              "valueAddedTaxIncluded": false
+            },
+            "url": "https://vanguardsolutionscr.com/pricing/pricing.html#sitio"
+          },
+          {
+            "@type": "Offer",
+            "name": "Sitio web Profesional",
+            "description": "Desarrollo (pago único): un sitio completo con filtros y buscador. Plazo de 4 a 6 semanas. Mensualidad de 65 USD desde la publicación, con un mínimo de 12 meses. Montos sin IVA.",
+            "price": "1925",
+            "priceCurrency": "USD",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "1925",
+              "priceCurrency": "USD",
+              "valueAddedTaxIncluded": false
+            },
+            "url": "https://vanguardsolutionscr.com/pricing/pricing.html#sitio"
+          }
+        ]
+      },
+      {
+        "@type": "Service",
+        "@id": "https://vanguardsolutionscr.com/pricing/pricing.html#tienda-en-linea",
+        "name": "Tienda en línea con panel de administración",
+        "serviceType": "Desarrollo de tiendas en línea",
+        "description": "Tienda en línea con panel de administración: catálogo, pago con tarjeta, inventario y pedidos, lista en 2 a 3 semanas.",
+        "provider": {
+          "@id": "https://vanguardsolutionscr.com/#organization"
+        },
+        "areaServed": {
+          "@type": "Country",
+          "name": "Costa Rica"
+        },
+        "url": "https://vanguardsolutionscr.com/pricing/pricing.html#tienda",
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "Tienda en línea Base",
+            "description": "Licencia (pago único): una tienda, hasta 250 productos. Setup de 200 USD y mensualidad de 55 USD desde la apertura, con un mínimo de 12 meses. Plazo de 2 a 3 semanas. Montos sin IVA.",
+            "price": "1250",
+            "priceCurrency": "USD",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "1250",
+              "priceCurrency": "USD",
+              "valueAddedTaxIncluded": false
+            },
+            "url": "https://vanguardsolutionscr.com/pricing/pricing.html#tienda"
+          },
+          {
+            "@type": "Offer",
+            "name": "Tienda en línea Standard",
+            "description": "Licencia (pago único): una tienda, hasta 500 productos. Setup de 400 USD y mensualidad de 85 USD desde la apertura, con un mínimo de 12 meses. Plazo de 2 a 3 semanas. Montos sin IVA.",
+            "price": "3300",
+            "priceCurrency": "USD",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "3300",
+              "priceCurrency": "USD",
+              "valueAddedTaxIncluded": false
+            },
+            "url": "https://vanguardsolutionscr.com/pricing/pricing.html#tienda"
+          },
+          {
+            "@type": "Offer",
+            "name": "Tienda en línea Profesional",
+            "description": "Licencia (pago único): varias tiendas físicas con traslados de inventario. Setup de 600 USD y mensualidad de 155 USD desde la apertura, con un mínimo de 12 meses. Plazo de 2 a 3 semanas. Montos sin IVA.",
+            "price": "9400",
+            "priceCurrency": "USD",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "9400",
+              "priceCurrency": "USD",
+              "valueAddedTaxIncluded": false
+            },
+            "url": "https://vanguardsolutionscr.com/pricing/pricing.html#tienda"
+          }
+        ]
+      },
+      {
+        "@type": "Service",
+        "@id": "https://vanguardsolutionscr.com/pricing/pricing.html#software-a-medida",
+        "name": "Software a medida",
+        "serviceType": "Desarrollo de software a medida",
+        "description": "Sistemas y apps hechos para tu operación. Se cotiza según el alcance, con una propuesta por escrito.",
+        "provider": {
+          "@id": "https://vanguardsolutionscr.com/#organization"
+        },
+        "areaServed": {
+          "@type": "Country",
+          "name": "Costa Rica"
+        },
+        "url": "https://vanguardsolutionscr.com/pricing/pricing.html#software"
+      }
+    ]
+  }
+  </script>
   <link rel="preload" href="/assets/vendor/fonts/orbitron-e8a5b1bf.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/assets/vendor/fonts/montserrat-49e242af.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="/assets/vendor/fontawesome/css/all.min.css" />
