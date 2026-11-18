@@ -783,3 +783,5 @@ html {
 .static-nav { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; padding: 1rem 2rem; }
 .static-nav a { color: var(--cyan); font-family: var(--font-tech); font-size: 0.9rem; letter-spacing: 0.06em; text-transform: uppercase; }
 .static-nav--footer { justify-content: center; border-top: 1px solid var(--glass-border); }
+/* El de respaldo del encabezado se superpone en vez de empujar la página: al cargar el encabezado real no hay salto */
+#header-placeholder > .static-nav { position: absolute; top: 0; left: 0; right: 0; z-index: 1; }
