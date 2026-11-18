@@ -13,6 +13,27 @@
     window._servicesInited = true;
     addCardRevealDelays();
     addCardTiltEffect();
+    loadPlanPrices();
+  }
+
+  /* "Desde $X" del resumen de planes: sale de pricing/prices.json (única fuente de verdad)
+     y solo se muestra si showPrices es true */
+  function loadPlanPrices() {
+    var slots = document.querySelectorAll('[data-plan-price]');
+    if (!slots.length) return;
+    fetch('../pricing/prices.json', { cache: 'no-cache' })
+      .then(function (r) { return r.ok ? r.json() : Promise.reject(new Error('prices.json ' + r.status)); })
+      .then(function (data) {
+        if (data.showPrices !== true) return;
+        slots.forEach(function (el) {
+          var value = el.dataset.planPrice.split('.').reduce(function (o, k) { return o == null ? o : o[k]; }, data);
+          if (typeof value !== 'number') return;
+          el.textContent = '$' + value.toLocaleString('en-US');
+          var line = el.closest('[data-plan-from]');
+          if (line) line.hidden = false;
+        });
+      })
+      .catch(function () { /* sin precios: la tarjeta queda sin el "desde" */ });
   }
 
   /* Stagger reveal delays */

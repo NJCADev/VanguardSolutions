@@ -102,7 +102,7 @@
     if (!wanted || !select || !Array.from(select.options).some((o) => o.value === wanted)) return;
     select.value = wanted;
     const textarea = document.getElementById('cf-message');
-    const text = wanted === 'ecommerce' ? tr('js.prefill.ecommerce', 'Hola, quiero una demo de NovaTienda para mi negocio. Tengo __ sucursales.') : '';
+    const text = wanted === 'ecommerce' ? tr('js.prefill.ecommerce', 'Hola, quiero una tienda en línea con panel de administración para mi negocio. Tengo __ sucursales.') : '';
     if (textarea && text && !textarea.value) textarea.value = text;
   }
 
@@ -278,7 +278,7 @@
       hosting : 'Hosting para tu sitio o tienda',
       domains : 'Gestión de Dominios',
       support : 'Soporte Técnico Especializado',
-      ecommerce: 'Tienda en Línea (NovaTienda)',
+      ecommerce: 'Tienda en Línea (con panel de administración)',
       other   : 'Otro / Consulta General',
     })[v] || v || 'No especificado';
   }
