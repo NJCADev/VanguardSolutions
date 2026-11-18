@@ -11,6 +11,7 @@
     const path = window.location.pathname.toLowerCase();
     if (path.includes('/privacy/')) return '';
     if (path.includes('/pricing/')) return 'pricing';
+    if (path.includes('/industries/')) return '';   // sin entrada en el menú; se enlaza desde el pie
     if (path.includes('/home/') || path.endsWith('/') || path.endsWith('index.html')) return 'home';
     if (path.includes('/blogs/')) return 'blogs';
     if (path.includes('/services/')) return 'services';
@@ -269,6 +270,9 @@
       'wa.services': 'Hola, estuve revisando sus servicios y quiero cotizar uno. ¿Me pueden asesorar?',
       'wa.contact': 'Hola, los encontré en la página de contacto y quiero cotizar mi proyecto.',
       'wa.pricing': 'Hola, estuve viendo sus planes y precios y quiero cotizar.',
+      'wa.clinics': 'Hola, vi su página de sitios web para clínicas y quiero cotizar.',
+      'wa.opticians': 'Hola, vi su página de sitios web para ópticas y quiero cotizar.',
+      'wa.restaurants': 'Hola, vi su página de sitios web para restaurantes y quiero cotizar.',
       'wa.generic': 'Hola, vi su sitio web y me gustaría recibir más información.'
     };
     const key = fallbacks['wa.' + where] ? 'wa.' + where : 'wa.generic';
