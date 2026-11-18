@@ -528,3 +528,50 @@
 @media (min-width: 768px) {
   .pm-two { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; }
 }
+
+/* ── PRESUPUESTO ESTIMADO DEL COTIZADOR ─────────────────────── */
+.pq-opt-price {
+  margin-left: auto;
+  padding-left: var(--space-xs);
+  font-size: 0.78rem;
+  color: rgba(224, 224, 224, 0.6);
+  white-space: nowrap;
+}
+
+.pq-opt-price[hidden],
+.pq-why[hidden],
+.pq-budget[hidden],
+.pq-bnote[hidden],
+.pq-alt[hidden],
+.pq-budget .pq-note[hidden] { display: none; }
+
+.pq-why {
+  margin: var(--space-sm) 0 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--cyan);
+}
+
+.pq-budget {
+  margin-top: var(--space-sm);
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--glass-border);
+}
+
+.pq-h4 {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  color: #fff;
+}
+
+.pq-budget .pq-lines { border-top: 0; padding-top: 0; margin-top: var(--space-xs); }
+.pq-budget .pq-lines > div:last-child dt,
+.pq-budget .pq-lines > div:last-child dd { color: #fff; font-weight: 700; }
+
+.pq-bnote,
+.pq-alt {
+  margin: var(--space-xs) 0 0;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: rgba(224, 224, 224, 0.75);
+}
