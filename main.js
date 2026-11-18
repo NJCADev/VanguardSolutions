@@ -10,7 +10,7 @@
   function detectActivePage() {
     const path = window.location.pathname.toLowerCase();
     if (path.includes('/privacy/')) return '';
-    if (path.includes('/pricing/')) return '';   // aún sin entrada en el menú (S8b)
+    if (path.includes('/pricing/')) return 'pricing';
     if (path.includes('/home/') || path.endsWith('/') || path.endsWith('index.html')) return 'home';
     if (path.includes('/blogs/')) return 'blogs';
     if (path.includes('/services/')) return 'services';
@@ -263,7 +263,7 @@
     const ctx = (document.querySelector('[data-wa-context]') || {}).dataset;
     const where = ctx && ctx.waContext;
     const fallbacks = {
-      'wa.novatienda': 'Hola, vi NovaTienda en su sitio y quiero una demo para mi negocio.',
+      'wa.novatienda': 'Hola, vi el ejemplo NovaTienda en su sitio y quiero una tienda en línea como esa para mi negocio.',
       'wa.products': 'Hola, vi su catálogo de licencias y quiero una cotización.',
       'wa.home': 'Hola, vi su sitio y quiero conversar sobre mi proyecto: sitio web, tienda en línea o software.',
       'wa.services': 'Hola, estuve revisando sus servicios y quiero cotizar uno. ¿Me pueden asesorar?',

@@ -65,7 +65,7 @@
   </div>
 
   <!-- HEADER PLACEHOLDER -->
-  <div id="header-placeholder"><nav class="static-nav" aria-label="Navegación principal"><a href="/home/home.html">Inicio</a><a href="/blogs/blogs.html">Blog</a><a href="/services/services.html">Servicios</a><a href="/products/products.html">Productos</a><a href="/proyects/proyects.html">Proyectos</a><a href="/contact/contact.html">Contacto</a></nav></div>
+  <div id="header-placeholder"><nav class="static-nav" aria-label="Navegación principal"><a href="/home/home.html">Inicio</a><a href="/blogs/blogs.html">Blog</a><a href="/services/services.html">Servicios</a><a href="/pricing/pricing.html">Planes</a><a href="/products/products.html">Productos</a><a href="/proyects/proyects.html">Proyectos</a><a href="/contact/contact.html">Contacto</a></nav></div>
 
   <main class="main-content" id="main-content" data-wa-context="services">
 
@@ -83,6 +83,9 @@
         </span>
         <h1 data-i18n-html="home.011">Soluciones que <span class="accent">Transforman</span></h1>
         <p data-i18n="services.005">Tecnología a tu medida — un portafolio completo de servicios diseñados para empresas que quieren liderar el cambio digital. Trabajamos con negocios y empresas de todos los tamaños, desde emprendimientos hasta medianas y grandes empresas.</p>
+        <div class="cta-actions mt-lg">
+          <a href="../pricing/pricing.html" class="btn btn-primary"><span data-i18n="plans.cta">Ver planes</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
       </div>
     </section>
 
@@ -236,7 +239,7 @@
             <ul data-i18n-attr="aria-label:services.011" class="sc-features" aria-label="Características incluidas">
               <li><i class="fa-solid fa-check" aria-hidden="true"></i> <span data-i18n="services.051">Respuesta el mismo día hábil</span></li>
               <li><i class="fa-solid fa-check" aria-hidden="true"></i> <span data-i18n="services.052">Soporte remoto y presencial (Cartago)</span></li>
-              <li><i class="fa-solid fa-check" aria-hidden="true"></i> <span data-i18n="services.053">Garantía de 12 meses en sitios y NovaTienda</span></li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i> <span data-i18n="services.053">Garantía de 12 meses en sitios y tiendas en línea</span></li>
               <li><i class="fa-solid fa-check" aria-hidden="true"></i> <span data-i18n="services.054">Mantenimiento y recomendaciones en tu mensualidad</span></li>
             </ul>
             <div data-i18n-attr="aria-label:services.055" class="sc-tags" aria-label="Canales de soporte">
@@ -246,6 +249,46 @@
               <span data-i18n="services.059" class="sc-tag sc-tag--purple">Presencial</span>
             </div>
             <div class="sc-glow-border" aria-hidden="true"></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         PLANES Y PRECIOS (resumen; el detalle está en /pricing)
+    ══════════════════════════════════════════════════════ -->
+    <section class="plans-section section" id="planes" aria-labelledby="plans-heading">
+      <div class="container">
+        <div class="section-header">
+          <span data-i18n="plans.badge" class="neon-badge mb-sm">Planes y precios</span><br>
+          <h2 data-i18n-html="plans.title" id="plans-heading">Elige un <span class="accent">plan</span></h2>
+          <div class="section-divider"></div>
+          <p data-i18n="plans.intro">Pagas el desarrollo una vez y una mensualidad desde que sale en línea. Montos en dólares, sin IVA.</p>
+        </div>
+
+        <div class="plans-grid">
+          <article class="plans-card glass-card reveal">
+            <div class="plans-icon"><i class="fa-solid fa-globe" aria-hidden="true"></i></div>
+            <h3 data-i18n="plans.web.title">Sitio web</h3>
+            <p data-i18n="plans.web.text">De una página con secciones a un sitio completo, con mensualidad desde la publicación.</p>
+            <p class="plans-from" data-plan-from hidden><span data-i18n="plans.from">Desde</span> <strong data-plan-price="web.base.dev"></strong></p>
+            <a class="plans-link" href="../pricing/pricing.html#sitio"><span data-i18n="plans.web.link">Ver planes de sitio web</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          </article>
+
+          <article class="plans-card glass-card reveal">
+            <div class="plans-icon plans-icon--purple"><i class="fa-solid fa-store" aria-hidden="true"></i></div>
+            <h3 data-i18n="plans.store.title">Tienda en línea</h3>
+            <p data-i18n="plans.store.text">Tienda en línea con panel de administración. Lista en 2 a 3 semanas.</p>
+            <p class="plans-from" data-plan-from hidden><span data-i18n="plans.from">Desde</span> <strong data-plan-price="store.base.license"></strong> <span data-i18n="plans.store.license">de licencia</span></p>
+            <a class="plans-link" href="../pricing/pricing.html#tienda"><span data-i18n="plans.store.link">Ver planes de tienda en línea</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          </article>
+
+          <article class="plans-card glass-card reveal">
+            <div class="plans-icon"><i class="fa-solid fa-code" aria-hidden="true"></i></div>
+            <h3 data-i18n="plans.custom.title">Software a medida</h3>
+            <p data-i18n="plans.custom.text">Sistemas y apps hechos para tu operación. Te enviamos una propuesta por escrito.</p>
+            <p class="plans-from" data-i18n="plans.custom.from">Se cotiza según el alcance</p>
+            <a class="plans-link" href="../pricing/pricing.html#software"><span data-i18n="plans.custom.link">Ver cómo cotizamos</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
           </article>
         </div>
       </div>
@@ -267,7 +310,7 @@
           <article class="trust-card glass-card reveal">
             <div class="trust-icon"><i class="fa-solid fa-clock" aria-hidden="true"></i></div>
             <h3 data-i18n="trust.time.title">Plazos reales</h3>
-            <p data-i18n="trust.time.text">Sitios web: de 2 a 6 semanas según el plan. NovaTienda: de 2 a 3 semanas (10 a 15 días hábiles). El prototipo y los reajustes van dentro del plan.</p>
+            <p data-i18n="trust.time.text">Sitios web: de 2 a 6 semanas según el plan. Tienda en línea: de 2 a 3 semanas (10 a 15 días hábiles). El prototipo y los reajustes van dentro del plan.</p>
           </article>
           <article class="trust-card glass-card reveal">
             <div class="trust-icon trust-icon--purple"><i class="fa-solid fa-coins" aria-hidden="true"></i></div>
@@ -381,6 +424,7 @@
               <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
               <span data-i18n="services.081">Solicitar Consulta</span>
             </a>
+            <a href="../pricing/pricing.html" class="btn btn-outline"><span data-i18n="plans.cta">Ver planes</span></a>
           </div>
           <p data-i18n="wa.note" class="wa-note">Lun–Vie 8 am–6 pm · te responde quien lo desarrolla</p>
         </div>
@@ -389,7 +433,7 @@
 
   </main>
 
-  <div id="footer-placeholder"><nav class="static-nav static-nav--footer" aria-label="Pie de página"><a href="/home/home.html">Inicio</a><a href="/blogs/blogs.html">Blog</a><a href="/services/services.html">Servicios</a><a href="/products/products.html">Productos</a><a href="/proyects/proyects.html">Proyectos</a><a href="/contact/contact.html">Contacto</a><a href="/privacy/privacy.html">Política de privacidad</a></nav></div>
+  <div id="footer-placeholder"><nav class="static-nav static-nav--footer" aria-label="Pie de página"><a href="/home/home.html">Inicio</a><a href="/blogs/blogs.html">Blog</a><a href="/services/services.html">Servicios</a><a href="/pricing/pricing.html">Planes</a><a href="/products/products.html">Productos</a><a href="/proyects/proyects.html">Proyectos</a><a href="/contact/contact.html">Contacto</a><a href="/privacy/privacy.html">Política de privacidad</a></nav></div>
 
   <script src="../config.js"></script>
   <script src="../components/i18n.js" defer></script>
