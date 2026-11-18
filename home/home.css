@@ -207,6 +207,48 @@
   font-size: 0.95rem;
 }
 
+/* ── HERO NOTE + FRANJA DE SERVICIOS ────────────────────────── */
+.hero-note {
+  font-size: 0.85rem;
+  color: rgba(224, 224, 224, 0.6);
+  animation: fadeSlideDown 1s 0.45s ease both;
+}
+
+.hero-strip {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-sm);
+  width: 100%;
+  margin-top: var(--space-sm);
+  padding: var(--space-md) 0 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  animation: fadeSlideDown 1s 0.5s ease both;
+}
+
+.hero-strip-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding-top: 0.75rem;
+  border-top: 2px solid rgba(0, 240, 255, 0.25);
+  font-size: 0.85rem;
+  color: rgba(224, 224, 224, 0.6);
+}
+
+.hero-strip-item strong {
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+@media (min-width: 640px) {
+  .hero-strip { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .hero-strip { grid-template-columns: repeat(4, 1fr); }
+}
+
 /* ── HERO STATS ─────────────────────────────────────────────── */
 .hero-stats {
   display: flex;
