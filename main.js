@@ -10,6 +10,7 @@
   function detectActivePage() {
     const path = window.location.pathname.toLowerCase();
     if (path.includes('/privacy/')) return '';
+    if (path.includes('/pricing/')) return '';   // aún sin entrada en el menú (S8b)
     if (path.includes('/home/') || path.endsWith('/') || path.endsWith('index.html')) return 'home';
     if (path.includes('/blogs/')) return 'blogs';
     if (path.includes('/services/')) return 'services';
@@ -267,6 +268,7 @@
       'wa.home': 'Hola, vi su sitio y quiero conversar sobre mi proyecto: sitio web, tienda en línea o software.',
       'wa.services': 'Hola, estuve revisando sus servicios y quiero cotizar uno. ¿Me pueden asesorar?',
       'wa.contact': 'Hola, los encontré en la página de contacto y quiero cotizar mi proyecto.',
+      'wa.pricing': 'Hola, estuve viendo sus planes y precios y quiero cotizar.',
       'wa.generic': 'Hola, vi su sitio web y me gustaría recibir más información.'
     };
     const key = fallbacks['wa.' + where] ? 'wa.' + where : 'wa.generic';
@@ -282,6 +284,9 @@
 
   /** Mensaje para un plan concreto (enlaces con data-wa-plan="Sitio Standard"). */
   function waPlanMessage(name) {
+    // data-wa-plan puede ser el nombre tal cual o una clave de idioma (así sale en inglés)
+    const translated = window.VanguardI18n && window.VanguardI18n.t(name);
+    if (translated) name = translated;
     const tpl = (window.VanguardI18n && window.VanguardI18n.t('wa.plan', { name })) || '';
     return tpl || ('Hola, me interesa el plan ' + name + '. ¿Me pueden dar información?');
   }

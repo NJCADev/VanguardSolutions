@@ -1,0 +1,32 @@
+{
+  "showPrices": true,
+  "currency": "USD",
+  "colonRate": 450,
+  "updated": "2026-11-17",
+  "web": {
+    "domain": 25,
+    "base": { "dev": 775, "monthly": 30 },
+    "standard": { "dev": 1350, "monthly": 45 },
+    "pro": { "dev": 1925, "monthly": 65 }
+  },
+  "store": {
+    "base": { "license": 1250, "setup": 200, "monthly": 55 },
+    "standard": { "license": 3300, "setup": 400, "monthly": 85 },
+    "pro": { "license": 9400, "setup": 600, "monthly": 155 }
+  },
+  "extras": {
+    "domain": 25,
+    "emailjs": 9,
+    "session": 100,
+    "hour": 15,
+    "almendro": 39,
+    "brevo": 9,
+    "r2": 5,
+    "onvopayPct": 5,
+    "einvoice": 1600,
+    "multistore": 1200,
+    "designMin": 1550,
+    "designMax": 3000,
+    "integration": 1800
+  }
+}
