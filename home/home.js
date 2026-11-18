@@ -29,6 +29,9 @@
     const canvas = document.getElementById('hero-canvas');
     if (!canvas) return;
 
+    // En celulares y con «reducir movimiento» no se anima el fondo de partículas
+    if (window.matchMedia('(max-width: 767px), (prefers-reduced-motion: reduce)').matches) return;
+
     const ctx = canvas.getContext('2d');
     let particles = [];
     let animId;
@@ -146,6 +149,13 @@
     ];
     // Frases del idioma activo (si no hay traducción disponible, español)
     const getPhrases = () => (window.VanguardI18n && window.VanguardI18n.t('js.typing')) || PHRASES_ES;
+
+    // Con «reducir movimiento» se muestra la primera frase sin animar
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      el.textContent = getPhrases()[0];
+      document.addEventListener('vanguard:langchange', () => { el.textContent = getPhrases()[0]; });
+      return;
+    }
 
     let phraseIndex = 0;
     let charIndex = 0;
