@@ -65,15 +65,9 @@
     if (!waBtn) return;
 
     waBtn.addEventListener('click', function () {
-      var url =
-        'https://wa.me/50671358066?text=' +
-        '%E2%9A%A1%20' +
-        '%C2%A1Hola%20equipo%20de%20Vanguard%20Solutions!%20' +
-        '%F0%9F%91%8B%20' +
-        'Encontr%C3%A9%20su%20sitio%20web%20y%20me%20interesa%20' +
-        'saber%20m%C3%A1s%20sobre%20sus%20servicios.%20' +
-        '%C2%BFPodr%C3%ADamos%20hablar%3F%20' +
-        '%F0%9F%9A%80';
+      var url = window.VanguardWA
+        ? window.VanguardWA.href()
+        : 'https://wa.me/50671358066?text=' + encodeURIComponent('Hola, los encontré en la página de contacto y quiero cotizar mi proyecto.');
 
       window.open(url, '_blank', 'noopener,noreferrer');
     });
