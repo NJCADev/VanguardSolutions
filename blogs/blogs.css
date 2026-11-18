@@ -1147,3 +1147,39 @@
   box-shadow: 0 0 15px rgba(255,45,149,0.3);
 }
 .bf-btn--pink:hover { box-shadow: 0 0 8px #FF2D95, 0 0 24px rgba(255,45,149,0.4); }
+
+/* ── COLOR AZUL (sexto artículo) ──────────────────────────────── */
+.blog-category--blue {
+  background: rgba(77,124,255,0.1);
+  border: 1px solid rgba(77,124,255,0.3);
+  color: #8aa9ff;
+}
+.blog-featured--blue {
+  border-color: rgba(77,124,255,0.1);
+  background: linear-gradient(135deg, rgba(77,124,255,0.03), rgba(0,240,255,0.02));
+}
+.blog-featured--blue::before { background: linear-gradient(135deg, #4D7CFF, #00F0FF); }
+.blog-featured--blue:hover {
+  border-color: rgba(77,124,255,0.25);
+  box-shadow: 0 0 40px rgba(77,124,255,0.06), 0 20px 60px rgba(0,0,0,0.4);
+}
+.bf-image--blue {
+  background:
+    radial-gradient(ellipse at 30% 30%, rgba(77,124,255,0.2) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 70%, rgba(0,240,255,0.08) 0%, transparent 50%),
+    linear-gradient(135deg, #0a0d1a, #0c1224);
+  border: 1px solid rgba(77,124,255,0.15);
+}
+.bf-image--blue .bf-image-icon {
+  background: linear-gradient(135deg, #4D7CFF, #00F0FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 20px rgba(77,124,255,0.5));
+}
+.bf-image-glow--blue { background: radial-gradient(circle, rgba(77,124,255,0.1) 0%, transparent 65%); }
+.bf-btn--blue {
+  background: linear-gradient(135deg, #4D7CFF, #00F0FF);
+  box-shadow: 0 0 15px rgba(77,124,255,0.3);
+}
+.bf-btn--blue:hover { box-shadow: 0 0 8px #4D7CFF, 0 0 24px rgba(77,124,255,0.4); }
