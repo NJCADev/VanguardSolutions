@@ -139,11 +139,10 @@
     if (!el) return;
 
     const PHRASES_ES = [
-      'transformamos ideas en software.',
-      'construimos el futuro digital.',
-      'desarrollamos apps que destacan.',
-      'optimizamos tu presencia online.',
-      'somos tu socio tecnológico.'
+      'hacemos sitios web para tu negocio.',
+      'montamos tu tienda en línea.',
+      'desarrollamos software a la medida.',
+      'cuidamos tu hosting y mantenimiento.'
     ];
     // Frases del idioma activo (si no hay traducción disponible, español)
     const getPhrases = () => (window.VanguardI18n && window.VanguardI18n.t('js.typing')) || PHRASES_ES;
