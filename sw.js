@@ -5,7 +5,7 @@
  * - Solo toca peticiones del mismo origen (no Google, fuentes ni EmailJS).
  */
 const CACHE = 'vanguard-v1';
-const SHELL = ['/home/home.html', '/assets/icons/icon-192.png'];
+const SHELL = ['/home/home.html', '/assets/icons/icon-192-v2.png'];
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
