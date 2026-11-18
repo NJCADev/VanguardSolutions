@@ -246,3 +246,6 @@
     gap: 0.3rem;
   }
 }
+
+/* Segundo bloque de enlaces de la columna (sitios por industria) */
+.footer-col-title--sub { margin-top: var(--space-md); }
