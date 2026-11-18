@@ -261,12 +261,16 @@
   function waMessage() {
     const ctx = (document.querySelector('[data-wa-context]') || {}).dataset;
     const where = ctx && ctx.waContext;
-    const key = where === 'novatienda' ? 'wa.novatienda' : where === 'products' ? 'wa.products' : 'wa.generic';
-    const fallback = {
+    const fallbacks = {
       'wa.novatienda': 'Hola, vi NovaTienda en su sitio y quiero una demo para mi negocio.',
       'wa.products': 'Hola, vi su catálogo de licencias y quiero una cotización.',
+      'wa.home': 'Hola, vi su sitio y quiero conversar sobre mi proyecto: sitio web, tienda en línea o software.',
+      'wa.services': 'Hola, estuve revisando sus servicios y quiero cotizar uno. ¿Me pueden asesorar?',
+      'wa.contact': 'Hola, los encontré en la página de contacto y quiero cotizar mi proyecto.',
       'wa.generic': 'Hola, vi su sitio web y me gustaría recibir más información.'
-    }[key];
+    };
+    const key = fallbacks['wa.' + where] ? 'wa.' + where : 'wa.generic';
+    const fallback = fallbacks[key];
     return (window.VanguardI18n && window.VanguardI18n.t(key)) || fallback;
   }
 
@@ -274,6 +278,12 @@
   function waProductMessage(name) {
     const tpl = (window.VanguardI18n && window.VanguardI18n.t('wa.product', { name })) || '';
     return tpl || ('Hola, quiero adquirir ' + name + '. ¿Me pueden dar información?');
+  }
+
+  /** Mensaje para un plan concreto (enlaces con data-wa-plan="Sitio Standard"). */
+  function waPlanMessage(name) {
+    const tpl = (window.VanguardI18n && window.VanguardI18n.t('wa.plan', { name })) || '';
+    return tpl || ('Hola, me interesa el plan ' + name + '. ¿Me pueden dar información?');
   }
 
   function waLink(text) {
@@ -284,13 +294,18 @@
     return waLink(waMessage());
   }
 
+  // Lo usa contact.js para abrir el chat con el mismo mensaje que el resto del sitio
+  window.VanguardWA = { href: waHref };
+
   function renderWhatsApp() {
     const t = (k, d) => (window.VanguardI18n && window.VanguardI18n.t(k)) || d;
     const href = waHref();
 
     // Enlaces de las páginas marcados con data-wa
     document.querySelectorAll('a[data-wa]').forEach((a) => {
-      a.href = a.dataset.waProduct ? waLink(waProductMessage(a.dataset.waProduct)) : href;
+      if (a.dataset.waProduct) a.href = waLink(waProductMessage(a.dataset.waProduct));
+      else if (a.dataset.waPlan) a.href = waLink(waPlanMessage(a.dataset.waPlan));
+      else a.href = href;
     });
 
     let btn = document.getElementById('wa-float');

@@ -677,6 +677,16 @@ html {
   .main-content { padding-top: 0; }
 }
 
+/* ── MICROTEXTO DE HORARIO JUNTO A LOS BOTONES DE WHATSAPP ───── */
+.wa-note {
+  margin-top: var(--space-sm);
+  font-size: 0.85rem;
+  color: rgba(224, 224, 224, 0.6);
+  text-align: center;
+}
+
+.wa-note--start { text-align: left; }
+
 /* ── BOTÓN FLOTANTE DE WHATSAPP (todas las páginas) ───────────── */
 .wa-float {
   position: fixed;
