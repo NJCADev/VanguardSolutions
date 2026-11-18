@@ -56,4 +56,16 @@
     <loc>https://vanguardsolutionscr.com/blogs/perfil-negocio-google.html</loc>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://vanguardsolutionscr.com/blogs/frontera-competitiva.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://vanguardsolutionscr.com/blogs/primeros-3-segundos.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://vanguardsolutionscr.com/blogs/mas-alla-del-boton-de-descarga.html</loc>
+    <priority>0.6</priority>
+  </url>
 </urlset>

@@ -34,6 +34,13 @@ async function loadHeader(activePage = '') {
  * Determina cuántos niveles de profundidad tiene la página actual.
  */
 function getPathDepth() {
+  // En http(s) la profundidad sale de la propia ruta: cualquier página dentro de una carpeta
+  // (/pricing/, /industries/, /blogs/…) usa «../», sin depender de una lista de carpetas.
+  if (window.location.protocol === 'http:' || window.location.protocol === 'https:') {
+    const segs = window.location.pathname.split('/').filter(Boolean);
+    const dirs = segs.length - (segs.length && segs[segs.length - 1].includes('.') ? 1 : 0);
+    return dirs > 0 ? dirs : 0;
+  }
   const knownFolders = ['home', 'services', 'products', 'proyects', 'privacy', 'novatienda', 'contact', 'pricing', 'industries', 'blog', 'blogs'];
   const path = window.location.pathname.toLowerCase();
 
