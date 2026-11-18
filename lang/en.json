@@ -1107,5 +1107,17 @@
  "plans.custom.title": "Custom software",
  "plans.custom.text": "Systems and apps built for your operation. We send you a written proposal.",
  "plans.custom.from": "Quoted by scope",
- "plans.custom.link": "See how we quote"
+ "plans.custom.link": "See how we quote",
+ "fit.badge": "Is it for you?",
+ "fit.title": "Each service, <span class=\"accent\">who it is for</span>",
+ "fit.intro": "We prefer to tell you before we start, so you know if we are a good fit.",
+ "fit.lead": "It is for you if:",
+ "fit.web.1": "You want your customers to find you on Google and see your services, your location and your contact details.",
+ "fit.web.2": "You prefer that we load your content, and you provide the texts and photos ready to use.",
+ "fit.web.3": "You want to edit your content yourself, with a training session.",
+ "fit.store.1": "You want to sell online with card payments and home delivery or in-store pickup.",
+ "fit.store.2": "You need a dashboard to control catalog, inventory and orders from any device.",
+ "fit.store.3": "You have one or more physical stores and want to sell online with your brand and your data.",
+ "fit.custom.1": "You need a system or an app built for how your business operates.",
+ "fit.custom.2": "You are happy to start with a conversation and a written proposal with scope, timeline and price."
 }

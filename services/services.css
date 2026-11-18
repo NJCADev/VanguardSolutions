@@ -666,3 +666,78 @@
 @media (min-width: 768px) {
   .plans-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
+
+/* ── ¿ES PARA TI? ───────────────────────────────────────────── */
+.fit-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-md);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.fit-card {
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.fit-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background: rgba(0,240,255,0.08);
+  border: 1px solid rgba(0,240,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: var(--cyan);
+}
+
+.fit-icon--purple {
+  background: rgba(191,0,255,0.08);
+  border-color: rgba(191,0,255,0.2);
+  color: var(--purple);
+}
+
+.fit-card h3 {
+  font-size: 1.05rem;
+  color: #fff;
+  font-family: var(--font-display);
+}
+
+.fit-lead {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--cyan);
+}
+
+.fit-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.fit-list li {
+  position: relative;
+  padding: 0.35rem 0 0.35rem 1.6rem;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: rgba(224,224,224,0.85);
+}
+
+.fit-list li i {
+  position: absolute;
+  left: 0;
+  top: 0.6rem;
+  font-size: 0.8rem;
+  color: var(--green);
+}
+
+@media (min-width: 768px) {
+  .fit-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
