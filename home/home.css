@@ -869,3 +869,48 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+/* ── CONDICIONES (versión corta de «Cómo trabajamos») ───────── */
+.trust-home-grid {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 1100px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-sm);
+}
+
+.trust-home-item {
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.trust-home-item i {
+  font-size: 1.25rem;
+  color: var(--cyan);
+}
+
+.trust-home-item:nth-child(even) i { color: var(--purple); }
+
+.trust-home-item p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(224,224,224,0.8);
+}
+
+.trust-home-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-md);
+}
+
+@media (min-width: 600px) {
+  .trust-home-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (min-width: 1000px) {
+  .trust-home-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
