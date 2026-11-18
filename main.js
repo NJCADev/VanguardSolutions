@@ -300,7 +300,7 @@
   }
 
   // Lo usa contact.js para abrir el chat con el mismo mensaje que el resto del sitio
-  window.VanguardWA = { href: waHref };
+  window.VanguardWA = { href: waHref, link: waLink };
 
   function renderWhatsApp() {
     const t = (k, d) => (window.VanguardI18n && window.VanguardI18n.t(k)) || d;
