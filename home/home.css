@@ -618,6 +618,8 @@
 .wvc-hex.h4 { --dur: 3.1s; --del: 0.9s; }
 .wvc-hex.h6 { --dur: 3.4s; --del: 1.2s; }
 .wvc-hex.h7 { --dur: 2.9s; --del: 0.4s; }
+.wvc-hex.h8 { --dur: 3.3s; --del: 0.7s; }
+.wvc-hex.h9 { --dur: 3s; --del: 1s; }
 
 .center-hex {
   background: rgba(0,240,255,0.12) !important;
