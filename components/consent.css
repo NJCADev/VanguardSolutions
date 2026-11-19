@@ -87,26 +87,6 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Enlace "Preferencias de cookies" del footer */
-.footer-legal-link {
-  padding: 0;
-  background: none;
-  border: 0;
-  color: inherit;
-  font: inherit;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  opacity: 0.75;
-  cursor: pointer;
-}
-
-.footer-legal-link:hover,
-.footer-legal-link:focus-visible {
-  color: #00F0FF;
-  opacity: 1;
-  outline: none;
-}
-
 .vs-consent-link { color: #00F0FF; text-underline-offset: 3px; }
 
 .footer-legal {

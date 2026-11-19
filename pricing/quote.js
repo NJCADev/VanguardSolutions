@@ -1,15 +1,26 @@
 /* ============================================================
    VANGUARD SOLUTIONS — COTIZADOR DE 1 MINUTO
-   Recomienda un plan según las respuestas, con los montos de
-   prices.json (si showPrices es true), un presupuesto estimado
-   con complementos y un resumen para WhatsApp. No guarda ni
-   envía datos personales.
+   Recomienda un plan según las respuestas (tipo de negocio,
+   forma del sitio, complementos, contenido y plazo), con los
+   montos de prices.json (si showPrices es true): presupuesto
+   estimado, comparación de planes, avisos a tener en cuenta y
+   un resumen para WhatsApp. No guarda ni envía datos personales.
    ============================================================ */
 
 (function () {
   'use strict';
 
   var PLANS = ['base', 'standard', 'pro'];
+  // Tipo de negocio: «two» = tiene 2 planes propios en prices.json (industries);
+  // «provider» = sistema de reservas que se instala para ese negocio.
+  var BIZ = {
+    clinic: { ind: 'clinicas', two: true, provider: 'SimplyBook.me' },
+    optica: { ind: null, two: false, provider: 'SimplyBook.me' },
+    vet: { ind: null, two: false, provider: 'SimplyBook.me' },
+    rest: { ind: 'restaurantes', two: true, provider: 'MyRestoo' },
+    office: { ind: null, two: false, provider: 'SimplyBook.me' },
+    other: { ind: null, two: false, provider: 'SimplyBook.me / MyRestoo' }
+  };
   var data = null;
 
   document.addEventListener('vanguard:ready', init);
@@ -67,6 +78,26 @@
     return rank;
   }
 
+  /* Plan de sitio para un tipo de negocio: con 2 planes propios, el rango 1 o más es el Profesional */
+  function webDesc(rank, biz) {
+    var cfg = BIZ[biz] || BIZ.other;
+    if (cfg.two && data && data.industries && data.industries[cfg.ind]) {
+      var pro = rank >= 1;
+      var key = pro ? 'pro' : 'standard';
+      return {
+        id: key, rank: pro ? 1 : 0, two: true, d: data.industries[cfg.ind][key],
+        name: 'pricing.web.' + (pro ? 'pro' : 'standard') + '.name',
+        forKey: pro ? 'ind.2p.pro.for' : 'pricing.web.base.for',
+        term: pro ? 'pricing.web.standard.term' : 'pricing.web.base.term'
+      };
+    }
+    var id = PLANS[rank];
+    return {
+      id: id, rank: rank, two: false, d: data && data.web && data.web[id],
+      name: 'pricing.web.' + id + '.name', forKey: 'pricing.web.' + id + '.for', term: 'pricing.web.' + id + '.term'
+    };
+  }
+
   /* Plan mínimo que piden las respuestas, sin contar las varias tiendas */
   function storeNeeds() {
     var rank = Number(checkedValue('storeProducts') || 0);
@@ -111,6 +142,7 @@
         if (k === 'design') text = range(data.extras.designMin, data.extras.designMax);
         else if (k === 'einvoice') text = t('pricing.q.ad.from') + ' ' + usd(data.extras.einvoice);
         else if (k === 'integration') text = t('pricing.q.ad.from') + ' ' + usd(data.extras.integration);
+        else if (k === 'booking') text = t('pricing.q.ad.booking.price', { amount: usd(data.extras.booking) });
       }
       el.textContent = text;
       el.hidden = !text;
@@ -138,6 +170,13 @@
     return { rows: rows, lo: lo, hi: hi, monthly: d.monthly };
   }
 
+  function webBudget(d, booking) {
+    var rows = [[t('pricing.q.bud.dev'), usd(d.dev)], [t('pricing.q.bud.domain'), '+ ' + usd(data.web.domain)]];
+    var lo = d.dev + data.web.domain;
+    if (booking) { lo += data.extras.booking; rows.push([t('pricing.q.bud.booking'), '+ ' + usd(data.extras.booking)]); }
+    return { rows: rows, lo: lo, hi: null, monthly: d.monthly };
+  }
+
   function renderBudget(kind, b, noteId) {
     var dl = document.getElementById('pq-budget-lines');
     dl.textContent = '';
@@ -149,13 +188,92 @@
     document.getElementById('pq-bud-note-web').hidden = noteId !== 'web';
   }
 
+  /* ── COMPARACIÓN DE PLANES ───────────────────────────────── */
+  // items: [{ name, lo, hi, monthly, covers, suggested }]
+  function renderCompare(items) {
+    var box = document.getElementById('pq-cmp');
+    var table = document.getElementById('pq-cmp-table');
+    table.textContent = '';
+    if (!items || items.length < 2) { box.hidden = true; return; }
+    var sug = items.filter(function (i) { return i.suggested; })[0];
+    var sugYear = sug.lo + 12 * sug.monthly;
+
+    var thead = document.createElement('thead');
+    var hr = document.createElement('tr');
+    ['pricing.q.cmp.plan', 'pricing.q.cmp.initial', 'pricing.q.cmp.monthly', 'pricing.q.cmp.year'].forEach(function (k) {
+      var th = document.createElement('th');
+      th.scope = 'col';
+      th.textContent = t(k);
+      hr.appendChild(th);
+    });
+    thead.appendChild(hr);
+    table.appendChild(thead);
+
+    var tbody = document.createElement('tbody');
+    items.forEach(function (i) {
+      var tr = document.createElement('tr');
+      if (i.suggested) tr.className = 'pq-cmp-sug';
+      if (!i.covers) tr.className = 'pq-cmp-low';
+      var year = i.lo + 12 * i.monthly;
+      var th = document.createElement('th');
+      th.scope = 'row';
+      var name = document.createElement('span');
+      name.textContent = i.name;
+      th.appendChild(name);
+      var sub = document.createElement('small');
+      if (i.suggested) sub.textContent = t('pricing.q.cmp.suggested');
+      else if (!i.covers) sub.textContent = t('pricing.q.cmp.low');
+      else {
+        var diff = year - sugYear;
+        sub.textContent = t(diff >= 0 ? 'pricing.q.cmp.more' : 'pricing.q.cmp.less', { amount: usd(Math.abs(diff)) });
+      }
+      th.appendChild(sub);
+      tr.appendChild(th);
+      [range(i.lo, i.hi), usd(i.monthly), range(year, i.hi == null ? null : i.hi + 12 * i.monthly)].forEach(function (v) {
+        var td = document.createElement('td');
+        td.textContent = v;
+        tr.appendChild(td);
+      });
+      tbody.appendChild(tr);
+    });
+    table.appendChild(tbody);
+    box.hidden = false;
+  }
+
+  /* ── AVISOS Y AVANCE ─────────────────────────────────────── */
+  function renderTips(tips) {
+    var box = document.getElementById('pq-tips');
+    var list = document.getElementById('pq-tips-list');
+    list.textContent = '';
+    tips.forEach(function (text) {
+      var li = document.createElement('li');
+      li.textContent = text;
+      list.appendChild(li);
+    });
+    box.hidden = !tips.length;
+  }
+
+  function renderProgress(kind) {
+    var names = kind === 'web' ? ['webBiz', 'webShape', 'ready', 'when'] : kind === 'store' ? ['storeStores', 'storeProducts', 'ready', 'when'] : [];
+    var wrap = document.getElementById('pq-progress-wrap');
+    var bar = document.getElementById('pq-progress');
+    if (!names.length) { wrap.hidden = true; return; }
+    var total = names.length + 1; // la primera pregunta: «¿Qué necesitas?»
+    var done = 1;
+    names.forEach(function (n) { if (checkedValue(n)) done++; });
+    bar.max = total;
+    bar.value = done;
+    document.getElementById('pq-progress-text').textContent = t('pricing.q.progress', { done: done, total: total });
+    wrap.hidden = false;
+  }
+
   /* ── RESULTADO ───────────────────────────────────────────── */
   function render() {
     var kind = checkedValue('kind');
     var prompt = document.getElementById('pq-prompt');
     var body = document.getElementById('pq-result-body');
-    document.querySelectorAll('#pq-form .pq-branch').forEach(function (b) { b.hidden = b.dataset.branch !== kind; });
-    if (!kind) { prompt.hidden = false; body.hidden = true; return; }
+    document.querySelectorAll('#pq-form .pq-branch').forEach(function (b) { b.hidden = b.dataset.branch.split(' ').indexOf(kind) === -1; });
+    if (!kind) { prompt.hidden = false; body.hidden = true; renderProgress(null); return; }
     prompt.hidden = true;
     body.hidden = false;
 
@@ -176,6 +294,9 @@
     setText('pq-why', '');
     setText('pq-bnote', '');
     setText('pq-alt', '');
+    renderCompare(null);
+    renderTips([]);
+    renderProgress(kind);
     var message;
 
     if (kind === 'custom') {
@@ -189,22 +310,36 @@
       var many = false;
       var add = [];
       var rank;
+      var biz = 'other';
+      var cfg = BIZ.other;
+      var booking = false;
+      var desc;
       if (kind === 'web') {
+        biz = checkedValue('webBiz') || 'other';
+        cfg = BIZ[biz] || BIZ.other;
+        // Con 2 planes propios (clínicas y restaurantes) no se ofrece el sitio con tienda
+        var shop = document.querySelector('#pq-form input[name="webShape"][value="2"]');
+        shop.parentNode.hidden = cfg.two;
+        if (cfg.two && shop.checked) document.querySelector('#pq-form input[name="webShape"][value="1"]').checked = true;
+        booking = checkedValues('webAddon').indexOf('booking') !== -1;
         rank = webPlan();
+        desc = webDesc(rank, biz);
+        rank = desc.rank;
       } else {
         add = checkedValues('storeAddon');
         many = checkedValue('storeStores') === '2';
         rank = storeNeeds();
         // Varias tiendas: Base no las ofrece; Standard las suma como complemento y Profesional ya las incluye
         if (many && rank < 2) rank = Math.max(rank, 1);
+        var sp = 'pricing.store.' + PLANS[rank];
+        desc = { id: PLANS[rank], rank: rank, two: false, d: data && data.store && data.store[PLANS[rank]], name: sp + '.name', forKey: sp + '.for', term: sp + '.term' };
       }
-      var id = PLANS[rank];
+      var id = desc.id;
       var multiAddon = kind === 'store' && many && id !== 'pro';
-      var p = 'pricing.' + group + '.' + id;
-      var d = data && data[group] && data[group][id];
+      var d = desc.d;
 
-      planEl.textContent = t(p + '.name');
-      forEl.textContent = t(p + '.for');
+      planEl.textContent = t(desc.name);
+      forEl.textContent = t(desc.forKey);
 
       if (show && d) {
         if (kind === 'web') {
@@ -217,7 +352,7 @@
           addLine(dl, t('pricing.q.res.monthly'), money(d.monthly) + ' ' + t('pricing.q.res.per.month'));
         }
       }
-      addLine(dl, t('pricing.q.res.term'), t(p + '.term'));
+      addLine(dl, t('pricing.q.res.term'), t(desc.term));
 
       // Avisos del plan
       var notes = [];
@@ -232,10 +367,17 @@
       var estimate = '';
       if (show && d) {
         var bud;
+        var cmp = [];
         if (kind === 'web') {
-          var lo = d.dev + data.web.domain;
-          bud = { rows: [], lo: lo, hi: null, monthly: d.monthly };
+          bud = webBudget(d, booking);
           renderBudget('web', bud, 'web');
+          if (booking) setText('pq-bnote', t('pricing.q.bnote.booking', { provider: cfg.provider }));
+          var last = cfg.two ? 1 : 2;
+          for (var r = 0; r <= last; r++) {
+            var dd = webDesc(r, biz);
+            var wb = webBudget(dd.d, booking);
+            cmp.push({ name: t(dd.name), lo: wb.lo, hi: null, monthly: wb.monthly, covers: r >= rank, suggested: r === rank });
+          }
         } else {
           bud = storeBudget(id, many, add);
           renderBudget('store', bud, 'store');
@@ -247,8 +389,13 @@
             var alt = storeBudget('pro', false, add.filter(function (x) { return x === 'design' || x === 'integration'; }));
             setText('pq-alt', t('pricing.q.alt', { initial: range(alt.lo, alt.hi), monthly: usd(alt.monthly) + ' ' + t('pricing.q.res.per.month') }));
           }
+          for (var s = 0; s < 3; s++) {
+            var sb = storeBudget(PLANS[s], many, add);
+            cmp.push({ name: t('pricing.store.' + PLANS[s] + '.name'), lo: sb.lo, hi: sb.hi, monthly: sb.monthly, covers: s >= rank, suggested: s === rank });
+          }
         }
         budget.hidden = false;
+        renderCompare(cmp);
         estimate = ' ' + t('pricing.q.wa.estimate', { initial: range(bud.lo, bud.hi), monthly: usd(bud.monthly) });
       } else if (multiAddon) {
         setText('pq-alt', t('pricing.q.alt.noprice'));
@@ -258,7 +405,23 @@
       }
       if (show && d) document.querySelector('#pq-budget .pq-h4').hidden = false;
 
-      var names = kind === 'web' ? ['webShape', 'webExtra'] : ['storeStores', 'storeProducts', 'storeExtra', 'storeAddon'];
+      // Avisos según el contenido, el plazo y el tipo de negocio
+      var tips = [];
+      var ready = checkedValue('ready');
+      var when = checkedValue('when');
+      if (ready === 'some') tips.push(t('pricing.q.tip.ready.some'));
+      if (ready === 'none') tips.push(t('pricing.q.tip.ready.none'));
+      if (when === 'asap') {
+        if (kind === 'web' && !desc.two && id === 'pro') tips.push(t('pricing.q.tip.asap.pro', { term: t(desc.term) }));
+        else tips.push(t('pricing.q.tip.asap', { term: t(desc.term) }));
+      }
+      if (kind === 'web' && cfg.two) tips.push(t('pricing.q.tip.twoplan'));
+      if (kind === 'web' && biz !== 'other' && !booking) tips.push(t('pricing.q.tip.booking', { provider: cfg.provider }));
+      renderTips(tips);
+
+      var names = kind === 'web'
+        ? ['webBiz', 'webShape', 'webExtra', 'webAddon', 'ready', 'when']
+        : ['storeStores', 'storeProducts', 'storeExtra', 'storeAddon', 'ready', 'when'];
       var answers = answersOf(names).join(t('pricing.q.res.sep', null, ' · '));
       document.getElementById('pq-answers-text').textContent = answers;
       answersEl.hidden = false;
