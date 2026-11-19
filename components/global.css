@@ -785,3 +785,41 @@ html {
 .static-nav--footer { justify-content: center; border-top: 1px solid var(--glass-border); }
 /* El de respaldo del encabezado se superpone en vez de empujar la página: al cargar el encabezado real no hay salto */
 #header-placeholder > .static-nav { position: absolute; top: 0; left: 0; right: 0; z-index: 1; }
+
+/* ── Enlace en píldora (pie y llamadas a la acción) ── */
+.fx-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 36px;
+  padding: 0.35rem 0.95rem;
+  border: 1px solid rgba(0, 240, 255, 0.28);
+  border-radius: 999px;
+  background-color: transparent;
+  background-image: none;
+  color: rgba(224, 224, 224, 0.9);
+  font-family: inherit;
+  font-size: 0.85rem;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.fx-link:hover,
+.fx-link:focus-visible {
+  color: #fff;
+  background-color: rgba(0, 240, 255, 0.14);
+  border-color: var(--cyan);
+  box-shadow: 0 0 14px rgba(0, 240, 255, 0.35);
+}
+
+.fx-link:focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; }
+.fx-link i { font-size: 0.8em; color: var(--cyan); transition: transform 0.25s ease; }
+.fx-link:hover i,
+.fx-link:focus-visible i { transform: translateX(3px); }
+
+@media (prefers-reduced-motion: reduce) {
+  .fx-link,
+  .fx-link i { transition: none; }
+}

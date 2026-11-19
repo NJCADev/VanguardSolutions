@@ -305,7 +305,6 @@
   text-align: center;
 }
 
-.pr-more a { color: var(--cyan); text-decoration: underline; }
 
 /* ── PIE DE MONTOS Y CTA ────────────────────────────────────── */
 .pr-foot-section { padding: 0 0 var(--space-lg); }
@@ -378,8 +377,6 @@
 
 /* ── COTIZADOR DE 1 MINUTO ──────────────────────────────────── */
 .pq-hero-link { margin-top: var(--space-sm); }
-.pq-hero-link a { color: var(--cyan); font-weight: 600; text-decoration: underline; }
-
 .pq-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -575,3 +572,34 @@
   line-height: 1.6;
   color: rgba(224, 224, 224, 0.75);
 }
+
+/* ── Cotizador: avance, comparación y avisos ── */
+.pq-progress { display: flex; align-items: center; gap: var(--space-sm); margin: 0 0 var(--space-md); }
+.pq-progress[hidden],
+.pq-cmp[hidden],
+.pq-tips[hidden],
+.pq-opt[hidden] { display: none; }
+.pq-progress progress { flex: 1; min-width: 0; height: 8px; accent-color: var(--cyan); }
+.pq-progress-text { font-size: 0.8rem; color: rgba(224, 224, 224, 0.7); white-space: nowrap; }
+
+.pq-cmp,
+.pq-tips {
+  margin-top: var(--space-sm);
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--glass-border);
+}
+.pq-cmp-scroll { overflow-x: auto; }
+.pq-cmp-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+.pq-cmp-table th,
+.pq-cmp-table td { padding: 0.45rem 0.4rem; text-align: right; border-bottom: 1px solid var(--glass-border); color: rgba(224, 224, 224, 0.85); }
+.pq-cmp-table thead th { font-weight: 600; color: rgba(224, 224, 224, 0.6); }
+.pq-cmp-table tbody th { text-align: left; font-weight: 600; color: #fff; }
+.pq-cmp-table tbody th small { display: block; font-weight: 400; font-size: 0.72rem; color: rgba(224, 224, 224, 0.6); }
+.pq-cmp-table .pq-cmp-sug th,
+.pq-cmp-table .pq-cmp-sug td { background: rgba(0, 240, 255, 0.08); color: #fff; }
+.pq-cmp-table .pq-cmp-sug th small { color: var(--cyan); }
+.pq-cmp-table .pq-cmp-low th,
+.pq-cmp-table .pq-cmp-low td { opacity: 0.55; }
+
+.pq-tip-list { margin: var(--space-xs) 0 0; padding-left: 1.1rem; display: grid; gap: 0.4rem; }
+.pq-tip-list li { font-size: 0.85rem; line-height: 1.6; color: rgba(224, 224, 224, 0.85); }
