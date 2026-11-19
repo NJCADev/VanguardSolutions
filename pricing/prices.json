@@ -2,15 +2,25 @@
   "showPrices": true,
   "currency": "USD",
   "colonRate": 450,
-  "updated": "2026-11-18",
+  "updated": "2026-11-19",
   "web": {
     "domain": 25,
-    "base": { "dev": 775, "monthly": 30 },
-    "standard": { "dev": 1350, "monthly": 45 },
-    "pro": { "dev": 1925, "monthly": 65 }
+    "base": { "dev": 825, "monthly": 30 },
+    "standard": { "dev": 1475, "monthly": 45 },
+    "pro": { "dev": 2825, "monthly": 85 }
+  },
+  "industries": {
+    "clinicas": {
+      "standard": { "dev": 825, "monthly": 30 },
+      "pro": { "dev": 1475, "monthly": 55 }
+    },
+    "restaurantes": {
+      "standard": { "dev": 825, "monthly": 30 },
+      "pro": { "dev": 1475, "monthly": 55 }
+    }
   },
   "store": {
-    "base": { "license": 1375, "setup": 275, "monthly": 55 },
+    "base": { "license": 1375, "setup": 225, "monthly": 65 },
     "standard": { "license": 3350, "setup": 350, "monthly": 85 },
     "pro": { "license": 6475, "setup": 425, "monthly": 155 }
   },
