@@ -200,10 +200,16 @@
     const href = a.getAttribute('href') || '';
     const label = (a.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 60);
 
-    if (/^https:\/\/wa\.me\//.test(href)) {
-      track('click_whatsapp', { page_path: page, button_text: label });
+    if (/^https:\/\/(wa\.me|api\.whatsapp\.com)\//.test(href)) {
+      track('click_whatsapp', { page_path: page, button_text: label, plan: a.dataset.waPlan || '', source: a.id === 'pq-wa' ? 'quote' : 'page' });
     } else if (href.indexOf('mailto:') === 0) {
       track('click_email', { page_path: page });
+    } else if (href.indexOf('tel:') === 0) {
+      track('click_phone', { page_path: page });
+    } else if (/^https?:\/\/([a-z0-9-]+\.)*(google\.[a-z.]+\/maps|maps\.app\.goo\.gl|goo\.gl\/maps|waze\.com)/i.test(href)) {
+      track('click_maps', { page_path: page });
+    } else if (/^https?:\/\/([a-z0-9-]+\.)*(facebook|instagram|linkedin|tiktok|youtube|twitter|github)\.com|^https?:\/\/(www\.)?x\.com/i.test(href)) {
+      track('click_social', { page_path: page, network: (href.match(/(facebook|instagram|linkedin|tiktok|youtube|twitter|github|x)\.com/i) || [])[1] || 'other' });
     } else if (a.classList.contains('btn')) {
       track('cta_click', { page_path: page, button_text: label, link_url: href });
     }
