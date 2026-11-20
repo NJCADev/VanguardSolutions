@@ -173,6 +173,19 @@ firebase deploy --only hosting
 Antes de publicar, Firebase ejecuta `scripts/build-config.js` para generar
 `config.js`. Las carpetas `.claude/`, `.agents/`, `scripts/` y `graphify-out/` no se publican.
 
+## Avisar a Bing después de desplegar (IndexNow)
+
+Después de desplegar, avisa a Bing y a los buscadores que usan IndexNow de que las páginas cambiaron:
+
+```bash
+npm run indexnow -- --dry      # muestra qué enviaría, sin enviar
+npm run indexnow              # envía todas las URL de sitemap.xml
+npm run indexnow -- --only=blogs/   # solo las URL que contengan «blogs/»
+```
+
+Usa la clave que ya está en la raíz del sitio. Una respuesta 200 o 202 es correcta; 403 suele significar que el archivo de la clave aún no está desplegado.
+
+
 ## Dominio y DNS
 
 El dominio se gestiona en Cloudflare (registros en «DNS only», no con proxy, para que
