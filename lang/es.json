@@ -928,7 +928,7 @@
  "pricing.web.pro.term": "5 a 8 semanas",
  "pricing.web.pro.b1": "Todo lo de Standard",
  "pricing.web.pro.b2": "Tienda real con panel administrativo (funciones del plan Base de la tienda), con setup y 1 capacitación",
- "pricing.web.pro.b3": "SEO avanzado, con dos recomendaciones de mejora al mes",
+ "pricing.web.pro.b3": "SEO avanzado: informe mensual de Search Console, auditoría técnica y medición de velocidad cada trimestre, y dos recomendaciones de mejora al mes",
  "pricing.waplan.web.pro": "Sitio web Profesional",
  "pricing.store.base.name": "Base",
  "pricing.store.base.for": "Una tienda, hasta 250 productos.",
@@ -1417,5 +1417,13 @@
  "pricing.q.tip.asap.pro": "El Profesional toma de {term}. Si lo necesitas antes, el plan Standard toma de 3 a 5 semanas y cubre lo esencial.",
  "pricing.q.tip.twoplan": "Para este tipo de negocio hay dos planes: Standard (una sola página) y Profesional (sitio completo).",
  "pricing.q.tip.booking": "¿Agendas citas o reservas? Puedes sumar un sistema de reservas con {provider}; la instalación se paga aparte.",
- "pricing.q.biz.office": "Despacho contable o legal"
+ "pricing.q.biz.office": "Despacho contable o legal",
+ "pricing.h.seo": "Qué incluye cada nivel de SEO",
+ "pricing.seo.cap": "Niveles de SEO de los planes de sitio y de tienda",
+ "pricing.seo.level": "Nivel",
+ "pricing.seo.what": "Qué incluye",
+ "pricing.seo.n1": "Search Console y Perfil de Negocio de Google, títulos y descripciones de cada página, y mapa del sitio.",
+ "pricing.seo.n2": "Lo del nivel Básico, más Bing (Webmaster Tools y Places), datos estructurados, solicitud de indexación y Google Analytics 4 con reporte mensual.",
+ "pricing.seo.n3": "Lo del nivel Optimizado, más un informe mensual de Search Console (consultas, clics y posiciones), una auditoría técnica y una medición de velocidad cada trimestre, datos estructurados adicionales (preguntas frecuentes y blog), una revisión mensual del Perfil de Negocio y dos recomendaciones de mejora al mes.",
+ "pricing.seo.note": "Usamos herramientas gratuitas de Google y Bing: no pagas licencias. Nadie puede garantizar un puesto específico en los buscadores, y los resultados pueden tardar de unos días a un mes."
 }

@@ -928,7 +928,7 @@
  "pricing.web.pro.term": "5 to 8 weeks",
  "pricing.web.pro.b1": "Everything in Standard",
  "pricing.web.pro.b2": "Real online store with an admin panel (Base store plan features), with setup and 1 training session",
- "pricing.web.pro.b3": "Advanced SEO, with two improvement recommendations per month",
+ "pricing.web.pro.b3": "Advanced SEO: monthly Search Console report, a technical audit and a speed check every quarter, and two improvement recommendations per month",
  "pricing.waplan.web.pro": "Website Professional",
  "pricing.store.base.name": "Base",
  "pricing.store.base.for": "One store, up to 250 products.",
@@ -1417,5 +1417,13 @@
  "pricing.q.tip.asap.pro": "Professional takes {term}. If you need it sooner, the Standard plan takes 3 to 5 weeks and covers the essentials.",
  "pricing.q.tip.twoplan": "For this kind of business there are two plans: Standard (a single page) and Professional (a complete site).",
  "pricing.q.tip.booking": "Do you take appointments or bookings? You can add a booking system with {provider}; the installation is paid separately.",
- "pricing.q.biz.office": "Accounting or law firm"
+ "pricing.q.biz.office": "Accounting or law firm",
+ "pricing.h.seo": "What each SEO level includes",
+ "pricing.seo.cap": "SEO levels of the website and store plans",
+ "pricing.seo.level": "Level",
+ "pricing.seo.what": "What it includes",
+ "pricing.seo.n1": "Google Search Console and Business Profile, titles and descriptions for every page, and a sitemap.",
+ "pricing.seo.n2": "Everything in Basic, plus Bing (Webmaster Tools and Places), structured data, an indexing request and Google Analytics 4 with a monthly report.",
+ "pricing.seo.n3": "Everything in Optimized, plus a monthly Search Console report (queries, clicks and positions), a technical audit and a speed check every quarter, additional structured data (FAQ and blog), a monthly Business Profile review and two improvement recommendations per month.",
+ "pricing.seo.note": "We use free Google and Bing tools: you pay no licenses. Nobody can guarantee a specific search ranking, and results can take from a few days to a month."
 }
