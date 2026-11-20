@@ -107,6 +107,21 @@
         "source": "/",
         "destination": "/home/home.html",
         "type": 301
+      },
+      {
+        "source": "/industries/clinicas.html",
+        "destination": "/pricing/pricing.html",
+        "type": 301
+      },
+      {
+        "source": "/industries/opticas.html",
+        "destination": "/pricing/pricing.html",
+        "type": 301
+      },
+      {
+        "source": "/industries/restaurantes.html",
+        "destination": "/pricing/pricing.html",
+        "type": 301
       }
     ]
   }
