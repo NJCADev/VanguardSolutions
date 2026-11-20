@@ -5,7 +5,8 @@
    - Los textos traducibles llevan data-i18n / data-i18n-html /
      data-i18n-attr y sus claves viven en /lang/es.json y /lang/en.json.
    - Idioma inicial: el elegido antes (localStorage) o, si no hay,
-     el del navegador (español → ES, cualquier otro → EN).
+     el del navegador (español → ES, cualquier otro → EN). Los robots
+     de buscadores siempre reciben el español.
    ============================================================ */
 
 (function () {
@@ -24,6 +25,8 @@
       const saved = localStorage.getItem(STORAGE_KEY);
       if (SUPPORTED.includes(saved)) return saved;
     } catch (e) { /* localStorage bloqueado: seguimos sin persistencia */ }
+    // Los buscadores y las herramientas de medición navegan en inglés: que indexen el español
+    if (/bot|crawl|spider|slurp|bingpreview|lighthouse|pagespeed|facebookexternalhit|whatsapp/i.test(navigator.userAgent || '')) return 'es';
     const nav = (navigator.languages && navigator.languages[0]) || navigator.language || 'es';
     return /^es/i.test(nav) ? 'es' : 'en';
   }

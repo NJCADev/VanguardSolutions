@@ -38,6 +38,7 @@
     if (!form) return;
 
     form.addEventListener('submit', function (e) { e.preventDefault(); });
+    form.addEventListener('change', function () { trackQuote('quote_start'); });
     form.addEventListener('change', render);
     document.addEventListener('vanguard:langchange', render);
 
@@ -46,6 +47,14 @@
       .then(function (json) { data = json; })
       .catch(function () { data = { showPrices: false }; })
       .then(render);
+  }
+
+  /* ── MEDICIÓN (sin datos personales: solo tipo de servicio y plan sugerido) ── */
+  var started = false;
+  var lastResult = '';
+  function trackQuote(name, params) {
+    if (name === 'quote_start') { if (started) return; started = true; }
+    if (window.VanguardAnalytics) window.VanguardAnalytics.track(name, params || {});
   }
 
   /* ── ESTADO DEL FORMULARIO ───────────────────────────────── */
@@ -434,6 +443,10 @@
       });
     }
 
+    if (kind !== 'custom') {
+      var sig = kind + ':' + (typeof id !== 'undefined' ? id : '');
+      if (sig !== lastResult) { lastResult = sig; trackQuote('quote_result', { service: kind, plan: id }); }
+    }
     if (window.VanguardWA && window.VanguardWA.link && message) wa.href = window.VanguardWA.link(message);
   }
 })();
